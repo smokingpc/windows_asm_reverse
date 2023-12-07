@@ -1,4 +1,4 @@
-# Windows Asm ReverseEngineering Notes
+# Windows Kernel Assembly ReverseEngineering Notes
 
 In my job, I need to find some "secret" by reverse engineering to windows kernel.
 

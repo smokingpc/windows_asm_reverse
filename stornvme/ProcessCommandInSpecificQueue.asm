@@ -200,7 +200,7 @@ stornvme!ProcessCommandInSpecificQueue+0x27c:
 fffff801`dbee2f9c 4533c0          xor     r8d,r8d
 fffff801`dbee2f9f 4c8d4de7        lea     r9,[rbp-19h]
 fffff801`dbee2fa3 488bd3          mov     rdx,rbx
-fffff801`dbee2fa6 418d482f        lea     ecx,[r8+2Fh]
+fffff801`dbee2fa6 418d482f        lea     ecx,[r8+2Fh]      ;ExtFunctionQueryPerformanceCounter?
 fffff801`dbee2faa 48ff1577c00100  call    qword ptr [stornvme!_imp_StorPortExtendedFunction (fffff801`dbeff028)]
 fffff801`dbee2fb1 0f1f440000      nop     dword ptr [rax+rax]
 fffff801`dbee2fb6 488b45e7        mov     rax,qword ptr [rbp-19h]

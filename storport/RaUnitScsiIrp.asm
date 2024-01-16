@@ -1,4 +1,6 @@
-﻿0: kd> uf storport!RaUnitScsiIrp
+﻿;這個function會檢查Adapter能吃哪種SRB，不合的就指定 SrbStatus == 6 退回request
+
+0: kd> uf storport!RaUnitScsiIrp
 Flow analysis was incomplete, some code may be missing
 storport!RaUnitScsiIrp:
 fffff80d`80807220 4053            push    rbx
@@ -11,46 +13,46 @@ fffff80d`80807229 4883ec68        sub     rsp,68h
 fffff80d`8080722d 488b055ca00500  mov     rax,qword ptr [storport!_security_cookie (fffff80d`80861290)]
 fffff80d`80807234 4833c4          xor     rax,rsp
 fffff80d`80807237 4889442458      mov     qword ptr [rsp+58h],rax
-fffff80d`8080723c 488b9ab8000000  mov     rbx,qword ptr [rdx+0B8h]
+fffff80d`8080723c 488b9ab8000000  mov     rbx,qword ptr [rdx+0B8h]  ;rbx = IRP->Tail.Overlay.CurrentStackLocation
 fffff80d`80807243 33f6            xor     esi,esi
 fffff80d`80807245 4c8bea          mov     r13,rdx
-fffff80d`80807248 488be9          mov     rbp,rcx
+fffff80d`80807248 488be9          mov     rbp,rcx   ;UnitExt
 fffff80d`8080724b 41b401          mov     r12b,1
 fffff80d`8080724e 8bfe            mov     edi,esi
 fffff80d`80807250 488b5b08        mov     rbx,qword ptr [rbx+8]
-fffff80d`80807254 4885db          test    rbx,rbx                       ;CurrentIoStack Index == 0 => IO STACK full, goto error
+fffff80d`80807254 4885db          test    rbx,rbx   ;if CurrentStackLocation->Parameters.Scsi == NULL, goto error
 fffff80d`80807257 0f84ad650200    je      storport!RaUnitScsiIrp+0x265ea (fffff80d`8082d80a)  Branch
 
 storport!RaUnitScsiIrp+0x3d:
-fffff80d`8080725d 658b0425a4010000 mov     eax,dword ptr gs:[1A4h]
+fffff80d`8080725d 658b0425a4010000 mov     eax,dword ptr gs:[1A4h]  ;current cpuid
 fffff80d`80807265 448bc0          mov     r8d,eax
 fffff80d`80807268 488b4120        mov     rax,qword ptr [rcx+20h]
-fffff80d`8080726c 49c1e006        shl     r8,6
-fffff80d`80807270 418b0400        mov     eax,dword ptr [r8+rax]
+fffff80d`8080726c 49c1e006        shl     r8,6  ;取得 UnitExt->PerProcessorData[cpuid] 的 ptr offset from begin
+fffff80d`80807270 418b0400        mov     eax,dword ptr [r8+rax] ; eax = PerProcessorData->OutstandingCount
 fffff80d`80807274 4184c4          test    r12b,al
 fffff80d`80807277 0f85a7650200    jne     storport!RaUnitScsiIrp+0x26604 (fffff80d`8082d824)  Branch
 
 storport!RaUnitScsiIrp+0x5d:
 fffff80d`8080727d 8d5002          lea     edx,[rax+2]
 fffff80d`80807280 488b4d20        mov     rcx,qword ptr [rbp+20h]
-fffff80d`80807284 f0410fb11408    lock cmpxchg dword ptr [r8+rcx],edx
+fffff80d`80807284 f0410fb11408    lock cmpxchg dword ptr [r8+rcx],edx ;InterlockedCompareExcahnge(PerProcessorData->OutstandingCount, 2, 0);
 fffff80d`8080728a 0f854f030000    jne     storport!RaUnitScsiIrp+0x3bf (fffff80d`808075df)  Branch
 
 storport!RaUnitScsiIrp+0x70:
-fffff80d`80807290 8b4d30          mov     ecx,dword ptr [rbp+30h]
+fffff80d`80807290 8b4d30          mov     ecx,dword ptr [rbp+30h]   ;UnitExt->DeviceState
 fffff80d`80807293 4c89b424b0000000 mov     qword ptr [rsp+0B0h],r14
-fffff80d`8080729b 83f905          cmp     ecx,5
+fffff80d`8080729b 83f905          cmp     ecx,5 ;if UnitExt->DeviceState >= 5, goto 0x26610
 fffff80d`8080729e 0f8d8c650200    jge     storport!RaUnitScsiIrp+0x26610 (fffff80d`8082d830)  Branch
 
 storport!RaUnitScsiIrp+0x84:
 fffff80d`808072a4 0fb64302        movzx   eax,byte ptr [rbx+2]
 fffff80d`808072a8 4c897c2460      mov     qword ptr [rsp+60h],r15
-fffff80d`808072ad 3c28            cmp     al,28h
+fffff80d`808072ad 3c28            cmp     al,28h    ;check if SRB is STORAGE_REQUEST_BLOCK
 fffff80d`808072af 0f85ce010000    jne     storport!RaUnitScsiIrp+0x263 (fffff80d`80807483)  Branch
 
 storport!RaUnitScsiIrp+0x95:
-fffff80d`808072b5 488b4518        mov     rax,qword ptr [rbp+18h]
-fffff80d`808072b9 80b8a201000001  cmp     byte ptr [rax+1A2h],1
+fffff80d`808072b5 488b4518        mov     rax,qword ptr [rbp+18h]   ;rax == AdapterExt
+fffff80d`808072b9 80b8a201000001  cmp     byte ptr [rax+1A2h],1     ;if AdapterExt->Miniport->PortConfiguration->SrbType != 1, goto 0x2669d
 fffff80d`808072c0 0f85f7650200    jne     storport!RaUnitScsiIrp+0x2669d (fffff80d`8082d8bd)  Branch
 
 storport!RaUnitScsiIrp+0xa6:
@@ -439,7 +441,7 @@ fffff80d`8082d8b7 90              nop
 fffff80d`8082d8b8 e9a49bfdff      jmp     storport!RaUnitScsiIrp+0x241 (fffff80d`80807461)  Branch
 
 storport!RaUnitScsiIrp+0x2669d:
-fffff80d`8082d8bd c6430306        mov     byte ptr [rbx+3],6
+fffff80d`8082d8bd c6430306        mov     byte ptr [rbx+3],6    ;set Srb->SrbStatus = 6
 fffff80d`8082d8c1 488bcd          mov     rcx,rbp
 fffff80d`8082d8c4 49897538        mov     qword ptr [r13+38h],rsi
 fffff80d`8082d8c8 e8ef96fdff      call    storport!RaUnitReleaseRemoveLock (fffff80d`80806fbc)

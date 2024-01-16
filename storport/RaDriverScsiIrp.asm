@@ -18,7 +18,7 @@ fffff80d`808071ad 0f85eb650200    jne     storport!RaDriverScsiIrp+0x2661e (ffff
 
 storport!RaDriverScsiIrp+0x33:
 fffff80d`808071b3 c6878d000000a8  mov     byte ptr [rdi+8Dh],0A8h 
-fffff80d`808071ba 488b4e40        mov     rcx,qword ptr [rsi+40h]       ;DeviceExtension of miniport => AdapterExt
+fffff80d`808071ba 488b4e40        mov     rcx,qword ptr [rsi+40h]       ;DeviceExtension of miniport => AdapterExt Or UnitExt?
 fffff80d`808071be 48895c2440      mov     qword ptr [rsp+40h],rbx       
 fffff80d`808071c3 8b01            mov     eax,dword ptr [rcx]           ;get AdapterExt->ObjectType
 fffff80d`808071c5 85c0            test    eax,eax                       ;if RaidAdapterObject==ObjectType , goto 0x2664b

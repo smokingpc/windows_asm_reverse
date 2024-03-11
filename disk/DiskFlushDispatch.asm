@@ -20,10 +20,10 @@ fffff807`797f1627 33d2            xor     edx,edx
 fffff807`797f1629 488b8610020000  mov     rax,qword ptr [rsi+210h]  ;get storage descriptor of this disk, created in classpnp.sys 
 fffff807`797f1630 458bf7          mov     r14d,r15d
 fffff807`797f1633 458d6720        lea     r12d,[r15+20h]
-fffff807`797f1637 4438681e        cmp     byte ptr [rax+1Eh],r13b   ;0x1C?
+fffff807`797f1637 4438681e        cmp     byte ptr [rax+1Eh],r13b   ;rax=0x1C, r13b=1
 fffff807`797f163b 0f8450010000    je      disk!DiskFlushDispatch+0x1a1 (fffff807`797f1791)  Branch
 
-disk!DiskFlushDispatch+0x51:
+disk!DiskFlushDispatch+0x51:    ;SCSI_REQUEST_BLOCK version SRB
 fffff807`797f1641 458d4756        lea     r8d,[r15+56h]
 fffff807`797f1645 e8b61c0000      call    disk!memset (fffff807`797f3300)
 fffff807`797f164a b858000000      mov     eax,58h
@@ -124,7 +124,7 @@ fffff807`797f178c 415c            pop     r12
 fffff807`797f178e 5f              pop     rdi
 fffff807`797f178f c3              ret
 
-disk!DiskFlushDispatch+0x1a1:
+disk!DiskFlushDispatch+0x1a1:       ;STORAGE_REQUEST_BLOCK version SRB filling
 fffff807`797f1791 41b8b6000000    mov     r8d,0B6h
 fffff807`797f1797 e8641b0000      call    disk!memset (fffff807`797f3300)
 fffff807`797f179c b808000000      mov     eax,8

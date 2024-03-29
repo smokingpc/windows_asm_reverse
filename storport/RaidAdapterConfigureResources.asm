@@ -1,74 +1,74 @@
-﻿1: kd> uf storport!RaidAdapterConfigureResources
+﻿8: kd> uf storport!RaidAdapterConfigureResources
 storport!RaidAdapterConfigureResources:
-fffff80b`7ca1c0cc 4053            push    rbx
-fffff80b`7ca1c0ce 4883ec30        sub     rsp,30h
-fffff80b`7ca1c0d2 488bd9          mov     rbx,rcx
-fffff80b`7ca1c0d5 4881c128010000  add     rcx,128h
-fffff80b`7ca1c0dc e897030500      call    storport!RaidInitializeResourceList (fffff80b`7ca6c478)
-fffff80b`7ca1c0e1 85c0            test    eax,eax
-fffff80b`7ca1c0e3 0f8813010000    js      storport!RaidAdapterConfigureResources+0x130 (fffff80b`7ca1c1fc)  Branch
+fffff80f`2d2dde34 4053            push    rbx
+fffff80f`2d2dde36 4883ec30        sub     rsp,30h
+fffff80f`2d2dde3a 488bd9          mov     rbx,rcx
+fffff80f`2d2dde3d 4881c128010000  add     rcx,128h
+fffff80f`2d2dde44 e8c7fe0400      call    storport!RaidInitializeResourceList (fffff80f`2d32dd10)
+fffff80f`2d2dde49 85c0            test    eax,eax
+fffff80f`2d2dde4b 0f8813010000    js      storport!RaidAdapterConfigureResources+0x130 (fffff80f`2d2ddf64)  Branch
 
 storport!RaidAdapterConfigureResources+0x1d:
-fffff80b`7ca1c0e9 488b5318        mov     rdx,qword ptr [rbx+18h]
-fffff80b`7ca1c0ed 488d8b68020000  lea     rcx,[rbx+268h]
-fffff80b`7ca1c0f4 e8df040500      call    storport!RaInitializeBus (fffff80b`7ca6c5d8)  ;IRP_MJ_PNP + IRP_MN_QUERY_INTERFACE to query BusInterface callbacks from bus driver.
-fffff80b`7ca1c0f9 babb0000c0      mov     edx,0C00000BBh
-fffff80b`7ca1c0fe 3bc2            cmp     eax,edx
-fffff80b`7ca1c100 0f84fc000000    je      storport!RaidAdapterConfigureResources+0x136 (fffff80b`7ca1c202)  Branch
+fffff80f`2d2dde51 488b5318        mov     rdx,qword ptr [rbx+18h]
+fffff80f`2d2dde55 488d8b68020000  lea     rcx,[rbx+268h]
+fffff80f`2d2dde5c e81ffe0400      call    storport!RaInitializeBus (fffff80f`2d32dc80)  ;IRP_MJ_PNP + IRP_MN_QUERY_INTERFACE to query BusInterface callbacks from bus driver.
+fffff80f`2d2dde61 babb0000c0      mov     edx,0C00000BBh
+fffff80f`2d2dde66 3bc2            cmp     eax,edx
+fffff80f`2d2dde68 0f84fc000000    je      storport!RaidAdapterConfigureResources+0x136 (fffff80f`2d2ddf6a)  Branch
 
 storport!RaidAdapterConfigureResources+0x3a:
-fffff80b`7ca1c106 488b5308        mov     rdx,qword ptr [rbx+8]
-fffff80b`7ca1c10a 488d058f5efeff  lea     rax,[storport!RaidAdapterDeferredRoutine (fffff80b`7ca01fa0)]
-fffff80b`7ca1c111 488d8b80040000  lea     rcx,[rbx+480h]
-fffff80b`7ca1c118 4889442420      mov     qword ptr [rsp+20h],rax
-fffff80b`7ca1c11d 41b950000000    mov     r9d,50h
-fffff80b`7ca1c123 e8f0000000      call    storport!RaidInitializeDeferredQueue (fffff80b`7ca1c218)
-fffff80b`7ca1c128 4c8b4308        mov     r8,qword ptr [rbx+8]
-fffff80b`7ca1c12c 488d8b80060000  lea     rcx,[rbx+680h]
-fffff80b`7ca1c133 488d158671feff  lea     rdx,[storport!RaidpAdapterTimerDpcRoutine (fffff80b`7ca032c0)]
-fffff80b`7ca1c13a 48ff152faf0400  call    qword ptr [storport!_imp_KeInitializeDpc (fffff80b`7ca67070)]
-fffff80b`7ca1c141 0f1f440000      nop     dword ptr [rax+rax]
-fffff80b`7ca1c146 4c8b4308        mov     r8,qword ptr [rbx+8]
-fffff80b`7ca1c14a 488d8b00070000  lea     rcx,[rbx+700h]
-fffff80b`7ca1c151 488d1558f20100  lea     rdx,[storport!RaidPauseTimerDpcRoutine (fffff80b`7ca3b3b0)]
-fffff80b`7ca1c158 48ff1511af0400  call    qword ptr [storport!_imp_KeInitializeDpc (fffff80b`7ca67070)]
-fffff80b`7ca1c15f 0f1f440000      nop     dword ptr [rax+rax]
-fffff80b`7ca1c164 4c8b4308        mov     r8,qword ptr [rbx+8]
-fffff80b`7ca1c168 488d8bc8070000  lea     rcx,[rbx+7C8h]
-fffff80b`7ca1c16f 488d159ae50100  lea     rdx,[storport!RaidCompletionDpcRoutine (fffff80b`7ca3a710)]
-fffff80b`7ca1c176 48ff15f3ae0400  call    qword ptr [storport!_imp_KeInitializeDpc (fffff80b`7ca67070)]
-fffff80b`7ca1c17d 0f1f440000      nop     dword ptr [rax+rax]
-fffff80b`7ca1c182 4c8b4308        mov     r8,qword ptr [rbx+8]
-fffff80b`7ca1c186 488d8bf8100000  lea     rcx,[rbx+10F8h]
-fffff80b`7ca1c18d 488d151cf20100  lea     rdx,[storport!RaidPauseTimerDpcRoutine (fffff80b`7ca3b3b0)]
-fffff80b`7ca1c194 48ff15d5ae0400  call    qword ptr [storport!_imp_KeInitializeDpc (fffff80b`7ca67070)]
-fffff80b`7ca1c19b 0f1f440000      nop     dword ptr [rax+rax]
-fffff80b`7ca1c1a0 4c8b4308        mov     r8,qword ptr [rbx+8]
-fffff80b`7ca1c1a4 488d8b08080000  lea     rcx,[rbx+808h]
-fffff80b`7ca1c1ab 488d155e9a0000  lea     rdx,[storport!RaidAdapterBusChangeDpcRoutine (fffff80b`7ca25c10)]
-fffff80b`7ca1c1b2 48ff15b7ae0400  call    qword ptr [storport!_imp_KeInitializeDpc (fffff80b`7ca67070)]
-fffff80b`7ca1c1b9 0f1f440000      nop     dword ptr [rax+rax]
-fffff80b`7ca1c1be 4c8b4308        mov     r8,qword ptr [rbx+8]
-fffff80b`7ca1c1c2 488d8b40070000  lea     rcx,[rbx+740h]
-fffff80b`7ca1c1c9 488d1580d00100  lea     rdx,[storport!RaidAdapterRestartDpcRoutine (fffff80b`7ca39250)]
-fffff80b`7ca1c1d0 48ff1599ae0400  call    qword ptr [storport!_imp_KeInitializeDpc (fffff80b`7ca67070)]
-fffff80b`7ca1c1d7 0f1f440000      nop     dword ptr [rax+rax]
-fffff80b`7ca1c1dc 4c8b4308        mov     r8,qword ptr [rbx+8]
-fffff80b`7ca1c1e0 488d8bf0150000  lea     rcx,[rbx+15F0h]
-fffff80b`7ca1c1e7 488d15c2520000  lea     rdx,[storport!RaidQueueWaitCheckDpcRoutine (fffff80b`7ca214b0)]
-fffff80b`7ca1c1ee 48ff157bae0400  call    qword ptr [storport!_imp_KeInitializeDpc (fffff80b`7ca67070)]
-fffff80b`7ca1c1f5 0f1f440000      nop     dword ptr [rax+rax]
-fffff80b`7ca1c1fa 33c0            xor     eax,eax
+fffff80f`2d2dde6e 488b5308        mov     rdx,qword ptr [rbx+8]
+fffff80f`2d2dde72 488d052741feff  lea     rax,[storport!RaidAdapterDeferredRoutine (fffff80f`2d2c1fa0)]
+fffff80f`2d2dde79 488d8b80040000  lea     rcx,[rbx+480h]
+fffff80f`2d2dde80 4889442420      mov     qword ptr [rsp+20h],rax
+fffff80f`2d2dde85 41b950000000    mov     r9d,50h
+fffff80f`2d2dde8b e8f0000000      call    storport!RaidInitializeDeferredQueue (fffff80f`2d2ddf80)
+fffff80f`2d2dde90 4c8b4308        mov     r8,qword ptr [rbx+8]
+fffff80f`2d2dde94 488d8b80060000  lea     rcx,[rbx+680h]
+fffff80f`2d2dde9b 488d15fe52feff  lea     rdx,[storport!RaidpAdapterTimerDpcRoutine (fffff80f`2d2c31a0)]
+fffff80f`2d2ddea2 48ff15c7910400  call    qword ptr [storport!_imp_KeInitializeDpc (fffff80f`2d327070)]
+fffff80f`2d2ddea9 0f1f440000      nop     dword ptr [rax+rax]
+fffff80f`2d2ddeae 4c8b4308        mov     r8,qword ptr [rbx+8]
+fffff80f`2d2ddeb2 488d8b00070000  lea     rcx,[rbx+700h]
+fffff80f`2d2ddeb9 488d1540d20100  lea     rdx,[storport!RaidPauseTimerDpcRoutine (fffff80f`2d2fb100)]
+fffff80f`2d2ddec0 48ff15a9910400  call    qword ptr [storport!_imp_KeInitializeDpc (fffff80f`2d327070)]
+fffff80f`2d2ddec7 0f1f440000      nop     dword ptr [rax+rax]
+fffff80f`2d2ddecc 4c8b4308        mov     r8,qword ptr [rbx+8]
+fffff80f`2d2dded0 488d8bc8070000  lea     rcx,[rbx+7C8h]
+fffff80f`2d2dded7 488d1582c50100  lea     rdx,[storport!RaidCompletionDpcRoutine (fffff80f`2d2fa460)]
+fffff80f`2d2ddede 48ff158b910400  call    qword ptr [storport!_imp_KeInitializeDpc (fffff80f`2d327070)]
+fffff80f`2d2ddee5 0f1f440000      nop     dword ptr [rax+rax]
+fffff80f`2d2ddeea 4c8b4308        mov     r8,qword ptr [rbx+8]
+fffff80f`2d2ddeee 488d8bf8100000  lea     rcx,[rbx+10F8h]
+fffff80f`2d2ddef5 488d1504d20100  lea     rdx,[storport!RaidPauseTimerDpcRoutine (fffff80f`2d2fb100)]
+fffff80f`2d2ddefc 48ff156d910400  call    qword ptr [storport!_imp_KeInitializeDpc (fffff80f`2d327070)]
+fffff80f`2d2ddf03 0f1f440000      nop     dword ptr [rax+rax]
+fffff80f`2d2ddf08 4c8b4308        mov     r8,qword ptr [rbx+8]
+fffff80f`2d2ddf0c 488d8b08080000  lea     rcx,[rbx+808h]
+fffff80f`2d2ddf13 488d1516790000  lea     rdx,[storport!RaidAdapterBusChangeDpcRoutine (fffff80f`2d2e5830)]
+fffff80f`2d2ddf1a 48ff154f910400  call    qword ptr [storport!_imp_KeInitializeDpc (fffff80f`2d327070)]
+fffff80f`2d2ddf21 0f1f440000      nop     dword ptr [rax+rax]
+fffff80f`2d2ddf26 4c8b4308        mov     r8,qword ptr [rbx+8]
+fffff80f`2d2ddf2a 488d8b40070000  lea     rcx,[rbx+740h]
+fffff80f`2d2ddf31 488d1568b00100  lea     rdx,[storport!RaidAdapterRestartDpcRoutine (fffff80f`2d2f8fa0)]
+fffff80f`2d2ddf38 48ff1531910400  call    qword ptr [storport!_imp_KeInitializeDpc (fffff80f`2d327070)]
+fffff80f`2d2ddf3f 0f1f440000      nop     dword ptr [rax+rax]
+fffff80f`2d2ddf44 4c8b4308        mov     r8,qword ptr [rbx+8]
+fffff80f`2d2ddf48 488d8bf0150000  lea     rcx,[rbx+15F0h]
+fffff80f`2d2ddf4f 488d158a2c0000  lea     rdx,[storport!RaidQueueWaitCheckDpcRoutine (fffff80f`2d2e0be0)]
+fffff80f`2d2ddf56 48ff1513910400  call    qword ptr [storport!_imp_KeInitializeDpc (fffff80f`2d327070)]
+fffff80f`2d2ddf5d 0f1f440000      nop     dword ptr [rax+rax]
+fffff80f`2d2ddf62 33c0            xor     eax,eax
 
 storport!RaidAdapterConfigureResources+0x130:
-fffff80b`7ca1c1fc 4883c430        add     rsp,30h
-fffff80b`7ca1c200 5b              pop     rbx
-fffff80b`7ca1c201 c3              ret
+fffff80f`2d2ddf64 4883c430        add     rsp,30h
+fffff80f`2d2ddf68 5b              pop     rbx
+fffff80f`2d2ddf69 c3              ret
 
 storport!RaidAdapterConfigureResources+0x136:
-fffff80b`7ca1c202 f6436808        test    byte ptr [rbx+68h],8
-fffff80b`7ca1c206 0f85fafeffff    jne     storport!RaidAdapterConfigureResources+0x3a (fffff80b`7ca1c106)  Branch
+fffff80f`2d2ddf6a f6436808        test    byte ptr [rbx+68h],8
+fffff80f`2d2ddf6e 0f85fafeffff    jne     storport!RaidAdapterConfigureResources+0x3a (fffff80f`2d2dde6e)  Branch
 
 storport!RaidAdapterConfigureResources+0x140:
-fffff80b`7ca1c20c 8bc2            mov     eax,edx
-fffff80b`7ca1c20e ebec            jmp     storport!RaidAdapterConfigureResources+0x130 (fffff80b`7ca1c1fc)  Branch
+fffff80f`2d2ddf74 8bc2            mov     eax,edx
+fffff80f`2d2ddf76 ebec            jmp     storport!RaidAdapterConfigureResources+0x130 (fffff80f`2d2ddf64)  Branch

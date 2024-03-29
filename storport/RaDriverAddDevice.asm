@@ -83,22 +83,22 @@ fffff80f`2d2dd91d 4c897c2420      mov     qword ptr [rsp+20h],r15
 fffff80f`2d2dd922 e8c1f90400      call    storport!RaidInitializeAdapter (fffff80f`2d32d2e8)
 fffff80f`2d2dd927 4c8965d8        mov     qword ptr [rbp-28h],r12
 fffff80f`2d2dd92b 448bf0          mov     r14d,eax
-fffff80f`2d2dd92e 85c0            test    eax,eax
+fffff80f`2d2dd92e 85c0            test    eax,eax   ;if RaidInitializeAdapter() failed, goto 0x130ef
 fffff80f`2d2dd930 0f88b92f0100    js      storport!RaDriverAddDevice+0x130ef (fffff80f`2d2f08ef)  Branch
 
 storport!RaDriverAddDevice+0x136:
-fffff80f`2d2dd936 488d4e50        lea     rcx,[rsi+50h]
+fffff80f`2d2dd936 488d4e50        lea     rcx,[rsi+50h]     ;rsi == AdapterExt->Driver.AdapterList.Lock
 fffff80f`2d2dd93a 488d55e0        lea     rdx,[rbp-20h]
 fffff80f`2d2dd93e 48ff156b990400  call    qword ptr [storport!_imp_KeAcquireInStackQueuedSpinLock (fffff80f`2d3272b0)]
 fffff80f`2d2dd945 0f1f440000      nop     dword ptr [rax+rax]
-fffff80f`2d2dd94a 488d4638        lea     rax,[rsi+38h]
-fffff80f`2d2dd94e 488b10          mov     rdx,qword ptr [rax]
-fffff80f`2d2dd951 488d4b40        lea     rcx,[rbx+40h]
-fffff80f`2d2dd955 48394208        cmp     qword ptr [rdx+8],rax
+fffff80f`2d2dd94a 488d4638        lea     rax,[rsi+38h]         ;rax = & AdapterExt->Driver.AdapterList.List
+fffff80f`2d2dd94e 488b10          mov     rdx,qword ptr [rax]   ;rdx = rax->Flink
+fffff80f`2d2dd951 488d4b40        lea     rcx,[rbx+40h]         ;rbx = AdapterExt->NextAdapter
+fffff80f`2d2dd955 48394208        cmp     qword ptr [rdx+8],rax ;if(AdapterExt->Driver.AdapterList.List 不是空的) goto 0x1312a
 fffff80f`2d2dd959 0f85cb2f0100    jne     storport!RaDriverAddDevice+0x1312a (fffff80f`2d2f092a)  Branch
 
 storport!RaDriverAddDevice+0x15f:
-fffff80f`2d2dd95f 488911          mov     qword ptr [rcx],rdx
+fffff80f`2d2dd95f 488911          mov     qword ptr [rcx],rdx       ;InsertHeadList()
 fffff80f`2d2dd962 48894108        mov     qword ptr [rcx+8],rax
 fffff80f`2d2dd966 48894a08        mov     qword ptr [rdx+8],rcx
 fffff80f`2d2dd96a 488908          mov     qword ptr [rax],rcx

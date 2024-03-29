@@ -20,7 +20,7 @@ fffff80f`2d32d32d 4533f6          xor     r14d,r14d
 fffff80f`2d32d330 498bc0          mov     rax,r8
 fffff80f`2d32d333 48895108        mov     qword ptr [rcx+8],rdx
 fffff80f`2d32d337 48894110        mov     qword ptr [rcx+10h],rax
-fffff80f`2d32d33b 488bd9          mov     rbx,rcx
+fffff80f`2d32d33b 488bd9          mov     rbx,rcx       ;rbx == rcx == _RAID_ADAPTER_EXTENSION
 fffff80f`2d32d33e 48897920        mov     qword ptr [rcx+20h],rdi
 fffff80f`2d32d342 4c8bea          mov     r13,rdx
 fffff80f`2d32d345 4c894918        mov     qword ptr [rcx+18h],r9
@@ -58,51 +58,53 @@ fffff80f`2d32d3c7 493bd1          cmp     rdx,r9                    ;
 fffff80f`2d32d3ca 0f84c93e0000    je      storport!RaidInitializeAdapter+0x3fb1 (fffff80f`2d331299)  Branch
 
 storport!RaidInitializeAdapter+0xe8:
-fffff80f`2d32d3d0 488d8a30ffffff  lea     rcx,[rdx-0D0h]
-fffff80f`2d32d3d7 f781b800000000080000 test dword ptr [rcx+0B8h],800h
+fffff80f`2d32d3d0 488d8a30ffffff  lea     rcx,[rdx-0D0h]    ;rcx == HW_INITIALIZE_DATA
+fffff80f`2d32d3d7 f781b800000000080000 test dword ptr [rcx+0B8h],800h   
+;if (HW_INITIALIZE_DATA::FeatureSupport & STOR_FEATURE_SET_ADAPTER_INTERFACE_TYPE) => goto 0x3fa8
 fffff80f`2d32d3e1 0f85a93e0000    jne     storport!RaidInitializeAdapter+0x3fa8 (fffff80f`2d331290)  Branch
 
 storport!RaidInitializeAdapter+0xff:
-fffff80f`2d32d3e7 44394104        cmp     dword ptr [rcx+4],r8d
+fffff80f`2d32d3e7 44394104        cmp     dword ptr [rcx+4],r8d     
+;if (HW_INITIALIZE_DATA::AdapterInterfaceType != PciBus) goto 0x3fa0
 fffff80f`2d32d3eb 0f85973e0000    jne     storport!RaidInitializeAdapter+0x3fa0 (fffff80f`2d331288)  Branch
 
 storport!RaidInitializeAdapter+0x109:
-fffff80f`2d32d3f1 48898b20020000  mov     qword ptr [rbx+220h],rcx
-fffff80f`2d32d3f8 4885c9          test    rcx,rcx
+fffff80f`2d32d3f1 48898b20020000  mov     qword ptr [rbx+220h],rcx ;rbx+0x220 == HW_INITIALIZE_DATA
+fffff80f`2d32d3f8 4885c9          test    rcx,rcx   ;if (HW_INITIALIZE_DATA is NULL) goto 0x3fb9
 fffff80f`2d32d3fb 0f84a03e0000    je      storport!RaidInitializeAdapter+0x3fb9 (fffff80f`2d3312a1)  Branch
 
 storport!RaidInitializeAdapter+0x119:
-fffff80f`2d32d401 8b4104          mov     eax,dword ptr [rcx+4]
+fffff80f`2d32d401 8b4104          mov     eax,dword ptr [rcx+4] 
 fffff80f`2d32d404 488bce          mov     rcx,rsi
 fffff80f`2d32d407 804b6e02        or      byte ptr [rbx+6Eh],2
 fffff80f`2d32d40b 898348010000    mov     dword ptr [rbx+148h],eax
-fffff80f`2d32d411 e8e2070000      call    storport!RiAllocateMiniportDeviceExtension (fffff80f`2d32dbf8)
+fffff80f`2d32d411 e8e2070000      call    storport!RiAllocateMiniportDeviceExtension (fffff80f`2d32dbf8)    ;Create miniport HBA Extension
 fffff80f`2d32d416 85c0            test    eax,eax
 fffff80f`2d32d418 0f8899060000    js      storport!RaidInitializeAdapter+0x7cf (fffff80f`2d32dab7)  Branch
 
 storport!RaidInitializeAdapter+0x136:
-fffff80f`2d32d41e 488b4b10        mov     rcx,qword ptr [rbx+10h]
-fffff80f`2d32d422 4c8d8360080000  lea     r8,[rbx+860h]
-fffff80f`2d32d429 4883c128        add     rcx,28h
+fffff80f`2d32d41e 488b4b10        mov     rcx,qword ptr [rbx+10h]   ;rbx == _RAID_ADAPTER_EXTENSION, rcx = AdapterExt->Driver
+fffff80f`2d32d422 4c8d8360080000  lea     r8,[rbx+860h]     ;r8 = AdapterExt->DriverParameters
+fffff80f`2d32d429 4883c128        add     rcx,28h           ;rcx = AdapterExt->Driver->RegistryPath
 fffff80f`2d32d42d 418bd7          mov     edx,r15d
 fffff80f`2d32d430 e84b070000      call    storport!PortGetDriverParameters (fffff80f`2d32db80)
 fffff80f`2d32d435 488b4b10        mov     rcx,qword ptr [rbx+10h]
-fffff80f`2d32d439 4c8da3a8080000  lea     r12,[rbx+8A8h]
-fffff80f`2d32d440 4883c128        add     rcx,28h
+fffff80f`2d32d439 4c8da3a8080000  lea     r12,[rbx+8A8h]    ;r12 = AdapterExt->LinkDownTimeoutValue
+fffff80f`2d32d440 4883c128        add     rcx,28h           ;rcx = AdapterExt->Driver->RegistryPath
 fffff80f`2d32d444 41c704241e000000 mov     dword ptr [r12],1Eh
 fffff80f`2d32d44c 4d8bc4          mov     r8,r12
 fffff80f`2d32d44f 418bd7          mov     edx,r15d
 fffff80f`2d32d452 e8b501fbff      call    storport!PortGetLinkTimeoutValue (fffff80f`2d2dd60c)
 fffff80f`2d32d457 488b4b10        mov     rcx,qword ptr [rbx+10h]
-fffff80f`2d32d45b 4c8db3ac100000  lea     r14,[rbx+10ACh]
+fffff80f`2d32d45b 4c8db3ac100000  lea     r14,[rbx+10ACh]   ;r14 = AdapterExt->DefaultTimeout
 fffff80f`2d32d462 41832600        and     dword ptr [r14],0
-fffff80f`2d32d466 4883c128        add     rcx,28h
+fffff80f`2d32d466 4883c128        add     rcx,28h           ;rcx = AdapterExt->Driver->RegistryPath
 fffff80f`2d32d46a 498bd6          mov     rdx,r14
 fffff80f`2d32d46d e83afaffff      call    storport!PortGetIoTimeoutValue (fffff80f`2d32ceac)
 fffff80f`2d32d472 488b4b10        mov     rcx,qword ptr [rbx+10h]
-fffff80f`2d32d476 488db3c8130000  lea     rsi,[rbx+13C8h]
+fffff80f`2d32d476 488db3c8130000  lea     rsi,[rbx+13C8h]   ;rsi = AdapterExt->IoLatencyCap
 fffff80f`2d32d47d 48832600        and     qword ptr [rsi],0
-fffff80f`2d32d481 4883c128        add     rcx,28h
+fffff80f`2d32d481 4883c128        add     rcx,28h           ;rcx = AdapterExt->Driver->RegistryPath
 fffff80f`2d32d485 488bd6          mov     rdx,rsi
 fffff80f`2d32d488 e85ff9ffff      call    storport!PortGetIoLatencyCapValue (fffff80f`2d32cdec)
 fffff80f`2d32d48d 488b06          mov     rax,qword ptr [rsi]
@@ -111,21 +113,21 @@ fffff80f`2d32d492 4885c0          test    rax,rax
 fffff80f`2d32d495 0f85103e0000    jne     storport!RaidInitializeAdapter+0x3fc3 (fffff80f`2d3312ab)  Branch
 
 storport!RaidInitializeAdapter+0x1b3:
-fffff80f`2d32d49b 488d93c4160000  lea     rdx,[rbx+16C4h]
+fffff80f`2d32d49b 488d93c4160000  lea     rdx,[rbx+16C4h]       ;rdx = AdapterExt->BusyRetryCount
 fffff80f`2d32d4a2 890a            mov     dword ptr [rdx],ecx
 fffff80f`2d32d4a4 488b4b10        mov     rcx,qword ptr [rbx+10h]
-fffff80f`2d32d4a8 4883c128        add     rcx,28h
+fffff80f`2d32d4a8 4883c128        add     rcx,28h           ;rcx = AdapterExt->Driver->RegistryPath
 fffff80f`2d32d4ac e83bf8ffff      call    storport!PortGetBusyRetryCountValue (fffff80f`2d32ccec)
 fffff80f`2d32d4b1 488b4b10        mov     rcx,qword ptr [rbx+10h]
-fffff80f`2d32d4b5 488d93c8160000  lea     rdx,[rbx+16C8h]
+fffff80f`2d32d4b5 488d93c8160000  lea     rdx,[rbx+16C8h]       ;rdx = AdapterExt->BusyPauseTimeInMs
 fffff80f`2d32d4bc 832200          and     dword ptr [rdx],0
-fffff80f`2d32d4bf 4883c128        add     rcx,28h
+fffff80f`2d32d4bf 4883c128        add     rcx,28h           ;rcx = AdapterExt->Driver->RegistryPath
 fffff80f`2d32d4c3 e824f7ffff      call    storport!PortGetBusyPauseTimeValue (fffff80f`2d32cbec)
-fffff80f`2d32d4c8 488d15d97bfeff  lea     rdx,[storport!`string` (fffff80f`2d3150a8)]
+fffff80f`2d32d4c8 488d15d97bfeff  lea     rdx,[storport!`string` (fffff80f`2d3150a8)]   ;"StorPort" => registry base key
 fffff80f`2d32d4cf 488d4c2470      lea     rcx,[rsp+70h]
 fffff80f`2d32d4d4 48ff15359cffff  call    qword ptr [storport!_imp_RtlInitUnicodeString (fffff80f`2d327110)]
 fffff80f`2d32d4db 0f1f440000      nop     dword ptr [rax+rax]
-fffff80f`2d32d4e0 488d15997bfeff  lea     rdx,[storport!`string` (fffff80f`2d315080)]
+fffff80f`2d32d4e0 488d15997bfeff  lea     rdx,[storport!`string` (fffff80f`2d315080)]   ;"TotalSenseDataBytes"
 fffff80f`2d32d4e7 488d4c2440      lea     rcx,[rsp+40h]
 fffff80f`2d32d4ec 48ff151d9cffff  call    qword ptr [storport!_imp_RtlInitUnicodeString (fffff80f`2d327110)]
 fffff80f`2d32d4f3 0f1f440000      nop     dword ptr [rax+rax]
@@ -155,10 +157,10 @@ storport!RaidInitializeAdapter+0x26c:
 fffff80f`2d32d554 3bca            cmp     ecx,edx
 fffff80f`2d32d556 0fb6c1          movzx   eax,cl
 fffff80f`2d32d559 0f43c2          cmovae  eax,edx
-fffff80f`2d32d55c 8883bc130000    mov     byte ptr [rbx+13BCh],al
+fffff80f`2d32d55c 8883bc130000    mov     byte ptr [rbx+13BCh],al   ;set AdapterExt->DefaultSenseByteCount = al (default 0xFF)
 
 storport!RaidInitializeAdapter+0x27a:
-fffff80f`2d32d562 488d15df7afeff  lea     rdx,[storport!`string` (fffff80f`2d315048)]
+fffff80f`2d32d562 488d15df7afeff  lea     rdx,[storport!`string` (fffff80f`2d315048)]   ;"EnableIdlePowerManagement"
 fffff80f`2d32d569 488d4c2440      lea     rcx,[rsp+40h]
 fffff80f`2d32d56e 48ff159b9bffff  call    qword ptr [storport!_imp_RtlInitUnicodeString (fffff80f`2d327110)]
 fffff80f`2d32d575 0f1f440000      nop     dword ptr [rax+rax]
@@ -176,11 +178,11 @@ fffff80f`2d32d5af 488bcf          mov     rcx,rdi
 fffff80f`2d32d5b2 4889442420      mov     qword ptr [rsp+20h],rax
 fffff80f`2d32d5b7 e8c4d7ffff      call    storport!PortRegistryReadDeviceKey (fffff80f`2d32ad80)
 fffff80f`2d32d5bc 33c9            xor     ecx,ecx
-fffff80f`2d32d5be 85c0            test    eax,eax
+fffff80f`2d32d5be 85c0            test    eax,eax   ;goto 0x802 if PortRegistryReadDeviceKey() succeed
 fffff80f`2d32d5c0 0f8924050000    jns     storport!RaidInitializeAdapter+0x802 (fffff80f`2d32daea)  Branch
 
 storport!RaidInitializeAdapter+0x2de:
-fffff80f`2d32d5c6 488d153b7afeff  lea     rdx,[storport!`string` (fffff80f`2d315008)]
+fffff80f`2d32d5c6 488d153b7afeff  lea     rdx,[storport!`string` (fffff80f`2d315008)]       ;"DisableRuntimePowerManagement"
 fffff80f`2d32d5cd 488d4c2440      lea     rcx,[rsp+40h]
 fffff80f`2d32d5d2 48ff15379bffff  call    qword ptr [storport!_imp_RtlInitUnicodeString (fffff80f`2d327110)]
 fffff80f`2d32d5d9 0f1f440000      nop     dword ptr [rax+rax]
@@ -199,11 +201,11 @@ fffff80f`2d32d611 4889442420      mov     qword ptr [rsp+20h],rax
 fffff80f`2d32d616 488bcf          mov     rcx,rdi
 fffff80f`2d32d619 e862d7ffff      call    storport!PortRegistryReadDeviceKey (fffff80f`2d32ad80)
 fffff80f`2d32d61e 33c9            xor     ecx,ecx
-fffff80f`2d32d620 85c0            test    eax,eax
+fffff80f`2d32d620 85c0            test    eax,eax   ;goto 0x3fde if PortRegistryReadDeviceKey() succeed
 fffff80f`2d32d622 0f899e3c0000    jns     storport!RaidInitializeAdapter+0x3fde (fffff80f`2d3312c6)  Branch
 
 storport!RaidInitializeAdapter+0x340:
-fffff80f`2d32d628 488d15b979feff  lea     rdx,[storport!`string` (fffff80f`2d314fe8)]
+fffff80f`2d32d628 488d15b979feff  lea     rdx,[storport!`string` (fffff80f`2d314fe8)]   ;"DisableD3Cold"
 fffff80f`2d32d62f 488d4c2440      lea     rcx,[rsp+40h]
 fffff80f`2d32d634 48ff15d59affff  call    qword ptr [storport!_imp_RtlInitUnicodeString (fffff80f`2d327110)]
 fffff80f`2d32d63b 0f1f440000      nop     dword ptr [rax+rax]
@@ -225,11 +227,11 @@ fffff80f`2d32d677 488d442438      lea     rax,[rsp+38h]
 fffff80f`2d32d67c 4889442420      mov     qword ptr [rsp+20h],rax
 fffff80f`2d32d681 e8fad6ffff      call    storport!PortRegistryReadDeviceKey (fffff80f`2d32ad80)
 fffff80f`2d32d686 33c9            xor     ecx,ecx
-fffff80f`2d32d688 85c0            test    eax,eax
+fffff80f`2d32d688 85c0            test    eax,eax   ;goto 0x3ff5 if PortRegistryReadDeviceKey() succeed
 fffff80f`2d32d68a 0f894d3c0000    jns     storport!RaidInitializeAdapter+0x3ff5 (fffff80f`2d3312dd)  Branch
 
 storport!RaidInitializeAdapter+0x3a8:
-fffff80f`2d32d690 488d153179feff  lea     rdx,[storport!`string` (fffff80f`2d314fc8)]
+fffff80f`2d32d690 488d153179feff  lea     rdx,[storport!`string` (fffff80f`2d314fc8)]   ;"IdleTimeoutInMS"
 fffff80f`2d32d697 488d4c2440      lea     rcx,[rsp+40h]
 fffff80f`2d32d69c 48ff156d9affff  call    qword ptr [storport!_imp_RtlInitUnicodeString (fffff80f`2d327110)]
 fffff80f`2d32d6a3 0f1f440000      nop     dword ptr [rax+rax]
@@ -247,11 +249,11 @@ fffff80f`2d32d6dc 488d442438      lea     rax,[rsp+38h]
 fffff80f`2d32d6e1 488bcf          mov     rcx,rdi
 fffff80f`2d32d6e4 4889442420      mov     qword ptr [rsp+20h],rax
 fffff80f`2d32d6e9 e892d6ffff      call    storport!PortRegistryReadDeviceKey (fffff80f`2d32ad80)
-fffff80f`2d32d6ee 85c0            test    eax,eax
+fffff80f`2d32d6ee 85c0            test    eax,eax   ;goto 0x400c if PortRegistryReadDeviceKey() succeed
 fffff80f`2d32d6f0 0f89fe3b0000    jns     storport!RaidInitializeAdapter+0x400c (fffff80f`2d3312f4)  Branch
 
 storport!RaidInitializeAdapter+0x40e:
-fffff80f`2d32d6f6 488d15b378feff  lea     rdx,[storport!`string` (fffff80f`2d314fb0)]
+fffff80f`2d32d6f6 488d15b378feff  lea     rdx,[storport!`string` (fffff80f`2d314fb0)]   ;"UseDMAv3"
 fffff80f`2d32d6fd 488d4c2440      lea     rcx,[rsp+40h]
 fffff80f`2d32d702 48ff15079affff  call    qword ptr [storport!_imp_RtlInitUnicodeString (fffff80f`2d327110)]
 fffff80f`2d32d709 0f1f440000      nop     dword ptr [rax+rax]
@@ -270,11 +272,11 @@ fffff80f`2d32d741 4889442420      mov     qword ptr [rsp+20h],rax
 fffff80f`2d32d746 488bcf          mov     rcx,rdi
 fffff80f`2d32d749 e832d6ffff      call    storport!PortRegistryReadDeviceKey (fffff80f`2d32ad80)
 fffff80f`2d32d74e 33c9            xor     ecx,ecx
-fffff80f`2d32d750 85c0            test    eax,eax
+fffff80f`2d32d750 85c0            test    eax,eax    ;goto 0x401f if PortRegistryReadDeviceKey() succeed
 fffff80f`2d32d752 0f89af3b0000    jns     storport!RaidInitializeAdapter+0x401f (fffff80f`2d331307)  Branch
 
 storport!RaidInitializeAdapter+0x470:
-fffff80f`2d32d758 488d153178feff  lea     rdx,[storport!`string` (fffff80f`2d314f90)]
+fffff80f`2d32d758 488d153178feff  lea     rdx,[storport!`string` (fffff80f`2d314f90)]   ;"PowerSrbTimeout"
 fffff80f`2d32d75f 488d4c2440      lea     rcx,[rsp+40h]
 fffff80f`2d32d764 48ff15a599ffff  call    qword ptr [storport!_imp_RtlInitUnicodeString (fffff80f`2d327110)]
 fffff80f`2d32d76b 0f1f440000      nop     dword ptr [rax+rax]
@@ -294,21 +296,21 @@ fffff80f`2d32d7a6 488d442438      lea     rax,[rsp+38h]
 fffff80f`2d32d7ab 4889442420      mov     qword ptr [rsp+20h],rax
 fffff80f`2d32d7b0 e8cbd5ffff      call    storport!PortRegistryReadDeviceKey (fffff80f`2d32ad80)
 fffff80f`2d32d7b5 33c9            xor     ecx,ecx
-fffff80f`2d32d7b7 85c0            test    eax,eax
+fffff80f`2d32d7b7 85c0            test    eax,eax   ;goto 0x4037 if PortRegistryReadDeviceKey() succeed
 fffff80f`2d32d7b9 0f89603b0000    jns     storport!RaidInitializeAdapter+0x4037 (fffff80f`2d33131f)  Branch
 
 storport!RaidInitializeAdapter+0x4d7:
-fffff80f`2d32d7bf 83bb801600006e  cmp     dword ptr [rbx+1680h],6Eh
+fffff80f`2d32d7bf 83bb801600006e  cmp     dword ptr [rbx+1680h],6Eh ;if(AdapterExt->PowerSrbTimeout > 0x6E) goto 0x404e
 fffff80f`2d32d7c6 0f876a3b0000    ja      storport!RaidInitializeAdapter+0x404e (fffff80f`2d331336)  Branch
 
 storport!RaidInitializeAdapter+0x4e4:
 fffff80f`2d32d7cc 80636c7f        and     byte ptr [rbx+6Ch],7Fh
 fffff80f`2d32d7d0 33d2            xor     edx,edx
-fffff80f`2d32d7d2 804b6d10        or      byte ptr [rbx+6Dh],10h
+fffff80f`2d32d7d2 804b6d10        or      byte ptr [rbx+6Dh],10h    ;set AdapterExt->Flags.ProtocolCommandEffectsPendingUpdate = TRUE
 fffff80f`2d32d7d6 41b848010000    mov     r8d,148h
-fffff80f`2d32d7dc 48898b28140000  mov     qword ptr [rbx+1428h],rcx
+fffff80f`2d32d7dc 48898b28140000  mov     qword ptr [rbx+1428h],rcx ;AdapterExt->LowPowerEpochHandle = rcx (NULL?)
 fffff80f`2d32d7e3 488d4dc0        lea     rcx,[rbp-40h]
-fffff80f`2d32d7e7 e814e6fbff      call    storport!memset (fffff80f`2d2ebe00)
+fffff80f`2d32d7e7 e814e6fbff      call    storport!memset (fffff80f`2d2ebe00)   ;清理stack上某個structure, 0x148 bytes
 fffff80f`2d32d7ec 488b4b10        mov     rcx,qword ptr [rbx+10h]
 fffff80f`2d32d7f0 4c8d45c0        lea     r8,[rbp-40h]
 fffff80f`2d32d7f4 660f6f05248ffeff movdqa  xmm0,xmmword ptr [storport!_xmm (fffff80f`2d316720)]
@@ -339,25 +341,25 @@ fffff80f`2d32d86a c7834411000006000000 mov dword ptr [rbx+1144h],6
 fffff80f`2d32d874 488b4b10        mov     rcx,qword ptr [rbx+10h]
 fffff80f`2d32d878 4883c128        add     rcx,28h
 fffff80f`2d32d87c e833f7ffff      call    storport!PortReadStorageBusType (fffff80f`2d32cfb4)
-fffff80f`2d32d881 84c0            test    al,al
+fffff80f`2d32d881 84c0            test    al,al     ;if (!PortReadStorageBusType()) goto 0x5a6
 fffff80f`2d32d883 7409            je      storport!RaidInitializeAdapter+0x5a6 (fffff80f`2d32d88e)  Branch
 
 storport!RaidInitializeAdapter+0x59d:
 fffff80f`2d32d885 8b4580          mov     eax,dword ptr [rbp-80h]
-fffff80f`2d32d888 898344110000    mov     dword ptr [rbx+1144h],eax
+fffff80f`2d32d888 898344110000    mov     dword ptr [rbx+1144h],eax     ;set AdapterExt->Parameters.BusType = eax (BusTypeNvme?)
 
 storport!RaidInitializeAdapter+0x5a6:
 fffff80f`2d32d88e 488b4d98        mov     rcx,qword ptr [rbp-68h]
-fffff80f`2d32d892 488d55a8        lea     rdx,[rbp-58h]
-fffff80f`2d32d896 e801bafaff      call    storport!RaidDriverGetName (fffff80f`2d2d929c)
-fffff80f`2d32d89b 488b45b0        mov     rax,qword ptr [rbp-50h]
-fffff80f`2d32d89f 4c8d8308130000  lea     r8,[rbx+1308h]
+fffff80f`2d32d892 488d55a8        lea     rdx,[rbp-58h]     ;[rbp-0x58] 是 UNICODE_STRING 結構
+fffff80f`2d32d896 e801bafaff      call    storport!RaidDriverGetName (fffff80f`2d2d929c)    ;讀出driver name 放進 rdx (UNICODE_STRING)
+fffff80f`2d32d89b 488b45b0        mov     rax,qword ptr [rbp-50h]   ;rax = UNICODE_STRING::Buffer
+fffff80f`2d32d89f 4c8d8308130000  lea     r8,[rbx+1308h]            ;r8 = &(AdapterExt->SqmAdapterId)
 fffff80f`2d32d8a6 488bcf          mov     rcx,rdi
-fffff80f`2d32d8a9 48898300130000  mov     qword ptr [rbx+1300h],rax
+fffff80f`2d32d8a9 48898300130000  mov     qword ptr [rbx+1300h],rax     ;AdapterExt->SqmMiniportName = UNICODE_STRING::Buffer ("stornvme")
 fffff80f`2d32d8b0 e897fcfaff      call    storport!RaidAllocateDeviceProperty (fffff80f`2d2dd54c)
 fffff80f`2d32d8b5 48b82003000080f7ffff mov rax,0FFFFF78000000320h
 fffff80f`2d32d8bf 488b00          mov     rax,qword ptr [rax]
-fffff80f`2d32d8c2 65488b142588010000 mov   rdx,qword ptr gs:[188h]
+fffff80f`2d32d8c2 65488b142588010000 mov   rdx,qword ptr gs:[188h]      ;rdx == current ETHREAD
 fffff80f`2d32d8cb 488bc8          mov     rcx,rax
 fffff80f`2d32d8ce 48c1e920        shr     rcx,20h
 fffff80f`2d32d8d2 33d1            xor     edx,ecx
@@ -367,18 +369,18 @@ fffff80f`2d32d8db 33d0            xor     edx,eax
 fffff80f`2d32d8dd 895584          mov     dword ptr [rbp-7Ch],edx
 fffff80f`2d32d8e0 48ff15d997ffff  call    qword ptr [storport!_imp_RtlRandomEx (fffff80f`2d3270c0)]
 fffff80f`2d32d8e7 0f1f440000      nop     dword ptr [rax+rax]
-fffff80f`2d32d8ec 898310130000    mov     dword ptr [rbx+1310h],eax
-fffff80f`2d32d8f2 488d8b00170000  lea     rcx,[rbx+1700h]
+fffff80f`2d32d8ec 898310130000    mov     dword ptr [rbx+1310h],eax     ;AdapterExt->SqmRandomId
+fffff80f`2d32d8f2 488d8b00170000  lea     rcx,[rbx+1700h]               ;給miniport的 HBA Extention 起始位置
 fffff80f`2d32d8f9 b8ffffffff      mov     eax,0FFFFFFFFh
-fffff80f`2d32d8fe 488d157376feff  lea     rdx,[storport!`string` (fffff80f`2d314f78)]
-fffff80f`2d32d905 898300140000    mov     dword ptr [rbx+1400h],eax
-fffff80f`2d32d90b 8b058f39ffff    mov     eax,dword ptr [storport!RaidLogListSize (fffff80f`2d3212a0)]
-fffff80f`2d32d911 898304140000    mov     dword ptr [rbx+1404h],eax
+fffff80f`2d32d8fe 488d157376feff  lea     rdx,[storport!`string` (fffff80f`2d314f78)]   ;"AdapterGuid"
+fffff80f`2d32d905 898300140000    mov     dword ptr [rbx+1400h],eax     ;AdapterExt->RaidLogListIndex = 0xFFFFFFFF
+fffff80f`2d32d90b 8b058f39ffff    mov     eax,dword ptr [storport!RaidLogListSize (fffff80f`2d3212a0)]  ;0x100
+fffff80f`2d32d911 898304140000    mov     dword ptr [rbx+1404h],eax     ;ADapterExt->RaidLogListSize = 0x100
 fffff80f`2d32d917 f7d8            neg     eax
 fffff80f`2d32d919 481bc0          sbb     rax,rax
 fffff80f`2d32d91c 4823c1          and     rax,rcx
 fffff80f`2d32d91f 488d4c2440      lea     rcx,[rsp+40h]
-fffff80f`2d32d924 48898308140000  mov     qword ptr [rbx+1408h],rax
+fffff80f`2d32d924 48898308140000  mov     qword ptr [rbx+1408h],rax     ;AdapterExt->RaidLogList
 fffff80f`2d32d92b 33c0            xor     eax,eax
 fffff80f`2d32d92d 48898510010000  mov     qword ptr [rbp+110h],rax
 fffff80f`2d32d934 48898518010000  mov     qword ptr [rbp+118h],rax
@@ -387,24 +389,24 @@ fffff80f`2d32d942 0f1f440000      nop     dword ptr [rax+rax]
 fffff80f`2d32d947 488d8510010000  lea     rax,[rbp+110h]
 fffff80f`2d32d94e 41bd10000000    mov     r13d,10h
 fffff80f`2d32d954 4889442438      mov     qword ptr [rsp+38h],rax
-fffff80f`2d32d959 4c8d442440      lea     r8,[rsp+40h]
+fffff80f`2d32d959 4c8d442440      lea     r8,[rsp+40h]      ;UNICODE_STRING "AdapterGuid"
 fffff80f`2d32d95e 488d442430      lea     rax,[rsp+30h]
 fffff80f`2d32d963 44896c2430      mov     dword ptr [rsp+30h],r13d
 fffff80f`2d32d968 4889442428      mov     qword ptr [rsp+28h],rax
-fffff80f`2d32d96d 488d542470      lea     rdx,[rsp+70h]
+fffff80f`2d32d96d 488d542470      lea     rdx,[rsp+70h]     ;UNICODE_STRING "StorPort"
 fffff80f`2d32d972 488d442438      lea     rax,[rsp+38h]
 fffff80f`2d32d977 488bcf          mov     rcx,rdi
 fffff80f`2d32d97a 458d4df3        lea     r9d,[r13-0Dh]
 fffff80f`2d32d97e 4889442420      mov     qword ptr [rsp+20h],rax
 fffff80f`2d32d983 e8f8d3ffff      call    storport!PortRegistryReadDeviceKey (fffff80f`2d32ad80)
-fffff80f`2d32d988 85c0            test    eax,eax
+fffff80f`2d32d988 85c0            test    eax,eax   ;if (!PortRegistryReadDeviceKey()) goto 0x405d
 fffff80f`2d32d98a 0f88b5390000    js      storport!RaidInitializeAdapter+0x405d (fffff80f`2d331345)  Branch
 
 storport!RaidInitializeAdapter+0x6a8:
 fffff80f`2d32d990 0f108510010000  movups  xmm0,xmmword ptr [rbp+110h]
 fffff80f`2d32d997 4c8d8b88140000  lea     r9,[rbx+1488h]
 fffff80f`2d32d99e 488bcb          mov     rcx,rbx
-fffff80f`2d32d9a1 f3410f7f01      movdqu  xmmword ptr [r9],xmm0
+fffff80f`2d32d9a1 f3410f7f01      movdqu  xmmword ptr [r9],xmm0 ;set AdapterExt->AdapterGuid
 fffff80f`2d32d9a6 e815fbfaff      call    storport!StorpInitializeAdapterTelemetry (fffff80f`2d2dd4c0)
 fffff80f`2d32d9ab 833da636ffff05  cmp     dword ptr [storport!StorPortEventProvider_Context+0x48 (fffff80f`2d321058)],5
 fffff80f`2d32d9b2 0f86d7000000    jbe     storport!RaidInitializeAdapter+0x7a7 (fffff80f`2d32da8f)  Branch

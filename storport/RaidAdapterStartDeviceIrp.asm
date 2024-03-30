@@ -80,20 +80,20 @@ fffff80b`7ca1bed3 488b8f78020000  mov     rcx,qword ptr [rdi+278h]
 fffff80b`7ca1beda 8d56c4          lea     edx,[rsi-3Ch]
 fffff80b`7ca1bedd 4533c9          xor     r9d,r9d
 fffff80b`7ca1bee0 89742420        mov     dword ptr [rsp+20h],esi
-fffff80b`7ca1bee4 ff153eb90400    call    qword ptr [storport!_guard_dispatch_icall_fptr (fffff80b`7ca67828)]
+fffff80b`7ca1bee4 ff153eb90400    call    qword ptr [storport!_guard_dispatch_icall_fptr (fffff80b`7ca67828)]   ;call to PDO's GetBusData()
 
 storport!RaidAdapterStartDeviceIrp+0x112:
-fffff80b`7ca1beea 488d8f80080000  lea     rcx,[rdi+880h]
-fffff80b`7ca1bef1 89b768080000    mov     dword ptr [rdi+868h],esi
+fffff80b`7ca1beea 488d8f80080000  lea     rcx,[rdi+880h]    ;AdapterExt->RegistryInfo->SpinLock
+fffff80b`7ca1bef1 89b768080000    mov     dword ptr [rdi+868h],esi  ;Set AdapterExt->RegistryInfo->Size = 40
 fffff80b`7ca1bef7 48ff1522b20400  call    qword ptr [storport!_imp_KeInitializeSpinLock (fffff80b`7ca67120)]
 fffff80b`7ca1befe 0f1f440000      nop     dword ptr [rax+rax]
-fffff80b`7ca1bf03 488d8770080000  lea     rax,[rdi+870h]
+fffff80b`7ca1bf03 488d8770080000  lea     rax,[rdi+870h]    ;rax = AdapterExt->RegistryInfo->ListEntry
 fffff80b`7ca1bf0a 41bc01000000    mov     r12d,1
 fffff80b`7ca1bf10 48894008        mov     qword ptr [rax+8],rax
-fffff80b`7ca1bf14 4c8db7a0150000  lea     r14,[rdi+15A0h]
+fffff80b`7ca1bf14 4c8db7a0150000  lea     r14,[rdi+15A0h]   ;AdapterExt->D3ColdInterface
 fffff80b`7ca1bf1b 488900          mov     qword ptr [rax],rax
 fffff80b`7ca1bf1e 498bd6          mov     rdx,r14
-fffff80b`7ca1bf21 4883a78808000000 and     qword ptr [rdi+888h],0
+fffff80b`7ca1bf21 4883a78808000000 and     qword ptr [rdi+888h],0   ;
 fffff80b`7ca1bf29 4489a7a0080000  mov     dword ptr [rdi+8A0h],r12d
 fffff80b`7ca1bf30 488b4f08        mov     rcx,qword ptr [rdi+8]
 fffff80b`7ca1bf34 e8771b0000      call    storport!RaidGetD3ColdInterface (fffff80b`7ca1dab0)

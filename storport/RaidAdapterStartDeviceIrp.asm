@@ -11,7 +11,7 @@ fffff80b`7ca1bdea 4883ec60        sub     rsp,60h
 fffff80b`7ca1bdee 488b059b540400  mov     rax,qword ptr [storport!_security_cookie (fffff80b`7ca61290)]
 fffff80b`7ca1bdf5 4833c4          xor     rax,rsp
 fffff80b`7ca1bdf8 4889442458      mov     qword ptr [rsp+58h],rax
-fffff80b`7ca1bdfd 4c8bfa          mov     r15,rdx
+fffff80b`7ca1bdfd 4c8bfa          mov     r15,rdx   ;r15 == IRP with IRP_MJ_PNP + IRP_MN_START_DEVICE
 fffff80b`7ca1be00 488bf9          mov     rdi,rcx
 fffff80b`7ca1be03 488b0df6510400  mov     rcx,qword ptr [storport!WPP_GLOBAL_Control (fffff80b`7ca61000)]
 fffff80b`7ca1be0a 488d2def510400  lea     rbp,[storport!WPP_GLOBAL_Control (fffff80b`7ca61000)]
@@ -30,12 +30,12 @@ fffff80b`7ca1be2b 83fb02          cmp     ebx,2
 fffff80b`7ca1be2e 0f8509630100    jne     storport!RaidAdapterStartDeviceIrp+0x16365 (fffff80b`7ca3213d)  Branch
 
 storport!RaidAdapterStartDeviceIrp+0x5c:
-fffff80b`7ca1be34 498b87b8000000  mov     rax,qword ptr [r15+0B8h]
+fffff80b`7ca1be34 498b87b8000000  mov     rax,qword ptr [r15+0B8h]  ;rax = irp->Tail->Overlay->CurrentStackLocation
 fffff80b`7ca1be3b 488d8f40010000  lea     rcx,[rdi+140h]
 fffff80b`7ca1be42 448b8f0c030000  mov     r9d,dword ptr [rdi+30Ch]
 fffff80b`7ca1be49 448b8708030000  mov     r8d,dword ptr [rdi+308h]
 fffff80b`7ca1be50 488b9720020000  mov     rdx,qword ptr [rdi+220h]
-fffff80b`7ca1be57 4c8b7008        mov     r14,qword ptr [rax+8]
+fffff80b`7ca1be57 4c8b7008        mov     r14,qword ptr [rax+8]     ;rax=CurrentStackLocation->StartDevice
 fffff80b`7ca1be5b 4c8b6010        mov     r12,qword ptr [rax+10h]
 fffff80b`7ca1be5f 8a476e          mov     al,byte ptr [rdi+6Eh]
 fffff80b`7ca1be62 d0e8            shr     al,1
@@ -61,7 +61,7 @@ fffff80b`7ca1be99 0f84bb620100    je      storport!RaidAdapterStartDeviceIrp+0x1
 
 storport!RaidAdapterStartDeviceIrp+0xc7:
 fffff80b`7ca1be9f 4d8bc4          mov     r8,r12
-fffff80b`7ca1bea2 498bd6          mov     rdx,r14
+fffff80b`7ca1bea2 498bd6          mov     rdx,r14   ;rdx = CurrentStackLocation->StartDevice.AllocatedResource
 fffff80b`7ca1bea5 488bcf          mov     rcx,rdi
 fffff80b`7ca1bea8 e81f020000      call    storport!RaidAdapterConfigureResources (fffff80b`7ca1c0cc)    ;prepare DPCs and other resources of Adapter.
 fffff80b`7ca1bead 8bf0            mov     esi,eax
@@ -79,7 +79,7 @@ fffff80b`7ca1becc 4c8d871c130000  lea     r8,[rdi+131Ch]
 fffff80b`7ca1bed3 488b8f78020000  mov     rcx,qword ptr [rdi+278h]
 fffff80b`7ca1beda 8d56c4          lea     edx,[rsi-3Ch]
 fffff80b`7ca1bedd 4533c9          xor     r9d,r9d
-fffff80b`7ca1bee0 89742420        mov     dword ptr [rsp+20h],esi
+fffff80b`7ca1bee0 89742420        mov     dword ptr [rsp+20h],esi   ;call parent's GetBusData
 fffff80b`7ca1bee4 ff153eb90400    call    qword ptr [storport!_guard_dispatch_icall_fptr (fffff80b`7ca67828)]
 
 storport!RaidAdapterStartDeviceIrp+0x112:

@@ -1,4 +1,6 @@
-﻿1: kd> uf storport!RaidAdapterConfigureResources
+﻿;RaidAdapterStartDeviceIrp+0xd5 => RaidAdapterConfigureResources
+
+1: kd> uf storport!RaidAdapterConfigureResources
 storport!RaidAdapterConfigureResources:
 fffff80b`7ca1c0cc 4053            push    rbx
 fffff80b`7ca1c0ce 4883ec30        sub     rsp,30h

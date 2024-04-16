@@ -12,7 +12,7 @@ fffff80b`7ca1bdee 488b059b540400  mov     rax,qword ptr [storport!_security_cook
 fffff80b`7ca1bdf5 4833c4          xor     rax,rsp
 fffff80b`7ca1bdf8 4889442458      mov     qword ptr [rsp+58h],rax
 fffff80b`7ca1bdfd 4c8bfa          mov     r15,rdx   ;r15 == IRP with IRP_MJ_PNP + IRP_MN_START_DEVICE
-fffff80b`7ca1be00 488bf9          mov     rdi,rcx
+fffff80b`7ca1be00 488bf9          mov     rdi,rcx   ;rcx == rdi == AdapterExt
 fffff80b`7ca1be03 488b0df6510400  mov     rcx,qword ptr [storport!WPP_GLOBAL_Control (fffff80b`7ca61000)]
 fffff80b`7ca1be0a 488d2def510400  lea     rbp,[storport!WPP_GLOBAL_Control (fffff80b`7ca61000)]
 fffff80b`7ca1be11 483bcd          cmp     rcx,rbp
@@ -26,21 +26,21 @@ fffff80b`7ca1be1b 0f85ef620100    jne     storport!RaidAdapterStartDeviceIrp+0x1
 storport!RaidAdapterStartDeviceIrp+0x49:
 fffff80b`7ca1be21 8b5f58          mov     ebx,dword ptr [rdi+58h]
 fffff80b`7ca1be24 c7475801000000  mov     dword ptr [rdi+58h],1
-fffff80b`7ca1be2b 83fb02          cmp     ebx,2
+fffff80b`7ca1be2b 83fb02          cmp     ebx,2     ;if (AdapterExt->DeviceState != DeviceStateStopped) goto 0x16365
 fffff80b`7ca1be2e 0f8509630100    jne     storport!RaidAdapterStartDeviceIrp+0x16365 (fffff80b`7ca3213d)  Branch
 
 storport!RaidAdapterStartDeviceIrp+0x5c:
-fffff80b`7ca1be34 498b87b8000000  mov     rax,qword ptr [r15+0B8h]  ;rax = irp->Tail->Overlay->CurrentStackLocation
-fffff80b`7ca1be3b 488d8f40010000  lea     rcx,[rdi+140h]
-fffff80b`7ca1be42 448b8f0c030000  mov     r9d,dword ptr [rdi+30Ch]
-fffff80b`7ca1be49 448b8708030000  mov     r8d,dword ptr [rdi+308h]
-fffff80b`7ca1be50 488b9720020000  mov     rdx,qword ptr [rdi+220h]
-fffff80b`7ca1be57 4c8b7008        mov     r14,qword ptr [rax+8]     ;rax=CurrentStackLocation->StartDevice
-fffff80b`7ca1be5b 4c8b6010        mov     r12,qword ptr [rax+10h]
+fffff80b`7ca1be34 498b87b8000000  mov     rax,qword ptr [r15+0B8h]  ;rax = IRP->Tail->Overlay->CurrentStackLocation
+fffff80b`7ca1be3b 488d8f40010000  lea     rcx,[rdi+140h]            ;AdapterExt->Miniport->PortConfiguration
+fffff80b`7ca1be42 448b8f0c030000  mov     r9d,dword ptr [rdi+30Ch]  ;AdapterExt->SlotNumber
+fffff80b`7ca1be49 448b8708030000  mov     r8d,dword ptr [rdi+308h]  ;AdapterExt->BusNumber
+fffff80b`7ca1be50 488b9720020000  mov     rdx,qword ptr [rdi+220h]  ;AdapterExt->Miniport->HwInitializeData
+fffff80b`7ca1be57 4c8b7008        mov     r14,qword ptr [rax+8]     ;CurrentStackLocation->Parameters->StartDevice->AllocatedResources
+fffff80b`7ca1be5b 4c8b6010        mov     r12,qword ptr [rax+10h]   ;CurrentStackLocation->Parameters->StartDevice->AllocatedResourcesTranslated
 fffff80b`7ca1be5f 8a476e          mov     al,byte ptr [rdi+6Eh]
 fffff80b`7ca1be62 d0e8            shr     al,1
 fffff80b`7ca1be64 2401            and     al,1
-fffff80b`7ca1be66 88442420        mov     byte ptr [rsp+20h],al
+fffff80b`7ca1be66 88442420        mov     byte ptr [rsp+20h],al     ;[rsp+20] = AdapterExt->Flags.AdapterInterfaceTypeInitialized
 fffff80b`7ca1be6a e855040500      call    storport!RaInitializeConfiguration (fffff80b`7ca6c2c4)
 fffff80b`7ca1be6f 8bf0            mov     esi,eax
 fffff80b`7ca1be71 85c0            test    eax,eax
@@ -48,7 +48,7 @@ fffff80b`7ca1be73 0f8895010000    js      storport!RaidAdapterStartDeviceIrp+0x2
 
 storport!RaidAdapterStartDeviceIrp+0xa1:
 fffff80b`7ca1be79 488b4f18        mov     rcx,qword ptr [rdi+18h]
-fffff80b`7ca1be7d 498bd7          mov     rdx,r15
+fffff80b`7ca1be7d 498bd7          mov     rdx,r15       ;朝 miniport 的 PDO 打一發 IRP (IRP_MJ_PNP + IRP_MN_START)
 fffff80b`7ca1be80 e8fbafffff      call    storport!RaForwardIrpSynchronous (fffff80b`7ca16e80)
 fffff80b`7ca1be85 8bf0            mov     esi,eax
 fffff80b`7ca1be87 85c0            test    eax,eax
@@ -80,20 +80,20 @@ fffff80b`7ca1bed3 488b8f78020000  mov     rcx,qword ptr [rdi+278h]
 fffff80b`7ca1beda 8d56c4          lea     edx,[rsi-3Ch]
 fffff80b`7ca1bedd 4533c9          xor     r9d,r9d
 fffff80b`7ca1bee0 89742420        mov     dword ptr [rsp+20h],esi   ;call parent's GetBusData
-fffff80b`7ca1bee4 ff153eb90400    call    qword ptr [storport!_guard_dispatch_icall_fptr (fffff80b`7ca67828)]
+fffff80b`7ca1bee4 ff153eb90400    call    qword ptr [storport!_guard_dispatch_icall_fptr (fffff80b`7ca67828)]   ;call to PDO's GetBusData()
 
 storport!RaidAdapterStartDeviceIrp+0x112:
-fffff80b`7ca1beea 488d8f80080000  lea     rcx,[rdi+880h]
-fffff80b`7ca1bef1 89b768080000    mov     dword ptr [rdi+868h],esi
+fffff80b`7ca1beea 488d8f80080000  lea     rcx,[rdi+880h]    ;AdapterExt->RegistryInfo->SpinLock
+fffff80b`7ca1bef1 89b768080000    mov     dword ptr [rdi+868h],esi  ;Set AdapterExt->RegistryInfo->Size = 40
 fffff80b`7ca1bef7 48ff1522b20400  call    qword ptr [storport!_imp_KeInitializeSpinLock (fffff80b`7ca67120)]
 fffff80b`7ca1befe 0f1f440000      nop     dword ptr [rax+rax]
-fffff80b`7ca1bf03 488d8770080000  lea     rax,[rdi+870h]
+fffff80b`7ca1bf03 488d8770080000  lea     rax,[rdi+870h]    ;rax = AdapterExt->RegistryInfo->ListEntry
 fffff80b`7ca1bf0a 41bc01000000    mov     r12d,1
 fffff80b`7ca1bf10 48894008        mov     qword ptr [rax+8],rax
-fffff80b`7ca1bf14 4c8db7a0150000  lea     r14,[rdi+15A0h]
+fffff80b`7ca1bf14 4c8db7a0150000  lea     r14,[rdi+15A0h]   ;AdapterExt->D3ColdInterface
 fffff80b`7ca1bf1b 488900          mov     qword ptr [rax],rax
 fffff80b`7ca1bf1e 498bd6          mov     rdx,r14
-fffff80b`7ca1bf21 4883a78808000000 and     qword ptr [rdi+888h],0
+fffff80b`7ca1bf21 4883a78808000000 and     qword ptr [rdi+888h],0   ;
 fffff80b`7ca1bf29 4489a7a0080000  mov     dword ptr [rdi+8A0h],r12d
 fffff80b`7ca1bf30 488b4f08        mov     rcx,qword ptr [rdi+8]
 fffff80b`7ca1bf34 e8771b0000      call    storport!RaidGetD3ColdInterface (fffff80b`7ca1dab0)

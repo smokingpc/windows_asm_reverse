@@ -72,11 +72,11 @@ fffff807`3297095c 6683f801        cmp     ax,1
 fffff807`32970960 0f87e9d0feff    ja      storport!RaidAdapterHack+0x87 (fffff807`3295da4f)  Branch
 
 storport!RaidAdapterHack+0x12f9e:
-fffff807`32970966 488d1553970200  lea     rdx,[storport!`string' (fffff807`3299a0c0)]
+fffff807`32970966 488d1553970200  lea     rdx,[storport!`string` (fffff807`3299a0c0)]
 fffff807`3297096d 488d4d9f        lea     rcx,[rbp-61h]
 fffff807`32970971 48ff1598670300  call    qword ptr [storport!_imp_RtlInitUnicodeString (fffff807`329a7110)]
 fffff807`32970978 0f1f440000      nop     dword ptr [rax+rax]
-fffff807`3297097d 488d15ac970200  lea     rdx,[storport!`string' (fffff807`3299a130)]
+fffff807`3297097d 488d15ac970200  lea     rdx,[storport!`string` (fffff807`3299a130)]
 fffff807`32970984 488d4d8f        lea     rcx,[rbp-71h]
 fffff807`32970988 48ff1581670300  call    qword ptr [storport!_imp_RtlInitUnicodeString (fffff807`329a7110)]
 fffff807`3297098f 0f1f440000      nop     dword ptr [rax+rax]

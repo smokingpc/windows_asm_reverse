@@ -10,7 +10,7 @@ fffff800`997877e5 488b83b8000000  mov     rax,qword ptr [rbx+0B8h]  ;RAX = IRP->
 fffff800`997877ec 4c8b5318        mov     r10,qword ptr [rbx+18h]   ;R10 = IRP->AssociatedIrp.SystemBuffer
 fffff800`997877f0 448b4008        mov     r8d,dword ptr [rax+8]     ;R8D == CurrentStackLocation->Parameters.DeviceIoControl.InputBufferLength
 fffff800`997877f4 4c894518        mov     qword ptr [rbp+18h],r8
-fffff800`997877f8 4983f808        cmp     r8,8
+fffff800`997877f8 4983f808        cmp     r8,8 ;if outbuf_size == 8, it is STORAGE_DESCRIPTOR_HEADER, return 8 bytes header only
 fffff800`997877fc 0f829c000000    jb      storport!RaidAdapterStorageQueryPropertyIoctl+0xce (fffff800`9978789e)  Branch
 
 storport!RaidAdapterStorageQueryPropertyIoctl+0x32:

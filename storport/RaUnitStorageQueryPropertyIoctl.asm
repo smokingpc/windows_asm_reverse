@@ -6,16 +6,16 @@ fffff807`3da773aa 4883ec50        sub     rsp,50h
 fffff807`3da773ae 488b05db6effff  mov     rax,qword ptr [storport!_security_cookie (fffff807`3da6e290)]
 fffff807`3da773b5 4833c4          xor     rax,rsp
 fffff807`3da773b8 4889442440      mov     qword ptr [rsp+40h],rax
-fffff807`3da773bd 488b82b8000000  mov     rax,qword ptr [rdx+0B8h]
-fffff807`3da773c4 488bf9          mov     rdi,rcx
-fffff807`3da773c7 488b4a18        mov     rcx,qword ptr [rdx+18h]
-fffff807`3da773cb 488bda          mov     rbx,rdx
-fffff807`3da773ce 83780808        cmp     dword ptr [rax+8],8
+fffff807`3da773bd 488b82b8000000  mov     rax,qword ptr [rdx+0B8h];rax=IRP->Tail->Overlay->CurrentStackLocation
+fffff807`3da773c4 488bf9          mov     rdi,rcx       ;UnitExt
+fffff807`3da773c7 488b4a18        mov     rcx,qword ptr [rdx+18h];rcx=IRP->AssociatedIrp
+fffff807`3da773cb 488bda          mov     rbx,rdx       ;IRP
+fffff807`3da773ce 83780808        cmp     dword ptr [rax+8],8;goto 0x73ca if 8 > CurrentStackLocation->DeviceIoContol.InputBufferLength
 fffff807`3da773d2 0f8296730000    jb      storport!RaUnitStorageQueryPropertyIoctl+0x73ca (fffff807`3da7e76e)  Branch
 
 storport!RaUnitStorageQueryPropertyIoctl+0x34:
-fffff807`3da773d8 8b01            mov     eax,dword ptr [rcx]
-fffff807`3da773da 85c0            test    eax,eax
+fffff807`3da773d8 8b01            mov     eax,dword ptr [rcx];eax = (*Irp->AssociatedIrp->SystemBuffer)
+fffff807`3da773da 85c0            test    eax,eax ;if (StorageQueryId != StorageDeviceProperty) goto 0x5a
 fffff807`3da773dc 7520            jne     storport!RaUnitStorageQueryPropertyIoctl+0x5a (fffff807`3da773fe)  Branch
 
 storport!RaUnitStorageQueryPropertyIoctl+0x3a:
@@ -75,7 +75,7 @@ fffff807`3da7746a fe4343          inc     byte ptr [rbx+43h]
 fffff807`3da7746d 488bd3          mov     rdx,rbx
 fffff807`3da77470 488383b800000048 add     qword ptr [rbx+0B8h],48h
 fffff807`3da77478 488b4f18        mov     rcx,qword ptr [rdi+18h]
-fffff807`3da7747c 488b4908        mov     rcx,qword ptr [rcx+8]
+fffff807`3da7747c 488b4908        mov     rcx,qword ptr [rcx+8] ;call to miniport adapter
 fffff807`3da77480 48ff1591cdffff  call    qword ptr [storport!_imp_IofCallDriver (fffff807`3da74218)]
 fffff807`3da77487 0f1f440000      nop     dword ptr [rax+rax]
 fffff807`3da7748c e955ffffff      jmp     storport!RaUnitStorageQueryPropertyIoctl+0x42 (fffff807`3da773e6)  Branch

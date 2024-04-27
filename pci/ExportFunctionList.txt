@@ -1,0 +1,1577 @@
+﻿0: kd> x pci!*
+fffff808`d850b73c pci!PciIsExtendedConfigAvailable (void)
+fffff808`d84c9120 pci!PciExternalWriteDeviceConfig (void)
+fffff808`d84c66b0 pci!PciMaximumBusNumbersToCapture (void)
+fffff808`d84c8240 pci!PciReadBusNumsRaw (void)
+fffff808`d84c4610 pci!PciReadDeviceConfig (void)
+fffff808`d85019a0 pci!PciGetInterruptRequirement (void)
+fffff808`d84c803c pci!PciIsDeviceThunderboltRaw (void)
+fffff808`d8503370 pci!PciSendPnpIrp (void)
+fffff808`d84c2e20 pci!WPP_RECORDER_SF_DDLdd (void)
+fffff808`d84f8650 pci!PciGetMessageRangeElements (void)
+fffff808`d850b450 pci!PciDevice_QueryDeviceRelations (void)
+fffff808`d84c9870 pci!PciProbeDeviceConfig (void)
+fffff808`d84c5ef4 pci!PciDoNotEnumerateHeadlessSerialDevice (void)
+fffff808`d84f6da8 pci!PciEvaluateDsmMethodForLtr (void)
+fffff808`d85061c8 pci!PciPreScanBus (void)
+fffff808`d84c233c pci!PciAdjustPmeEnable (void)
+fffff808`d84c1a00 pci!PciDestroyDevice (void)
+fffff808`d84c2efc pci!PciDeviceCallCritical (void)
+fffff808`d84c1310 pci!PciIsDeviceConfigSpaceUnavailable (void)
+fffff808`d84fd990 pci!PciQueryDeviceText (void)
+fffff808`d84c639c pci!RtlStringCbPrintfA (void)
+fffff808`d84c9ac0 pci!PciMsiXInterface_SetTableEntry (void)
+fffff808`d850aae4 pci!ExpressProcessExtendedPortCapabilities (void)
+fffff808`d84c3d84 pci!PciProgramMsiInterrupt (void)
+fffff808`d850b9b0 pci!IoDevObjCreateDeviceSecure (void)
+fffff808`d850b8b0 pci!PciArbiter_Constructor (void)
+fffff808`d84c66d8 pci!PciUpdateHotPlugSlotAfterBusScan (void)
+fffff808`d850ae08 pci!ExpressInitErrorSourceInfo (void)
+fffff808`d84ca5f4 pci!PciMungeHackFlags (void)
+fffff808`d84c75d4 pci!WPP_RECORDER_SF_DDDdd (void)
+fffff808`d84c7800 pci!WPP_RECORDER_SF_DDDdD (void)
+fffff808`d84fa260 pci!PciScanBusCompletion (void)
+fffff808`d84c5630 pci!PciConnectDevice (void)
+fffff808`d8505b10 pci!PciDevice_QueryCapabilities (void)
+fffff808`d84c8404 pci!PciReadExpressDeviceTypeRaw (void)
+fffff808`d84dc688 pci!RtlStringExHandleOtherFlagsW (void)
+fffff808`d84dc688 pci!RtlStringExHandleOtherFlagsW (void)
+fffff808`d84c9500 pci!PciType1_GetRequirements (void)
+fffff808`d84f6590 pci!ExpressBridgeUnregisterDeviceForAspmCallbacks (void)
+fffff808`d84c4e50 pci!PciReadSlotIdData (void)
+fffff808`d8504194 pci!PciProcessBus (void)
+fffff808`d84c57d0 pci!PciDisconnectDevice (void)
+fffff808`d850c070 pci!PciArbiter_UnpackResource (void)
+fffff808`d84f6c38 pci!ArbpGetRegistryValue (void)
+fffff808`d84c3bc0 pci!PciType0_SetResources (void)
+fffff808`d8507628 pci!PciPreScanUpdateParent (void)
+fffff808`d84c2ce4 pci!PciDeviceEnableAtomics (void)
+fffff808`d8509110 pci!ArbArbiterHandler (void)
+fffff808`d8503f38 pci!ExpressBridgeProcessNewHotPlugController (void)
+fffff808`d850b0d0 pci!PciBus_QueryCapabilities (void)
+fffff808`d8502354 pci!PciDeviceResourcesToBridgeResources (void)
+fffff808`d85027b0 pci!PciAddDevice (void)
+fffff808`d84f7684 pci!PciInitializeMemoryOrderingLists (void)
+fffff808`d84c230c pci!PciEnablePme (void)
+fffff808`d84fcf50 pci!PciGetRegistryValue (void)
+fffff808`d85045dc pci!PciValidateMsiXMemorySpaceStructures (void)
+fffff808`d84c7cc0 pci!PciSriovBusNumbersRaw (void)
+fffff808`d84c81b0 pci!PciIsDeviceSlotImplementedRaw (void)
+fffff808`d8509550 pci!PciArbiter_UnpackRequirement (void)
+fffff808`d84ca4e0 pci!PciDispatchDeviceControl (void)
+fffff808`d8508460 pci!PciRoutingInterface_GetRoutingInfo (void)
+fffff808`d8501c60 pci!PciBridgeInterface_Constructor (void)
+fffff808`d84f6d00 pci!PciExcludeRangesFromWindow (void)
+fffff808`d84c42c0 pci!PciWriteDeviceConfig (void)
+fffff808`d84c3f30 pci!PciType0_GetRequirements (void)
+fffff808`d84c76a0 pci!PciReadHeaderTypeRaw (void)
+fffff808`d84fc490 pci!PciDevice_DeviceEnumerated (void)
+fffff808`d84c5454 pci!PciBusAffectedByConsoleLock (void)
+fffff808`d84f9400 pci!PciDeviceAssembleCustomProperties (void)
+fffff808`d84c7560 pci!PciIsDevicePresentRaw (void)
+fffff808`d85085d0 pci!PciLocationInterface_GetLocationStrings (void)
+fffff808`d84c2d64 pci!PciTranslateHostBridgeToDeviceSpeedAndMode (void)
+fffff808`d84c46b0 pci!PciType1_SetResources (void)
+fffff808`d850b1d4 pci!PciProcessHtCapabilities (void)
+fffff808`d84fb1c0 pci!PciBus_QueryDeviceRelations (void)
+fffff808`d84c537c pci!VmProxyCheckTearDown (void)
+fffff808`d850bd2c pci!SepSddlSecurityDescriptorFromSDDLString (void)
+fffff808`d84ca0c0 pci!PciBus_PoFxActive (void)
+fffff808`d84c90a0 pci!PciBusInterface_SetBusData (void)
+fffff808`d84c1010 pci!PciBusInterface_GetBusData (void)
+fffff808`d84fb9c0 pci!PciIsDeviceFeatureEnabled (void)
+fffff808`d84c6e4c pci!PciPreScanDisconnectDevice (void)
+fffff808`d850b2d0 pci!PciMemoryArbiter_CommitAllocation (void)
+fffff808`d84c83bc pci!PciGetLengthFromBar (void)
+fffff808`d8505030 pci!PciGetSegmentForRootBus (void)
+fffff808`d84c5af0 pci!PciProbeForRequirements (void)
+fffff808`d84c5f98 pci!ExpressPortObffEnable (void)
+fffff808`d84f63a0 pci!PciRootAssembleCustomProperties (void)
+fffff808`d84c7ba0 pci!PciReadConfigRaw (void)
+fffff808`d84fede8 pci!ExpressSaveExtendedPortCapabilityPointers (void)
+fffff808`d85049ec pci!PciCreateControlDevice (void)
+fffff808`d850c5d0 pci!PciDispatchSystemControl (void)
+fffff808`d85004d0 pci!PciScanBus (void)
+fffff808`d84c6798 pci!PciBridgeUpdateD3Availability (void)
+fffff808`d85059e0 pci!PciDevice_QueryInterface (void)
+fffff808`d84fbc70 pci!ArbBuildAssignmentOrdering (void)
+fffff808`d850c1f0 pci!ExpressLinkQuiescentInterface_Constructor (void)
+fffff808`d850b360 pci!PciD3ColdSupportInterface_GetIdleWakeInfo (void)
+fffff808`d84c546c pci!PciHibernateInfoUpdate (void)
+fffff808`d84c1f30 pci!WPP_RECORDER_SF_DLL (void)
+fffff808`d84f7ce8 pci!PciInitializeArbiters (void)
+fffff808`d8503cbc pci!ExpressBridgeStart (void)
+fffff808`d84c33a0 pci!WPP_RECORDER_SF_qL (void)
+fffff808`d8503514 pci!PciIsFundamentalDeviceResetTriggeredOnD3ToD0 (void)
+fffff808`d84c6b80 pci!PciPreScanProbeBridgePrefetchWindowWorker (void)
+fffff808`d84c1fd4 pci!WPP_RECORDER_SF_DL (void)
+fffff808`d84c4d00 pci!PciBusGetNextSlotNumber (void)
+fffff808`d84f69b8 pci!PciEvaluateDsmMethodForDelayOnSxResume (void)
+fffff808`d8500b84 pci!PciApplyInitialHacks (void)
+fffff808`d84f6064 pci!PciSetConsoleState (void)
+fffff808`d850a460 pci!PciIoArbiter_FindSuitableRange (void)
+fffff808`d84fa990 pci!PciDevice_Start (void)
+fffff808`d84c7c68 pci!PciIsDeviceMultifunction (void)
+fffff808`d84ff4c0 pci!PciSaveCapabilityPointers (void)
+fffff808`d84c7f40 pci!WPP_RECORDER_SF_DDDiiii (void)
+fffff808`d84c7a70 pci!WPP_RECORDER_SF_dDDiiiii (void)
+fffff808`d84ff640 pci!PciBuildRequirementsList (void)
+fffff808`d84c7700 pci!WPP_RECORDER_SF_DDDdDd (void)
+fffff808`d850c630 pci!PciPowerStateCallback (void)
+fffff808`d84c274c pci!PciDisableInterrupts (void)
+fffff808`d84c69cc pci!WPP_RECORDER_SF_DDDiiiiii (void)
+fffff808`d84fa3a8 pci!PciGetMessageCount (void)
+fffff808`d84fa550 pci!ArbInitializeArbiterInstance (void)
+fffff808`d84f6e24 pci!PciEvaluateDsmMethodForObff (void)
+fffff808`d84f7af0 pci!PciRangeListFromResourceList (void)
+fffff808`d84c6af0 pci!PciTryEnableBridgeARIRaw (void)
+fffff808`d84f8cb4 pci!PciGetInterruptConnectionData (void)
+fffff808`d8508790 pci!ArbTestAllocation (void)
+fffff808`d8502580 pci!PciBridgeGetDefaultRequirements (void)
+fffff808`d8502e64 pci!PciIsD3ColdAuxPowerAndTimingSupported (void)
+fffff808`d8507b20 pci!PciDevice_QueryId (void)
+fffff808`d84c8e00 pci!PciType0_GetResources (void)
+fffff808`d8501624 pci!ExpressProcessNewVirtualBridge (void)
+fffff808`d84f9290 pci!PciDecodesFromDeviceResources (void)
+fffff808`d84f796c pci!PciProgramIoArbiter (void)
+fffff808`d85077a0 pci!PciPreScanBuildPostVgaDeviceId (void)
+fffff808`d8508e80 pci!ArbGetNextAllocationRange (void)
+fffff808`d8523fe8 pci!PciGetDebugPorts (void)
+fffff808`d8508db4 pci!PciSetAllocationAttributes (void)
+fffff808`d8503c74 pci!ExpressVerifyAcsCapability (void)
+fffff808`d84c7060 pci!PciPreScanProbeDeviceBarsWorker (void)
+fffff808`d84fd150 pci!PciUpdateLegacyHardwareDescription (void)
+fffff808`d850bcc8 pci!SeSddlSecurityDescriptorFromSDDL (void)
+fffff808`d84c9d30 pci!PciProcessInterruptMessageData (void)
+fffff808`d8502ef0 pci!PciSendIoctl (void)
+fffff808`d84c27c0 pci!PciMaskMsiInterrupt (void)
+fffff808`d84c52f0 pci!PciHibernateInfoLogTime (void)
+fffff808`d8507454 pci!PciPreScanReadBridgeWindow (void)
+fffff808`d84ff1b8 pci!ExpressProcessPortRegisters (void)
+fffff808`d8509ed0 pci!ArbAllocateEntry (void)
+fffff808`d8504f68 pci!PciGetRootBusNumbersFromBootConfig (void)
+fffff808`d84c8c80 pci!PciIommuBusInterface_GetDeviceId (void)
+fffff808`d84c21fc pci!ExpressUpdateWakeControl (void)
+fffff808`d8503fbc pci!ExpressBridgeProcessMaxPayloadSize (void)
+fffff808`d84f65ac pci!ExpressRemoveIntegratedPortFromRootComplex (void)
+fffff808`d84c4350 pci!PciType1_GetResources (void)
+fffff808`d84c3530 pci!RtlStringCbPrintfW (void)
+fffff808`d84f6650 pci!PciDebugDevicePowerCallbackDeregister (void)
+fffff808`d850a830 pci!PciMemoryArbiter_FindSuitableRange (void)
+fffff808`d84f8ae0 pci!PciIsDsmFunctionSupported (void)
+fffff808`d84c5bb8 pci!ExpressRestorePortRegisters (void)
+fffff808`d84f830c pci!ExpressInitializeObffValue (void)
+fffff808`d84fa000 pci!PciEvaluateDsmMethodForDelayOptimization (void)
+fffff808`d8504930 pci!VmProxyReadDevicePathsFromRegistry (void)
+fffff808`d8506854 pci!PciInitializeResourceHint (void)
+fffff808`d84cae18 pci!PciWalkDevicePath (void)
+fffff808`d84cac28 pci!PciGetHardwarePowerState (void)
+fffff808`d8509e90 pci!PciMemoryArbiter_AllocateEntry (void)
+fffff808`d84c261c pci!WPP_RECORDER_SF_DqL (void)
+fffff808`d8500b2c pci!PciFixupBridgeBusNumbers (void)
+fffff808`d8500070 pci!PciBuildCurrentResourceList (void)
+fffff808`d84c3670 pci!PciDispatchPnpPower (void)
+fffff808`d8506940 pci!PciPreScanSubtree (void)
+fffff808`d84c3310 pci!WPP_RECORDER_SF_qq (void)
+fffff808`d8505680 pci!PciDeviceMatchCallback (void)
+fffff808`d84c2584 pci!WPP_RECORDER_SF_Dq (void)
+fffff808`d84c2070 pci!PciDevice_WaitWake (void)
+fffff808`d85078ac pci!PciPreScanFindAvailableBusNumberRange (void)
+fffff808`d8506e90 pci!PciPreScanAddChildRequirementsToBridgeRequirements (void)
+fffff808`d8507cd0 pci!PciQueryCompatibleIDs (void)
+fffff808`d84c7bfc pci!PciResourceFromBar (void)
+fffff808`d8523d18 pci!PciGetAcpiTable (void)
+fffff808`d84f7360 pci!PciBus_Start (void)
+fffff808`d84f825c pci!ExpressInitializeLtrValue (void)
+fffff808`d84f9b18 pci!PciGetDeviceTypeProperty (void)
+fffff808`d84dc65c pci!RtlStringExHandleFillBehindNullW (void)
+fffff808`d84c53f0 pci!PciIsSameDevice (void)
+fffff808`d84ca2bc pci!PciBus_ProcessDeferredPmeEvents (void)
+fffff808`d85072e0 pci!PciPreScanAdjustBridgeRequirements (void)
+fffff808`d84c5db4 pci!PciGetPmeInformation (void)
+fffff808`d850a2b0 pci!PciIoArbiter_QueryArbitrate (void)
+fffff808`d8509d0c pci!PciBridgeFilterRequirementsListInterrupts (void)
+fffff808`d84c4ad0 pci!PciProgramInterruptResource (void)
+fffff808`d84fa8b0 pci!PciGetAssignmentSetOverride (void)
+fffff808`d84c9e40 pci!PciTranslateBusAddress (void)
+fffff808`d84ff450 pci!PciRoutingInterface_UpdateInterruptLine (void)
+fffff808`d850b950 pci!PciMemoryArbiter_DeleteOwnerRanges (void)
+fffff808`d84c3480 pci!WPP_RECORDER_SF_ (void)
+fffff808`d84c2fa0 pci!PciSetHardwarePowerStatePreamble (void)
+fffff808`d84c88d0 pci!RtlStringCbPrintfExW (void)
+fffff808`d8508700 pci!PciMemoryArbiter_TestAllocation (void)
+fffff808`d85094a0 pci!PciArbiter_ScoreRequirement (void)
+fffff808`d84c62dc pci!WPP_RECORDER_SF_q (void)
+fffff808`d84ca6c8 pci!PciSetHackFlagsByClass (void)
+fffff808`d84c3ac0 pci!WPP_RECORDER_SF_d (void)
+fffff808`d84f8148 pci!PciInitializeBusNumberArbiter (void)
+fffff808`d8504744 pci!PciEarlyRestoreAddListItem (void)
+fffff808`d85036e8 pci!PciBusGetSecondaryInterface (void)
+fffff808`d8500ccc pci!ExpressProcessNewRootPortBridge (void)
+fffff808`d84c9a50 pci!PciRequirementFromRomBar (void)
+fffff808`d84f7190 pci!BusPowerRegisterPep (void)
+fffff808`d850bf58 pci!PciAreBusNumbersConfigured (void)
+fffff808`d8506580 pci!PciPreScanAllocateBridgeRaw (void)
+fffff808`d84fb650 pci!PciProcessInitialConfig (void)
+fffff808`d84c6578 pci!PciWriteSlotConfig (void)
+fffff808`d8508e40 pci!PciMemoryArbiter_GetNextAllocationRange (void)
+fffff808`d84ca1cc pci!PciBus_SignalWorkerRetireD0Irps (void)
+fffff808`d850c260 pci!ExpressRootPortInterface_Constructor (void)
+fffff808`d8523de0 pci!PciBuildDefaultIoExclusionLists (void)
+fffff808`d850a4f0 pci!ArbFindSuitableRange (void)
+fffff808`d84caf18 pci!PciGetHackFlagsFromRegistry (void)
+fffff808`d84c30a0 pci!PciStallForPowerChange (void)
+fffff808`d850a7b0 pci!PciMemoryArbiter_QueryArbitrate (void)
+fffff808`d850beb0 pci!PciBus_QueryDeviceState (void)
+fffff808`d84c80e4 pci!PciIsDeviceHotplugCapableRaw (void)
+fffff808`d850b070 pci!PciIommuBusInterface_GetDeviceProperties (void)
+fffff808`d84f9b78 pci!PciBeginStateTransition (void)
+fffff808`d84c1398 pci!PciPowerUpDevice (void)
+fffff808`d85233c0 pci!PciGetSystemWideHackFlags (void)
+fffff808`d84c35c0 pci!PciBus_PowerDereference (void)
+fffff808`d84cab44 pci!PciProcessDeviceIdData (void)
+fffff808`d850c0b8 pci!PciUnlinkResourceHint (void)
+fffff808`d850bfd0 pci!PciMsiXInterface_Constructor (void)
+fffff808`d84c1b04 pci!ExpressDestroyPort (void)
+fffff808`d84f8820 pci!PciGetMessageDevicePolicy (void)
+fffff808`d84c2400 pci!PciDevice_SetPower (void)
+fffff808`d85042e0 pci!PciConfigureBusNumbers (void)
+fffff808`d84c2d18 pci!PciDeviceQueryAtomics (void)
+fffff808`d84c6880 pci!PciPreScanSpreadBridgeExtraResources (void)
+fffff808`d850b610 pci!PciDevice_QueryDeviceState (void)
+fffff808`d8503e8c pci!ExpressBridgeConnectMessageInterrupt (void)
+fffff808`d84c31f0 pci!PciBus_WaitTimeForBusSettle (void)
+fffff808`d850a240 pci!PciIoArbiter_AddAllocation (void)
+fffff808`d84f70a8 pci!PciBridgeProcessStartResources (void)
+fffff808`d8508d40 pci!PciIoArbiter_GetNextAllocationRange (void)
+fffff808`d84c82f8 pci!PciIsUnconfiguredBridge (void)
+fffff808`d84f8544 pci!PciGetMessagePolicy (void)
+fffff808`d850a9a8 pci!ExpressProcessNewPort (void)
+fffff808`d8509a20 pci!PciBridgeFilterRequirement (void)
+fffff808`d84c5990 pci!PciGetSaveRestoreData (void)
+fffff808`d84c26c4 pci!PciCanDisableDeviceForPowerDown (void)
+fffff808`d84ca760 pci!RootPmeEventDispatcher (void)
+fffff808`d850bf10 pci!PciBridgeInterface_GetPowerParameters (void)
+fffff808`d850b4a4 pci!PciQueryTargetDeviceRelations (void)
+fffff808`d84c28c8 pci!PciPowerDownDevice (void)
+fffff808`d84f6a4c pci!ArbAddInaccessibleAllocationRange (void)
+fffff808`d84c5550 pci!PciUpdateHardware (void)
+fffff808`d84c5cfc pci!ExpressPortObffDisable (void)
+fffff808`d8509250 pci!PciIoArbiter_PreprocessEntry (void)
+fffff808`d84c48a0 pci!PciRestoreDeviceRegisters (void)
+fffff808`d8508b10 pci!ArbBootAllocation (void)
+fffff808`d850abac pci!ExpressUpdatePortLineage (void)
+fffff808`d8500f40 pci!PciProcessNewBridgedBus (void)
+fffff808`d852341c pci!PciGetSystemWideHackFlagsFromEM (void)
+fffff808`d85081e0 pci!PciQueryHardwareIDs (void)
+fffff808`d84c22b4 pci!PciDeviceSupportsNativeExpressPme (void)
+fffff808`d84f89f0 pci!PciSendIoctlForDsmEvaluation (void)
+fffff808`d850be40 pci!PciBusInterface_GetDmaAdapter (void)
+fffff808`d850af5c pci!ExpressAddIntegratedPortToRootComplex (void)
+fffff808`d8503b98 pci!ExpressCheckAcsHierarchyCompatibility (void)
+fffff808`d8504bfc pci!PciProcessNewRootBus (void)
+fffff808`d850bdb0 pci!PciTranslatorInterface_Constructor (void)
+fffff808`d84f8dc0 pci!PciProcessStartResources (void)
+fffff808`d84c7db0 pci!PciFindCapOffsetRaw (void)
+fffff808`d84c84e4 pci!WPP_RECORDER_SF_DDq (void)
+fffff808`d84c9410 pci!WPP_RECORDER_SF_qDD (void)
+fffff808`d84f7754 pci!ArbAddMmConfigRangeAsBootReserved (void)
+fffff808`d84c2b64 pci!WPP_RECORDER_SF_DDD (void)
+fffff808`d84c2b64 pci!WPP_RECORDER_SF_DDd (void)
+fffff808`d84c2b64 pci!WPP_RECORDER_SF_DDL (void)
+fffff808`d84c1b98 pci!WPP_RECORDER_SF_Ldd (void)
+fffff808`d850c1c8 pci!ExpressBridgeInitializeLinkPowerManagement (void)
+fffff808`d84c2d94 pci!WPP_RECORDER_SF_qd (void)
+fffff808`d84c6418 pci!WPP_RECORDER_SF_qD (void)
+fffff808`d84ff060 pci!PciProcessPowerCapability (void)
+fffff808`d84c3a30 pci!WPP_RECORDER_SF_dd (void)
+fffff808`d84cad78 pci!WPP_RECORDER_SF_Dd (void)
+fffff808`d84c323c pci!WPP_RECORDER_SF_DD (void)
+fffff808`d84c6604 pci!PciUpdateSaveRestoreData (void)
+fffff808`d8501be8 pci!PciIsNonHotplugBridgeWithNoChildren (void)
+fffff808`d850c2f0 pci!PciVirtualization_Constructor (void)
+fffff808`d8506d70 pci!PciPreScanNextPopulatedSlot (void)
+fffff808`d84ca970 pci!PciBus_RetireChildPowerIrps (void)
+fffff808`d850b670 pci!PciIoArbiter_OverrideConflict (void)
+fffff808`d84c60f8 pci!PciGetHPXParameters (void)
+fffff808`d84c1dc8 pci!PciBus_WakeStateM (void)
+fffff808`d84c6210 pci!PciGetHPPParameters (void)
+fffff808`d84c1230 pci!PciReadDeviceConfigEx (void)
+fffff808`d84c6f88 pci!PciFindExtCapOffsetRaw (void)
+fffff808`d84c78e0 pci!PciRequirementFromBar (void)
+fffff808`d85051c4 pci!PciGetNumaInformation (void)
+fffff808`d8505d40 pci!PciQueryPowerCapabilities (void)
+fffff808`d850a330 pci!PciD3ColdSupportInterface_Constructor (void)
+fffff808`d84c5e80 pci!PciDoNotEnumerate (void)
+fffff808`d84c9bd4 pci!PciProgramMsiXInterrupt (void)
+fffff808`d84f7fb0 pci!PciInitializeIoArbiter (void)
+fffff808`d85079b4 pci!PciQueryInstanceID (void)
+fffff808`d84c3970 pci!PciBus_PowerReference (void)
+fffff808`d84f9d90 pci!PciEvaluateDsmMethodToIgnoreBootConfig (void)
+fffff808`d84c2c78 pci!PciApplyArbiterInitializationHack (void)
+fffff808`d8503460 pci!PciGetBusHackFlags (void)
+fffff808`d84c846c pci!PciPreScanProbeDeviceBarsCritical (void)
+fffff808`d8500aa4 pci!VmProxyIsProxyDevice (void)
+fffff808`d84c9068 pci!PciIsFixedRequirement (void)
+fffff808`d8505100 pci!PciGetDeviceProperty (void)
+fffff808`d8509680 pci!PciBridgeFilterRequirementsList (void)
+fffff808`d850b000 pci!PciMemoryArbiter_PreprocessEntry (void)
+fffff808`d84c6d40 pci!PciProbeConfigRegistersRaw (void)
+fffff808`d8507164 pci!PciPreScanProbeDeviceBars (void)
+fffff808`d850ac44 pci!ExpressValidateFabricTopology (void)
+fffff808`d8523130 pci!PciGetSystemWideHackFlagsFromRegistry (void)
+fffff808`d84c8ab0 pci!RtlStringCchPrintfExW (void)
+fffff808`d850a600 pci!ArbShareDriverExclusive (void)
+fffff808`d85023b8 pci!PciDeviceRequirementsToBridgeRequirements (void)
+fffff808`d850449c pci!PciQueryRootBusInterface (void)
+fffff808`d84f7da8 pci!PciInitializeMemoryArbiter (void)
+fffff808`d8504e94 pci!ExpressProcessNewRootComplex (void)
+fffff808`d85056d0 pci!PciBus_QueryInterface (void)
+fffff808`d85235e8 pci!DriverEntry (void)
+fffff808`d850c2a0 pci!ExpressCheckDeviceOnRootPort (void)
+fffff808`d84f6548 pci!PciRemoveDeviceFromChildList (void)
+fffff808`d84c5900 pci!PciReadSlotConfig (void)
+fffff808`d84c64a4 pci!ExpressRootPortEnableInterrupts (void)
+fffff808`d84c60cc pci!PciApplyHPX (void)
+fffff808`d85090d4 pci!ArbpUpdatePriority (void)
+fffff808`d850549c pci!WppInitKm (void)
+fffff808`d85231f8 pci!PciBuildHackTable (void)
+fffff808`d84c72e0 pci!PciSetPowerStateRaw (void)
+fffff808`d84c8a2c pci!RtlStringCchPrintfW (void)
+fffff808`d8503790 pci!PciBridgeAssembleCustomProperties (void)
+fffff808`d84d2e00 pci!PciBridgeInterface_SetLtrEnable (PciBridgeInterface_SetLtrEnable)
+fffff808`d8515ec4 pci!ExpressUpdateBaselineVersion (ExpressUpdateBaselineVersion)
+fffff808`d84f33a8 pci!HalDispatchTable = <no type information>
+fffff808`d851b010 pci!PciFpbReleaseBusNumberRange (PciFpbReleaseBusNumberRange)
+fffff808`d84d318c pci!PciEarlyRestoreDevice (PciEarlyRestoreDevice)
+fffff808`d851d0e0 pci!PciDeviceResetInterface_Constructor (PciDeviceResetInterface_Constructor)
+fffff808`d84d9a84 pci!PciFpbPdopGetNextSupportedMemoryVectorGranularityInBytes (PciFpbPdopGetNextSupportedMemoryVectorGranularityInBytes)
+fffff808`d84e1dd0 pci!PciLocationInterface = <no type information>
+fffff808`d84df340 pci!WPP_RECORDER_SF_dii (WPP_RECORDER_SF_dii)
+fffff808`d84d71f0 pci!PciPowerDownDeviceTimerDpc (PciPowerDownDeviceTimerDpc)
+fffff808`d84dc8f0 pci!WppClassicProviderCallback (WppClassicProviderCallback)
+fffff808`d84c1570 pci!PciRoutingInterface_Reference (PciRoutingInterface_Reference)
+fffff808`d84d5c98 pci!PciBus_TraceDirectedDripsCandidateDevice (PciBus_TraceDirectedDripsCandidateDevice)
+fffff808`d851bbf4 pci!PciFpbpRequestBusNumbers (PciFpbpRequestBusNumbers)
+fffff808`d84f36f8 pci!_imp_VslGetSecurePciDeviceAlternateFunctionNumberForVtl0Dma = <no type information>
+fffff808`d851d5d0 pci!PciIommuBusInterface_DisableSvmCapabilities (PciIommuBusInterface_DisableSvmCapabilities)
+fffff808`d84ec4b8 pci!PciWatchdogTable = <no type information>
+fffff808`d84dc300 pci!PciQueueHotPlugEvent (PciQueueHotPlugEvent)
+fffff808`d84d2be0 pci!PciWalkDevicePathCheckAtomicOpCallback (PciWalkDevicePathCheckAtomicOpCallback)
+fffff808`d84f3708 pci!_imp_KdAcquireDebuggerLock = <no type information>
+fffff808`d84e0510 pci!PciVirtualization_SetFunctionData (PciVirtualization_SetFunctionData)
+fffff808`d84f61b0 pci!PciD3ColdAuxPowerAndTimingInterface_Reference (PciD3ColdAuxPowerAndTimingInterface_Reference)
+fffff808`d84f3008 pci!_imp_KeStallExecutionProcessor = <no type information>
+fffff808`d84e30d8 pci!GUID_PCI_BUS_INTERFACE_STANDARD2 = <no type information>
+fffff808`d850a960 pci!PciLocationInterface_Constructor (PciLocationInterface_Constructor)
+fffff808`d84e2ed0 pci!WPP_3897241c0bc43c4e354ada0deec054e1_Traceguids = <no type information>
+fffff808`d8521094 pci!SepSddlGetAclForString (SepSddlGetAclForString)
+fffff808`d851da70 pci!PciKsrCallback (PciKsrCallback)
+fffff808`d84f3498 pci!_imp_IoGetDeviceAttachmentBaseRef = <no type information>
+fffff808`d84d38e4 pci!TlgCreateSz (_TlgCreateSz)
+fffff808`d84f36c0 pci!_imp_RtlGetNextRange = <no type information>
+fffff808`d851afb4 pci!PciFpbInitializeResourceDescriptor (PciFpbInitializeResourceDescriptor)
+fffff808`d84e3f08 pci!DEVPKEY_PciDevice_SubClass = <no type information>
+fffff808`d8520754 pci!VmProxyGetDeviceLocationString (VmProxyGetDeviceLocationString)
+fffff808`d84e3028 pci!GUID_PCI_BRIDGE_INTERFACE = <no type information>
+fffff808`d84ddbd4 pci!ExpressRootPortAerInterruptRoutine (ExpressRootPortAerInterruptRoutine)
+fffff808`d84f3218 pci!_imp_PoFxUnregisterDevice = <no type information>
+fffff808`d84e3c68 pci!DEVPKEY_PciDevice_AtomicsSupported = <no type information>
+fffff808`d84d2620 pci!ExpressLinkEnableL0sL1State (ExpressLinkEnableL0sL1State)
+fffff808`d84f3468 pci!_imp_RtlFreeUnicodeString = <no type information>
+fffff808`d84f3328 pci!_imp_KeSetTimer = <no type information>
+fffff808`d84f3198 pci!_imp_RtlFindSetBits = <no type information>
+fffff808`d84e3440 pci!WPP_ThisDir_CTLGUID_PciDriverTraceGuid = <no type information>
+fffff808`d84e0200 pci!PciType2_SetResources (PciType2_SetResources)
+fffff808`d8514b88 pci!PciProgramMemoryArbiter (PciProgramMemoryArbiter)
+fffff808`d851ce08 pci!PciCheckDevicePresence (PciCheckDevicePresence)
+fffff808`d84f3438 pci!_imp_IoRequestDeviceEjectEx = <no type information>
+fffff808`d84d8e94 pci!ExpressCompatibilityRestorePortRegisters (ExpressCompatibilityRestorePortRegisters)
+fffff808`d84d6f18 pci!PciDevice_WakeTriggered (PciDevice_WakeTriggered)
+fffff808`d8520be8 pci!VmProxyIsSubString (VmProxyIsSubString)
+fffff808`d84df9d4 pci!ExpressRestoreTphMsiXStEntries (ExpressRestoreTphMsiXStEntries)
+fffff808`d84de184 pci!ExpressRootPortDisablePmeInterrupt (ExpressRootPortDisablePmeInterrupt)
+fffff808`d8514630 pci!PciArbitrateRequirementInsideBridgeWindow (PciArbitrateRequirementInsideBridgeWindow)
+fffff808`d851fb50 pci!PciVirtualization_GetVirtualFunctionProbedBars (PciVirtualization_GetVirtualFunctionProbedBars)
+fffff808`d84ec238 pci!_security_cookie_complement = <no type information>
+fffff808`d851caf0 pci!WppTraceCallback (WppTraceCallback)
+fffff808`d8514b20 pci!PciMemoryArbiter_RetestAllocation (PciMemoryArbiter_RetestAllocation)
+fffff808`d85202a0 pci!PciWheaInitErrorSource (PciWheaInitErrorSource)
+fffff808`d850c4b0 pci!PciPmeInterface_Constructor (PciPmeInterface_Constructor)
+fffff808`d84ec424 pci!PciKSRInProgress = <no type information>
+fffff808`d84e54c8 pci!GUID_EM_CPU_TYPE_AMD = <no type information>
+fffff808`d84f32b8 pci!_imp_ObfDereferenceObject = <no type information>
+fffff808`d84e43f0 pci!DEVPKEY_PciRootBus_DeviceIDMessagingCapable = <no type information>
+fffff808`d84f3288 pci!_imp_PoFxReportDevicePoweredOn = <no type information>
+fffff808`d84e3f38 pci!DEVPKEY_PciDevice_CurrentSpeedAndMode = <no type information>
+fffff808`d851d140 pci!PciSdevIdentifierInterface_Constructor (PciSdevIdentifierInterface_Constructor)
+fffff808`d84e4220 pci!GUID_DSD_ROOTPORT_RESET_PROPERTIES = <no type information>
+fffff808`d8520a28 pci!VmProxyGetDeviceState (VmProxyGetDeviceState)
+fffff808`d84f60f0 pci!PciArbiter_Dereference (PciArbiter_Dereference)
+fffff808`d84ed6f8 pci!PfnIoCreateDeviceSecure = <no type information>
+fffff808`d84dd860 pci!ExpressDownstreamSwitchPortEnableInterrupts (ExpressDownstreamSwitchPortEnableInterrupts)
+fffff808`d84e3e30 pci!DEVPKEY_PciDevice_ExpressSpecVersion = <no type information>
+fffff808`d84f35a8 pci!_imp_VfFailSystemBIOS = <no type information>
+fffff808`d84ed680 pci!PciNumaInformationLock = <no type information>
+fffff808`d84e39e0 pci!GUID_PCI_KSR_CONTEXT = <no type information>
+fffff808`d84c9a8c pci!PciType1_PrefetchMemoryBase (PciType1_PrefetchMemoryBase)
+fffff808`d8514dc8 pci!PciAllAliasesAvailable (PciAllAliasesAvailable)
+fffff808`d84d641c pci!PciReadDeviceSpace (PciReadDeviceSpace)
+fffff808`d84cb36f pci!RtlAddRange (RtlAddRange)
+fffff808`d851ecfc pci!PciTranslateRomAddress (PciTranslateRomAddress)
+fffff808`d84e1e90 pci!PciRoutingInterface = <no type information>
+fffff808`d84e3b70 pci!GUID_EM_PCI_DEVICE_HACK_BIOS_MATCH_RULE = <no type information>
+fffff808`d84cb35d pci!RtlInitializeRangeList (RtlInitializeRangeList)
+fffff808`d84e1c30 pci!PciD3ColdAuxPowerAndTimingInterface = <no type information>
+fffff808`d851b174 pci!PciFpbRequestLongestConsecutiveBusNumberRangeFromRoot (PciFpbRequestLongestConsecutiveBusNumberRangeFromRoot)
+fffff808`d851888c pci!PciQuerySupportedResetTypes (PciQuerySupportedResetTypes)
+fffff808`d84f3518 pci!_imp_KeIpiGenericCall = <no type information>
+fffff808`d84e4088 pci!GUID_DEVICE_RESET_INTERFACE_STANDARD = <no type information>
+fffff808`d84f3408 pci!_imp_ZwEnumerateValueKey = <no type information>
+fffff808`d84e1db0 pci!PciBridgeInterface = <no type information>
+fffff808`d84f32d0 pci!_imp_RtlInitUnicodeString = <no type information>
+fffff808`d8522494 pci!ArbInitializeOrderingList (ArbInitializeOrderingList)
+fffff808`d84d3294 pci!PciEarlyRestoreExecuteRestore (PciEarlyRestoreExecuteRestore)
+fffff808`d84cc0e0 pci!guard_dispatch_icall_nop (_guard_dispatch_icall_nop)
+fffff808`d84e3210 pci!s_VmProxyRegPath = <no type information>
+fffff808`d84db29c pci!PciProcessEventInDisabledState (PciProcessEventInDisabledState)
+fffff808`d84d9f30 pci!PciFpbPdopUpdateHardware (PciFpbPdopUpdateHardware)
+fffff808`d84f35e8 pci!_imp_PoRegisterPowerSettingCallback = <no type information>
+fffff808`d84ec570 pci!PciDiagHandle = <no type information>
+fffff808`d851edac pci!ExpressDestroyRootComplex (ExpressDestroyRootComplex)
+fffff808`d84e1d50 pci!PciMsiXTableConfigInterface = <no type information>
+fffff808`d85150d0 pci!PciIoArbiter_BacktrackAllocation (PciIoArbiter_BacktrackAllocation)
+fffff808`d851e240 pci!PciDestroyResourceHint (PciDestroyResourceHint)
+fffff808`d851dd80 pci!PciAssignSlotResources (PciAssignSlotResources)
+fffff808`d84dfc80 pci!ExpressSaveTphStEntries (ExpressSaveTphStEntries)
+fffff808`d84dfcf0 pci!PciType2_GetRequirements (PciType2_GetRequirements)
+fffff808`d84e48b8 pci!TraceLoggingMetadata = <no type information>
+fffff808`d84f34d0 pci!_imp_PsTerminateSystemThread = <no type information>
+fffff808`d8517e30 pci!PciDevice_CancelRemove (PciDevice_CancelRemove)
+fffff808`d850c5b0 pci!PciPreScanFreeBridgeRaw (PciPreScanFreeBridgeRaw)
+fffff808`d85150f0 pci!PciIoArbiter_ReinitializeArbiter (PciIoArbiter_ReinitializeArbiter)
+fffff808`d84ec088 pci!PcipErrorSourceConfiguration = <no type information>
+fffff808`d84f3250 pci!_imp_PoGetSystemWake = <no type information>
+fffff808`d84dc748 pci!PciConfigureIdeController (PciConfigureIdeController)
+fffff808`d84d9fb4 pci!PciFpbPdopVectorSizeEncodingToVecotAccessOffsetMask (PciFpbPdopVectorSizeEncodingToVecotAccessOffsetMask)
+fffff808`d84d3f80 pci!PciBusDevicePowerNotRequired (PciBusDevicePowerNotRequired)
+fffff808`d84e42a0 pci!DEVPKEY_PciRootBus_SystemMsiSupport = <no type information>
+fffff808`d84d7108 pci!PciDisablePme (PciDisablePme)
+fffff808`d84f3110 pci!_imp_RtlSetBits = <no type information>
+fffff808`d84e4230 pci!GUID_DSD_ROOTPORT_SUPPORTS_HOTPLUG_IN_D3 = <no type information>
+fffff808`d84f30d0 pci!_imp_IoCreateDevice = <no type information>
+fffff808`d850aee4 pci!ExpressProcessSerialNumberCapability (ExpressProcessSerialNumberCapability)
+fffff808`d84e3038 pci!WPP_c9936893665f302cdcc1b4f4a0a29cd2_Traceguids = <no type information>
+fffff808`d84f3330 pci!_imp_PoSetSystemWake = <no type information>
+fffff808`d84f3608 pci!_imp_IoDeviceObjectType = <no type information>
+fffff808`d84dd6d0 pci!ExpressBridgeProcessAsyncHotPlugEvents (ExpressBridgeProcessAsyncHotPlugEvents)
+fffff808`d84cacc0 pci!PciLocationInterface_Dereference (PciLocationInterface_Dereference)
+fffff808`d84df490 pci!PciAccessRom (PciAccessRom)
+fffff808`d84dd35c pci!ExpressSetPriControl (ExpressSetPriControl)
+fffff808`d84de590 pci!ExpressRootPortInterruptRoutine (ExpressRootPortInterruptRoutine)
+fffff808`d8515910 pci!ExpressOverrideLinkPowerManagement (ExpressOverrideLinkPowerManagement)
+fffff808`d851aa3c pci!PciFpbPdopUnconfigureTraditionalBusNumber (PciFpbPdopUnconfigureTraditionalBusNumber)
+fffff808`d84f3370 pci!_imp_ExAllocateTimer = <no type information>
+fffff808`d84e56b8 pci!WPP_cfec3bff4dc731957805eb61ff882817_Traceguids = <no type information>
+fffff808`d84e3d10 pci!DEVPKEY_PciDevice_S0WakeupSupported = <no type information>
+fffff808`d85031e0 pci!PciDevice_DeviceUsageNotification (PciDevice_DeviceUsageNotification)
+fffff808`d84e31b0 pci!GUID_EM_RULE_IGNORE_ISA_VGA_BIT_CONFLICT = <no type information>
+fffff808`d84f33c8 pci!_imp_RtlCopyRangeList = <no type information>
+fffff808`d84e2ce8 pci!INTERRUPT_CONNECTION_DATA_PKEY = <no type information>
+fffff808`d84f3040 pci!_imp_PshedGetErrorSourceInfo = <no type information>
+fffff808`d84e3ff8 pci!GUID_PCI_NATIVE_IDE_INTERFACE = <no type information>
+fffff808`d851d31c pci!PciCacheLegacyDeviceRouting (PciCacheLegacyDeviceRouting)
+fffff808`d84da644 pci!PciFpbGetFirstMemoryRange (PciFpbGetFirstMemoryRange)
+fffff808`d851bc38 pci!PciFpbpSetBusNumberDecodeUpstream (PciFpbpSetBusNumberDecodeUpstream)
+fffff808`d84e06cc pci!WPP_RECORDER_SF_qddd (WPP_RECORDER_SF_qddd)
+fffff808`d84cb91c pci!WPP_RECORDER_SF_qDDD (WPP_RECORDER_SF_qDDD)
+fffff808`d84e56f8 pci!WPP_0d12598c069534855ca8729ac6757ddb_Traceguids = <no type information>
+fffff808`d84f6030 pci!PciDeviceOptInFpb (PciDeviceOptInFpb)
+fffff808`d84f31e0 pci!_imp_IofCompleteRequest = <no type information>
+fffff808`d84e1d90 pci!ExpressLinkQuiescentInterface = <no type information>
+fffff808`d84cb480 pci!PciPowerUpDeviceTimerCallback (PciPowerUpDeviceTimerCallback)
+fffff808`d84d73b0 pci!WPP_RECORDER_SF_DDDD (WPP_RECORDER_SF_DDDD)
+fffff808`d84f3230 pci!_imp_PoFxCompleteIdleState = <no type information>
+fffff808`d851ac7c pci!PciFpbConfigureChildrenBusNumbers (PciFpbConfigureChildrenBusNumbers)
+fffff808`d84f3650 pci!_imp_RtlCreateSecurityDescriptor = <no type information>
+fffff808`d851b698 pci!PciFpbpClearBusNumberDecodeUpstream (PciFpbpClearBusNumberDecodeUpstream)
+fffff808`d84f3794 pci!_IMPORT_DESCRIPTOR_HAL = <no type information>
+fffff808`d84c1490 pci!PciVirtualization_Reference (PciVirtualization_Reference)
+fffff808`d84f6110 pci!PciD3ColdSupportInterface_GetD3ColdBusDriverSupport (PciD3ColdSupportInterface_GetD3ColdBusDriverSupport)
+fffff808`d8522208 pci!ArbAddOrdering (ArbAddOrdering)
+fffff808`d84e5468 pci!DEVPKEY_Device_InstanceId = <no type information>
+fffff808`d85181a0 pci!PciDevice_WriteConfig (PciDevice_WriteConfig)
+fffff808`d84f3640 pci!_imp_wcschr = <no type information>
+fffff808`d84dd900 pci!ExpressDownstreamSwitchPortInterruptDpc (ExpressDownstreamSwitchPortInterruptDpc)
+fffff808`d85095f0 pci!PciBus_FilterResourceRequirements (PciBus_FilterResourceRequirements)
+fffff808`d8518d70 pci!ExpressProcessNewUpstreamSwitchPortBridge (ExpressProcessNewUpstreamSwitchPortBridge)
+fffff808`d84ed5c0 pci!PciConfigDoubleBufferLock = <no type information>
+fffff808`d84f3060 pci!_imp_imp_WppRecorderLogGetDefault = <no type information>
+fffff808`d84caea0 pci!PciD3ColdSupportInterface_Reference (PciD3ColdSupportInterface_Reference)
+fffff808`d84d8788 pci!ExpressDestroyVirtualBridge (ExpressDestroyVirtualBridge)
+fffff808`d84dec64 pci!WPP_RECORDER_SF_DDDDD (WPP_RECORDER_SF_DDDDD)
+fffff808`d84d8470 pci!ExpressBridgeGetLinkState (ExpressBridgeGetLinkState)
+fffff808`d851c14c pci!PciFpbpAllocateMemoryRange (PciFpbpAllocateMemoryRange)
+fffff808`d84d8170 pci!ExpressBridgeExecuteHotPlugCommandsWorker (ExpressBridgeExecuteHotPlugCommandsWorker)
+fffff808`d8519390 pci!ExpressPortExitLinkQuiescentMode (ExpressPortExitLinkQuiescentMode)
+fffff808`d84d8a78 pci!ExpressRootPortAckPmeEvent (ExpressRootPortAckPmeEvent)
+fffff808`d84f3188 pci!_imp_RtlClearBits = <no type information>
+fffff808`d84d3950 pci!TlgWrite (_TlgWrite)
+fffff808`d84db580 pci!PciProcessEventInLinkActiveTimerQueuedState (PciProcessEventInLinkActiveTimerQueuedState)
+fffff808`d84f3778 pci!_guard_dispatch_icall_fptr = <no type information>
+fffff808`d84f30f8 pci!_imp_IoAttachDeviceToDeviceStack = <no type information>
+fffff808`d84ed7f4 pci!PiRegStateDiscriptor = <no type information>
+fffff808`d851bf68 pci!PciFpbDestroyMemoryRangeList (PciFpbDestroyMemoryRangeList)
+fffff808`d8515a4c pci!ExpressPortInitializeLinkPowerManagement (ExpressPortInitializeLinkPowerManagement)
+fffff808`d84f3020 pci!_imp_HalGetBusDataByOffset = <no type information>
+fffff808`d84f3680 pci!_imp_RtlGetOwnerSecurityDescriptor = <no type information>
+fffff808`d84f3648 pci!_imp__wcsnicmp = <no type information>
+fffff808`d84db6e0 pci!PciProcessEventInSettleTimerQueuedState (PciProcessEventInSettleTimerQueuedState)
+fffff808`d84e03cc pci!PciDisableSriovDecodes (PciDisableSriovDecodes)
+fffff808`d84f3088 pci!WppRecorder_NULL_THUNK_DATA = <no type information>
+fffff808`d850baf8 pci!IopDevObjApplyPostCreationSettings (IopDevObjApplyPostCreationSettings)
+fffff808`d84e31d0 pci!GUID_EM_RULE_IGNORE_CB_MEM_LIMITS = <no type information>
+fffff808`d84d6b68 pci!PciReconnectDevice (PciReconnectDevice)
+fffff808`d851d1a0 pci!PciSecurityInterface_Constructor (PciSecurityInterface_Constructor)
+fffff808`d84f3448 pci!_imp_MmGetSystemRoutineAddress = <no type information>
+fffff808`d84f33e0 pci!_imp_RtlSetAllBits = <no type information>
+fffff808`d84df750 pci!PciD3ColdAuxPowerAndTimingAggregationInfoInit (PciD3ColdAuxPowerAndTimingAggregationInfoInit)
+fffff808`d8518430 pci!PciDispatchCreate (PciDispatchCreate)
+fffff808`d84f3380 pci!_imp_HeadlessDispatch = <no type information>
+fffff808`d84d7cb0 pci!ExpressBridgeEnableDisableControllerInterrupts (ExpressBridgeEnableDisableControllerInterrupts)
+fffff808`d84f30e0 pci!_imp_KeInitializeSpinLock = <no type information>
+fffff808`d84ddf2c pci!ExpressRootPortBuildPmeRequestors (ExpressRootPortBuildPmeRequestors)
+fffff808`d84e4048 pci!GUID_PCI_VIRTUALIZATION_INTERFACE = <no type information>
+fffff808`d84e4300 pci!DEVPKEY_PciRootBus_PCIExpressNativePMEControl = <no type information>
+fffff808`d851c2cc pci!PciApplyIdeHacks (PciApplyIdeHacks)
+fffff808`d851c420 pci!PciSetD0DelayCallback (PciSetD0DelayCallback)
+fffff808`d84d9730 pci!PciFpbPdoEnableFpbMechanisms (PciFpbPdoEnableFpbMechanisms)
+fffff808`d84d391c pci!TlgKeywordOn (_TlgKeywordOn)
+fffff808`d84d5690 pci!PciBus_S0Stirring (PciBus_S0Stirring)
+fffff808`d84e2cd8 pci!WPP_6a634ec9cce13fc4f65e99e3f4c3f349_Traceguids = <no type information>
+fffff808`d84ca2f0 pci!PciGetHackFlagsFromEM (PciGetHackFlagsFromEM)
+fffff808`d84f9c70 pci!PciSetHardwarePowerStatePassive (PciSetHardwarePowerStatePassive)
+fffff808`d84e1c70 pci!PciSecurityInterface = <no type information>
+fffff808`d8517490 pci!PciBus_CancelStop (PciBus_CancelStop)
+fffff808`d850a0e0 pci!PciIommuBusInterface_Constructor (PciIommuBusInterface_Constructor)
+fffff808`d8508ad0 pci!PciMemoryArbiter_BootAllocation (PciMemoryArbiter_BootAllocation)
+fffff808`d84cb230 pci!PciBridgeInterface_Delay (PciBridgeInterface_Delay)
+fffff808`d851cfa4 pci!PciDevicePresentOnBus (PciDevicePresentOnBus)
+fffff808`d84ec410 pci!PciKsrCallbackObject = <no type information>
+fffff808`d84f36a8 pci!_imp_KeWaitForSingleObject = <no type information>
+fffff808`d84dd27c pci!ExpressSetOutstandingPageRequests (ExpressSetOutstandingPageRequests)
+fffff808`d84f31b0 pci!_imp_KeReleaseSpinLock = <no type information>
+fffff808`d84e04a0 pci!PciVirtualization_GetFunctionData (PciVirtualization_GetFunctionData)
+fffff808`d84c1490 pci!PciBusInterface_Reference (PciBusInterface_Reference)
+fffff808`d84c14a0 pci!PciDevice_QueryPower (PciDevice_QueryPower)
+fffff808`d84ec540 pci!PciDriverObject = <no type information>
+fffff808`d851a3c8 pci!PciFpbFdopRemoveNodeFromTree (PciFpbFdopRemoveNodeFromTree)
+fffff808`d84d7eb0 pci!ExpressBridgeExecuteHotPlugCommands (ExpressBridgeExecuteHotPlugCommands)
+fffff808`d85172cc pci!PciExtendBusNumberRange (PciExtendBusNumberRange)
+fffff808`d8517418 pci!PciUpdateAncestorSubordinateBuses (PciUpdateAncestorSubordinateBuses)
+fffff808`d8521e14 pci!CmRegUtilUcValueGetDword (CmRegUtilUcValueGetDword)
+fffff808`d84d2c74 pci!PciBridgeDeassertSecondaryReset (PciBridgeDeassertSecondaryReset)
+fffff808`d84e57e8 pci!PCIEXPRESS_ERROR_SECTION_GUID = <no type information>
+fffff808`d84e3de8 pci!DEVPKEY_PciDevice_BarTypes = <no type information>
+fffff808`d84e4210 pci!GUID_DSD_D3COLD_AUX_POWER_AND_TIMING_PREVIOUS_AUX_SAFE = <no type information>
+fffff808`d84f3730 pci!_imp_RtlFreeRangeList = <no type information>
+fffff808`d84f3598 pci!_imp_IoRegisterPlugPlayNotification = <no type information>
+fffff808`d84f3338 pci!_imp_IoReleaseCancelSpinLock = <no type information>
+fffff808`d84f3580 pci!_imp_RtlClearBit = <no type information>
+fffff808`d84e43c0 pci!DEVPKEY_PciRootBus_ExtendedConfigAvailable = <no type information>
+fffff808`d84ec4e0 pci!PciBusLock = <no type information>
+fffff808`d84e1d30 pci!PciVirtualizationInterface = <no type information>
+fffff808`d84cb3ff pci!ZwCreateKey (ZwCreateKey)
+fffff808`d84cc100 pci!memcpy (memcpy)
+fffff808`d8517d34 pci!PciSlotPresentInParentMethod (PciSlotPresentInParentMethod)
+fffff808`d84c14b0 pci!PciPmeInterface_Dereference (PciPmeInterface_Dereference)
+fffff808`d84ec4b0 pci!PciEnableNativeModeATA = <no type information>
+fffff808`d84daee0 pci!PciHandleHotPlugCommandFailure (PciHandleHotPlugCommandFailure)
+fffff808`d850b5a0 pci!PciDevice_QueryBusInformation (PciDevice_QueryBusInformation)
+fffff808`d8517f80 pci!PciDevice_QueryStop (PciDevice_QueryStop)
+fffff808`d8519ae4 pci!PciFpbArbMempFixResourceRequirement (PciFpbArbMempFixResourceRequirement)
+fffff808`d8514920 pci!PciRequirementInsideWindow (PciRequirementInsideWindow)
+fffff808`d84e40d8 pci!GUID_BUS_RESOURCE_UPDATE_INTERFACE = <no type information>
+fffff808`d84c1470 pci!PciBridgeInterface_ControlErrorReporting (PciBridgeInterface_ControlErrorReporting)
+fffff808`d84d5370 pci!PciBus_QueryPower (PciBus_QueryPower)
+fffff808`d84f3010 pci!_imp_HalGetInterruptTargetInformation = <no type information>
+fffff808`d84d98c0 pci!PciFpbPdoMarkHiberPhase (PciFpbPdoMarkHiberPhase)
+fffff808`d851eccc pci!PciRomTestWriteAccessToBuffer (PciRomTestWriteAccessToBuffer)
+fffff808`d84d7c7c pci!ExpressBridgeDisableInterrupts (ExpressBridgeDisableInterrupts)
+fffff808`d84f3368 pci!_imp_KeInitializeDpc = <no type information>
+fffff808`d84e3c80 pci!DEVPKEY_PciDevice_AtsSupport = <no type information>
+fffff808`d84e3fc8 pci!GUID_LEGACY_DEVICE_DETECTION_STANDARD = <no type information>
+fffff808`d84f30c8 pci!_imp_RtlFindClosestEncodableLength = <no type information>
+fffff808`d84cb3a5 pci!RtlGetFirstRange (RtlGetFirstRange)
+fffff808`d84e3ae0 pci!WPP_1ab26348d7bb3827b155b649d4023739_Traceguids = <no type information>
+fffff808`d84cb290 pci!PciBridgeInterface_ObffControl (PciBridgeInterface_ObffControl)
+fffff808`d8524728 pci!PciStringToUSHORT (PciStringToUSHORT)
+fffff808`d84dcb10 pci!PciMsiXInterface_MaskTableEntry (PciMsiXInterface_MaskTableEntry)
+fffff808`d84e4008 pci!GUID_PNP_LOCATION_INTERFACE = <no type information>
+fffff808`d84d6224 pci!PciExternalReadDeviceConfig (PciExternalReadDeviceConfig)
+fffff808`d84e08f8 pci!PciVerifierEnsureTreeConsistancy (PciVerifierEnsureTreeConsistancy)
+fffff808`d84d83b0 pci!ExpressBridgeGetDevicePresenceState (ExpressBridgeGetDevicePresenceState)
+fffff808`d8520fb4 pci!SepSddlDaclFromSDDLString (SepSddlDaclFromSDDLString)
+fffff808`d851c6dc pci!PciInitializeHotPlugEventMap (PciInitializeHotPlugEventMap)
+fffff808`d84e31e0 pci!GUID_EM_RULE_IGNORE_OVERLAPPING_PCI_ROOTBUS_NUMBER_RANGES = <no type information>
+fffff808`d84f3168 pci!_imp_ZwSetValueKey = <no type information>
+fffff808`d84e1c50 pci!PciSdevIdentifierInterface = <no type information>
+fffff808`d850b640 pci!PciIommuBusInterface_Dereference (PciIommuBusInterface_Dereference)
+fffff808`d84e57a8 pci!WNF_PO_SCENARIO_CHANGE = <no type information>
+fffff808`d851e150 pci!PciLegacyDeviceInterface_GetLegacyDevice (PciLegacyDeviceInterface_GetLegacyDevice)
+fffff808`d84f3138 pci!_imp_IoDeleteDevice = <no type information>
+fffff808`d84ed6b8 pci!pfnWppGetVersion = <no type information>
+fffff808`d84f3638 pci!_imp_RtlAbsoluteToSelfRelativeSD = <no type information>
+fffff808`d84d28ac pci!ExpressLinkEnableL0sState (ExpressLinkEnableL0sState)
+fffff808`d84e3ea8 pci!DEVPKEY_PciDevice_MaxReadRequestSize = <no type information>
+fffff808`d84e56a8 pci!WPP_6fa5c236ca643d3a75eaac43ba9a3211_Traceguids = <no type information>
+fffff808`d84c8c20 pci!PciExecuteCriticalSystemRoutine (PciExecuteCriticalSystemRoutine)
+fffff808`d84cb459 pci!_C_specific_handler (__C_specific_handler)
+fffff808`d8519050 pci!ExpressInitializeNewCompatibilityPort (ExpressInitializeNewCompatibilityPort)
+fffff808`d84f31c8 pci!_imp_IofCallDriver = <no type information>
+fffff808`d84e1df0 pci!PciNativeIdeInterface = <no type information>
+fffff808`d84d6970 pci!PciWriteConfigRaw (PciWriteConfigRaw)
+fffff808`d84e5490 pci!PCI_ETW_EVENT_ASPM_ERRATA_RUNDOWN = <no type information>
+fffff808`d84dfa70 pci!ExpressSaveTphMsiXStEntries (ExpressSaveTphMsiXStEntries)
+fffff808`d84de8d4 pci!PciFindDeviceByLocation (PciFindDeviceByLocation)
+fffff808`d84f35d0 pci!_imp_IoAcquireRemoveLockEx = <no type information>
+fffff808`d84d71d0 pci!PciPmeInterface_ClearPmeStatus (PciPmeInterface_ClearPmeStatus)
+fffff808`d84e40c8 pci!GUID_PCI_PTM_CONTROL_INTERFACE = <no type information>
+fffff808`d84f3208 pci!_imp_PoFxStartDevicePowerManagement = <no type information>
+fffff808`d84e3380 pci!PCI_ETW_PROVIDER = <no type information>
+fffff808`d84f36b8 pci!_imp_RtlDeleteRange = <no type information>
+fffff808`d84e57b8 pci!GUID_HWPROFILE_CHANGE_COMPLETE = <no type information>
+fffff808`d84dfce0 pci!TlgDefineProvider_annotation__TlgPciTraceLoggingProviderProv (_TlgDefineProvider_annotation__TlgPciTraceLoggingProviderProv)
+fffff808`d84cc100 pci!memmove (memmove)
+fffff808`d84e5070 pci!GUID_LOW_POWER_EPOCH = <no type information>
+fffff808`d84db610 pci!PciProcessEventInPowerOffTimerQueuedState (PciProcessEventInPowerOffTimerQueuedState)
+fffff808`d84ec558 pci!PciDeviceAndBiosSystemMatchSkipMorLockActionSet = <no type information>
+fffff808`d85022c0 pci!PciFindResourceHintBySlot (PciFindResourceHintBySlot)
+fffff808`d84f34e0 pci!_imp_IoConnectInterruptEx = <no type information>
+fffff808`d8519d44 pci!PciFpbArbMempResourcesProgramToFpb (PciFpbArbMempResourcesProgramToFpb)
+fffff808`d8514f38 pci!PciFindSuitableIsaBitRange (PciFindSuitableIsaBitRange)
+fffff808`d851cf90 pci!PciDevicePresentInterface_DevicePresentEx (PciDevicePresentInterface_DevicePresentEx)
+fffff808`d84f33f0 pci!_imp_RtlFindNextForwardRunClear = <no type information>
+fffff808`d84f3458 pci!_imp_RtlCopyUnicodeString = <no type information>
+fffff808`d84e1310 pci!PciDevice_DispatchPnpTable = <no type information>
+fffff808`d8514a60 pci!PciMemoryArbiter_ReinitializeArbiter (PciMemoryArbiter_ReinitializeArbiter)
+fffff808`d84fd950 pci!PciDevice_QueryDeviceText (PciDevice_QueryDeviceText)
+fffff808`d84d59c0 pci!PciBus_SetPower (PciBus_SetPower)
+fffff808`d84dd770 pci!ExpressBridgeSimulateHotPlugInterrupt (ExpressBridgeSimulateHotPlugInterrupt)
+fffff808`d850b790 pci!PciD3ColdSupportInterface_GetD3ColdCapability (PciD3ColdSupportInterface_GetD3ColdCapability)
+fffff808`d84f32e8 pci!_imp_ExUnregisterCallback = <no type information>
+fffff808`d84d5470 pci!PciBus_S0D0 (PciBus_S0D0)
+fffff808`d84d7d80 pci!ExpressBridgeEnqueuePassivePmeWorkItem (ExpressBridgeEnqueuePassivePmeWorkItem)
+fffff808`d84f30a0 pci!_imp_KsrMdlToMemoryRuns = <no type information>
+fffff808`d84cbf7c pci!_GSHandlerCheckCommon (__GSHandlerCheckCommon)
+fffff808`d84e3d70 pci!DEVPKEY_PciDevice_Correctable_Error_Mask = <no type information>
+fffff808`d84e3b30 pci!GUID_EM_PCI_DEVICE_SET_MPSSIZE_RULE = <no type information>
+fffff808`d84c67ec pci!PciHibernateInfoReset (PciHibernateInfoReset)
+fffff808`d84e1eb0 pci!PciAgpTargetInterface = <no type information>
+fffff808`d8515e04 pci!ExpressUpdateBaselineLinkPowerManagementSupport (ExpressUpdateBaselineLinkPowerManagementSupport)
+fffff808`d85181f4 pci!PciEnableAcsForHierarchy (PciEnableAcsForHierarchy)
+fffff808`d84f3560 pci!_imp_IoBuildDeviceIoControlRequest = <no type information>
+fffff808`d851c460 pci!PciSetHackflagsCallback (PciSetHackflagsCallback)
+fffff808`d84f31f8 pci!_imp_PoFxSetDeviceIdleTimeout = <no type information>
+fffff808`d84f3310 pci!_imp_KeQueryActiveProcessorCountEx = <no type information>
+fffff808`d852352c pci!PciInitConsoleLock (PciInitConsoleLock)
+fffff808`d8517b38 pci!PciQueryDeviceUsage (PciQueryDeviceUsage)
+fffff808`d84e5708 pci!WPP_ae0cc2ea388932372cff1929a8dfa700_Traceguids = <no type information>
+fffff808`d84d6df0 pci!PciDeviceWaitWakeCancel (PciDeviceWaitWakeCancel)
+fffff808`d84f36e8 pci!_imp_RtlCmDecodeMemIoResource = <no type information>
+fffff808`d84c14d0 pci!ext_ms_win_ntos_ksr_l1_1_2_KsrEnumeratePersistedMemory (ext_ms_win_ntos_ksr_l1_1_2_KsrEnumeratePersistedMemory)
+fffff808`d8522e60 pci!ArbRollbackAllocation (ArbRollbackAllocation)
+fffff808`d84c1550 pci!PciDevicePresentInterface_Reference (PciDevicePresentInterface_Reference)
+fffff808`d851c350 pci!PciDeregisterWithEM (PciDeregisterWithEM)
+fffff808`d84daa6c pci!PciDestroyHotPlugController (PciDestroyHotPlugController)
+fffff808`d84ec440 pci!WPP_MAIN_CB = <no type information>
+fffff808`d84e3ce0 pci!DEVPKEY_PciDevice_AcsSupport = <no type information>
+fffff808`d84f61e0 pci!ArbQueryArbitrate (ArbQueryArbitrate)
+fffff808`d84de660 pci!ExpressRootPortMessageRoutine (ExpressRootPortMessageRoutine)
+fffff808`d850362c pci!PciIsHotplugInD3Supported (PciIsHotplugInD3Supported)
+fffff808`d84f6100 pci!PciArbiter_Reference (PciArbiter_Reference)
+fffff808`d84d2418 pci!ExpressLinkDisableL0sL1State (ExpressLinkDisableL0sL1State)
+fffff808`d84ed7e8 pci!PciVerifierNotificationHandle = <no type information>
+fffff808`d8522e80 pci!ArbStartArbiter (ArbStartArbiter)
+fffff808`d84f31d8 pci!_imp_ObfReferenceObject = <no type information>
+fffff808`d850bee0 pci!ArbCommitAllocation (ArbCommitAllocation)
+fffff808`d8500010 pci!PciDevice_QueryResourceRequirements (PciDevice_QueryResourceRequirements)
+fffff808`d84e3520 pci!WPP_76166988a5d83e2a388c536ef22a9cdc_Traceguids = <no type information>
+fffff808`d84d44ac pci!PciBus_ConventionalWakeTriggered (PciBus_ConventionalWakeTriggered)
+fffff808`d84d63d0 pci!PciGetConfigSlotAndBus (PciGetConfigSlotAndBus)
+fffff808`d85200a0 pci!PciEvaluateDsmMethodPrepareInputBuffer (PciEvaluateDsmMethodPrepareInputBuffer)
+fffff808`d84c1560 pci!PciRoutingInterface_Dereference (PciRoutingInterface_Dereference)
+fffff808`d84d5b90 pci!PciBus_StirringD0 (PciBus_StirringD0)
+fffff808`d84e3d40 pci!DEVPKEY_PciDevice_Error_Reporting = <no type information>
+fffff808`d84d8b5c pci!ExpressApplyHPXSettings (ExpressApplyHPXSettings)
+fffff808`d84de674 pci!ExpressRootPortPmeEventWorker (ExpressRootPortPmeEventWorker)
+fffff808`d84dff80 pci!PciType2_GetResources (PciType2_GetResources)
+fffff808`d84f61a0 pci!PciD3ColdAuxPowerAndTimingInterface_Dereference (PciD3ColdAuxPowerAndTimingInterface_Dereference)
+fffff808`d84ed6e3 pci!DmaNonworkingListDev = <no type information>
+fffff808`d85202c4 pci!VmProxyAddPath (VmProxyAddPath)
+fffff808`d84cb3ed pci!ZwClose (ZwClose)
+fffff808`d84dcae0 pci!PciMsiXInterface_GetTableSize (PciMsiXInterface_GetTableSize)
+fffff808`d84d3a00 pci!PciBus_Remove (PciBus_Remove)
+fffff808`d84f33c0 pci!_imp_IoQueueWorkItem = <no type information>
+fffff808`d850b160 pci!PciBusInterface_Constructor (PciBusInterface_Constructor)
+fffff808`d852159c pci!SepSddlParseWideStringUlong (SepSddlParseWideStringUlong)
+fffff808`d851fb9c pci!PciEvaluateDsmMethodForRequestCorePowerRail (PciEvaluateDsmMethodForRequestCorePowerRail)
+fffff808`d84ec500 pci!PciDebugPorts = <no type information>
+fffff808`d84f3718 pci!_imp_KdReleaseDebuggerLock = <no type information>
+fffff808`d851e100 pci!PciLegacyDeviceInterface_Constructor (PciLegacyDeviceInterface_Constructor)
+fffff808`d84cb393 pci!RtlFreeRangeList (RtlFreeRangeList)
+fffff808`d84d6acc pci!PciIsSameResource (PciIsSameResource)
+fffff808`d84cb411 pci!RtlInitUnicodeString (RtlInitUnicodeString)
+fffff808`d84f3548 pci!_imp_EtwSetInformation = <no type information>
+fffff808`d84ec568 pci!PciDebugExpressNativeSaveNotDone = <no type information>
+fffff808`d84dc0cc pci!PciProcessStateAgnosticEvent (PciProcessStateAgnosticEvent)
+fffff808`d84ed6e1 pci!PciHeadlessInfoInitialized = <no type information>
+fffff808`d84da4d8 pci!PciFpbResourceDescriptorFindLongestConsecutiveRange (PciFpbResourceDescriptorFindLongestConsecutiveRange)
+fffff808`d8518e84 pci!ExpressRootPortUpdateMaxPayloadSize (ExpressRootPortUpdateMaxPayloadSize)
+fffff808`d84ec58c pci!PciDebugSaveNotDone = <no type information>
+fffff808`d8504b78 pci!WdmlibInit (WdmlibInit)
+fffff808`d84e40a8 pci!GUID_SDEV_IDENTIFIER_INTERFACE = <no type information>
+fffff808`d84f3210 pci!_imp_PoFxRegisterDripsWatchdogCallback = <no type information>
+fffff808`d84debac pci!PciPreScanProbeBridgePrefetchWindowCritical (PciPreScanProbeBridgePrefetchWindowCritical)
+fffff808`d84df634 pci!PciDestroyRootBus (PciDestroyRootBus)
+fffff808`d850c0a0 pci!ArbDeleteOwnerRanges (ArbDeleteOwnerRanges)
+fffff808`d84f32f0 pci!_imp_IoCreateSymbolicLink = <no type information>
+fffff808`d84f37d0 pci!_IMPORT_DESCRIPTOR_ext-ms-win-ntos-ksr-l1-1-2 = <no type information>
+fffff808`d84f36c8 pci!_imp_RtlGetFirstRange = <no type information>
+fffff808`d851f080 pci!PciD3ColdAuxPowerAndTimingInterface_RequestCorePowerRail (PciD3ColdAuxPowerAndTimingInterface_RequestCorePowerRail)
+fffff808`d84f36d8 pci!_imp_ExAllocatePoolWithTag = <no type information>
+fffff808`d84e4438 pci!DEVPKEY_PciRootBus_SecondaryInterface = <no type information>
+fffff808`d8520260 pci!PciVerifierProfileChangeCallback (PciVerifierProfileChangeCallback)
+fffff808`d84e31c0 pci!GUID_EM_RULE_AVOID_ASSERT_ON_BAD_ID_DATA_FOR_HOST_BRIDGE = <no type information>
+fffff808`d84f3440 pci!_imp_RtlFindMessage = <no type information>
+fffff808`d84dc860 pci!PciNativeIdeInterface_InterruptControl (PciNativeIdeInterface_InterruptControl)
+fffff808`d84d5744 pci!PciBus_SendDx (PciBus_SendDx)
+fffff808`d84e3f98 pci!GUID_AGP_TARGET_BUS_INTERFACE_STANDARD = <no type information>
+fffff808`d84f34d8 pci!_imp_IoDisconnectInterruptEx = <no type information>
+fffff808`d84d6534 pci!PciWriteDeviceSpace (PciWriteDeviceSpace)
+fffff808`d851824c pci!PciQueryEjectionRelations (PciQueryEjectionRelations)
+fffff808`d8517470 pci!PciBus_CancelRemove (PciBus_CancelRemove)
+fffff808`d84f33d8 pci!_imp_RtlCmEncodeMemIoResource = <no type information>
+fffff808`d84e3cc8 pci!DEVPKEY_PciDevice_AriSupport = <no type information>
+fffff808`d84e3d28 pci!DEVPKEY_PciDevice_RootError_Reporting = <no type information>
+fffff808`d851e674 pci!PciResizableBarInitialize (PciResizableBarInitialize)
+fffff808`d84ed6d8 pci!pfnWppQueryTraceInformation = <no type information>
+fffff808`d85032a0 pci!PciBus_DeviceUsageNotification (PciBus_DeviceUsageNotification)
+fffff808`d84e1080 pci!PciBus_DispatchPnpTable = <no type information>
+fffff808`d84dd1f4 pci!ExpressSetAtsControl (ExpressSetAtsControl)
+fffff808`d84e3e18 pci!DEVPKEY_PciDevice_InterruptSupport = <no type information>
+fffff808`d84f3118 pci!_imp_RtlAreBitsClear = <no type information>
+fffff808`d84d4220 pci!PciBusSystemPowerCompletion (PciBusSystemPowerCompletion)
+fffff808`d84d2b80 pci!PciDeviceDisableAtomics (PciDeviceDisableAtomics)
+fffff808`d84c1b70 pci!PciPmeInterface_UpdateEnable (PciPmeInterface_UpdateEnable)
+fffff808`d851aa9c pci!PciFpbAddBusNumberRangeToRoot (PciFpbAddBusNumberRangeToRoot)
+fffff808`d84f37bc pci!_IMPORT_DESCRIPTOR_WppRecorder = <no type information>
+fffff808`d84f3000 pci!_imp_HalTranslateBusAddress = <no type information>
+fffff808`d84f3668 pci!_imp__snwprintf = <no type information>
+fffff808`d851dac0 pci!PciKsrPrepare (PciKsrPrepare)
+fffff808`d84df8c0 pci!WPP_RECORDER_SF_LL (WPP_RECORDER_SF_LL)
+fffff808`d8507714 pci!PciPreScanAddBridgeWindowRequirements (PciPreScanAddBridgeWindowRequirements)
+fffff808`d851f1b0 pci!PciD3ColdAuxPowerAndTimingInterface_RequestPerstDelay (PciD3ColdAuxPowerAndTimingInterface_RequestPerstDelay)
+fffff808`d84e3c10 pci!PciPowerDelayTable = <no type information>
+fffff808`d84c14a0 pci!ext_ms_win_ntos_ksr_l1_1_2_KsrFreePersistedMemory (ext_ms_win_ntos_ksr_l1_1_2_KsrFreePersistedMemory)
+fffff808`d851c27c pci!PciApplyBrokenVideoHack (PciApplyBrokenVideoHack)
+fffff808`d851f4cc pci!PciIsSriovDriverAvailable (PciIsSriovDriverAvailable)
+fffff808`d85174e0 pci!PciBus_QueryRemove (PciBus_QueryRemove)
+fffff808`d84f3140 pci!_imp_EtwWriteTransfer = <no type information>
+fffff808`d8502464 pci!PciGetSavedSlotInformation (PciGetSavedSlotInformation)
+fffff808`d851d99c pci!ExpressDownstreamSwitchPortDisconnectInterrupt (ExpressDownstreamSwitchPortDisconnectInterrupt)
+fffff808`d84ec240 pci!PciSystemWideHackFlags = <no type information>
+fffff808`d84dca90 pci!PciMsiXInterface_GetTableEntry (PciMsiXInterface_GetTableEntry)
+fffff808`d84f3170 pci!_imp_PoSetHiberRange = <no type information>
+fffff808`d84e2ee0 pci!WPP_81a5400bf5c33ba62178ff0713826879_Traceguids = <no type information>
+fffff808`d84cb244 pci!PciDevice_Delay (PciDevice_Delay)
+fffff808`d84cbf00 pci!PcipSurpriseRemoveAndReenumerateSelf (PcipSurpriseRemoveAndReenumerateSelf)
+fffff808`d84ed7e0 pci!PcipSavedAssignSlotResources = <no type information>
+fffff808`d851f8b0 pci!PciVirtualization_EnableVirtualization (PciVirtualization_EnableVirtualization)
+fffff808`d84f3508 pci!_imp_IoAssignResources = <no type information>
+fffff808`d851d640 pci!PciIommuBusInterface_EnableSvmCapabilities (PciIommuBusInterface_EnableSvmCapabilities)
+fffff808`d84e15a0 pci!PciInterfaces = <no type information>
+fffff808`d84da65c pci!PciFpbGetFirstMemoryRangeStartAtHint (PciFpbGetFirstMemoryRangeStartAtHint)
+fffff808`d84e4128 pci!GUID_EM_PCI_DEVICE_MATCH_CALLBACK = <no type information>
+fffff808`d84f3728 pci!_imp__wcsicmp = <no type information>
+fffff808`d84def98 pci!WPP_RECORDER_SF_DDDDDDii (WPP_RECORDER_SF_DDDDDDii)
+fffff808`d84cb46b pci!ZwQueryValueKey (ZwQueryValueKey)
+fffff808`d84f3530 pci!_imp___C_specific_handler = <no type information>
+fffff808`d8517390 pci!PciFindLargestBusNumberGap (PciFindLargestBusNumberGap)
+fffff808`d84c1580 pci!PciLegacyDeviceInterface_Dereference (PciLegacyDeviceInterface_Dereference)
+fffff808`d85159ac pci!ExpressPortFindOptInOptOutPolicy (ExpressPortFindOptInOptOutPolicy)
+fffff808`d84db868 pci!PciProcessEventInWaitingWhileEnabledState (PciProcessEventInWaitingWhileEnabledState)
+fffff808`d84d2bfc pci!PciBridgeAssertSecondaryReset (PciBridgeAssertSecondaryReset)
+fffff808`d84cba3c pci!WPP_RECORDER_SF_qDDDDDDDDDDDDd (WPP_RECORDER_SF_qDDDDDDDDDDDDd)
+fffff808`d84ed7b8 pci!PciHeadlessInfo = <no type information>
+fffff808`d84c14d0 pci!ext_ms_win_ntos_ksr_l1_1_2_KsrGetFirmwareInformation (ext_ms_win_ntos_ksr_l1_1_2_KsrGetFirmwareInformation)
+fffff808`d84e3fa8 pci!GUID_INT_ROUTE_INTERFACE_STANDARD = <no type information>
+fffff808`d8515c54 pci!ExpressSwitchUpdateLinkLatency (ExpressSwitchUpdateLinkLatency)
+fffff808`d84d5c40 pci!PciBus_SxArmed (PciBus_SxArmed)
+fffff808`d84d6634 pci!WPP_RECORDER_SF_DDDDDD (WPP_RECORDER_SF_DDDDDD)
+fffff808`d84f3490 pci!_imp_RtlQueryRegistryValuesEx = <no type information>
+fffff808`d84e3c98 pci!DEVPKEY_PciDevice_AcsCapabilityRegister = <no type information>
+fffff808`d84d403c pci!PciBusHandleSystemPower (PciBusHandleSystemPower)
+fffff808`d84f3670 pci!_imp_SeCaptureSecurityDescriptor = <no type information>
+fffff808`d84e4028 pci!GUID_PCI_EXPRESS_ROOT_PORT_INTERFACE = <no type information>
+fffff808`d84f33a8 pci!_imp_HalDispatchTable = <no type information>
+fffff808`d84f3698 pci!_imp_KeLeaveCriticalRegion = <no type information>
+fffff808`d84f34f8 pci!_imp_MmUnmapLockedPages = <no type information>
+fffff808`d84e1ed0 pci!PciBusHandlerInterface = <no type information>
+fffff808`d851e76c pci!PciAllocateCmResourceList (PciAllocateCmResourceList)
+fffff808`d85201c8 pci!PciQueryCurrentCsSession (PciQueryCurrentCsSession)
+fffff808`d84f3238 pci!_imp_PoFxNotifySurprisePowerOn = <no type information>
+fffff808`d84e057c pci!PciDecodeBusNumberOnSecondarySide (PciDecodeBusNumberOnSecondarySide)
+fffff808`d8522300 pci!ArbBacktrackAllocation (ArbBacktrackAllocation)
+fffff808`d84ed7c8 pci!PciLegacyDeviceHead = <no type information>
+fffff808`d850c550 pci!PciRoutingInterface_Constructor (PciRoutingInterface_Constructor)
+fffff808`d8515f9c pci!ExpressUpdateLinkPowerManagementSupport (ExpressUpdateLinkPowerManagementSupport)
+fffff808`d84cbf58 pci!_GSHandlerCheck (__GSHandlerCheck)
+fffff808`d851c380 pci!PciQueryRuleCallback (PciQueryRuleCallback)
+fffff808`d851ee30 pci!PciD3ColdAuxPowerAndTimingInterface_Constructor (PciD3ColdAuxPowerAndTimingInterface_Constructor)
+fffff808`d84e3e48 pci!DEVPKEY_PciDevice_MaxLinkWidth = <no type information>
+fffff808`d84f7c6c pci!PciCommitStateTransition (PciCommitStateTransition)
+fffff808`d851c7c0 pci!PciNativeIdeInterface_Constructor (PciNativeIdeInterface_Constructor)
+fffff808`d84fed20 pci!PciCallDownIrpStack (PciCallDownIrpStack)
+fffff808`d84c1520 pci!PciCrashdumpFunctions_Dereference (PciCrashdumpFunctions_Dereference)
+fffff808`d84f30b0 pci!_imp_KsrGetFirmwareInformation = <no type information>
+fffff808`d84e4180 pci!PnpStateTransitionArray = <no type information>
+fffff808`d84c145c pci!PciSetHardwarePowerStateReset (PciSetHardwarePowerStateReset)
+fffff808`d84ed7d8 pci!PciRoundRobinIndex = <no type information>
+fffff808`d84c14d0 pci!ext_ms_win_ntos_ksr_l1_1_2_KsrPersistMemory (ext_ms_win_ntos_ksr_l1_1_2_KsrPersistMemory)
+fffff808`d84e2150 pci!PciHeaderOperations = <no type information>
+fffff808`d84e39d0 pci!s_VmProxyId = <no type information>
+fffff808`d8516908 pci!PciBridgeGetRequirementsForDevice (PciBridgeGetRequirementsForDevice)
+fffff808`d84f3630 pci!_imp_RtlAddAccessAllowedAce = <no type information>
+fffff808`d84ec55c pci!PciDebugExpressCompatibilitySaveDone = <no type information>
+fffff808`d84d5650 pci!PciBus_S0DozingArmed (PciBus_S0DozingArmed)
+fffff808`d84da2b8 pci!PciFpbVectorSpaceGranularityEncodingToNumericAlignment (PciFpbVectorSpaceGranularityEncodingToNumericAlignment)
+fffff808`d84d5690 pci!PciBus_S0Off (PciBus_S0Off)
+fffff808`d84df7f8 pci!PciD3ColdAuxPowerAndTimingDeviceInfoLink (PciD3ColdAuxPowerAndTimingDeviceInfoLink)
+fffff808`d84f3658 pci!_imp_SeExports = <no type information>
+fffff808`d84ed5f0 pci!PciSegmentList = <no type information>
+fffff808`d84f3538 pci!_imp_PsCreateSystemThread = <no type information>
+fffff808`d84c5f80 pci!PciPmeInterface_GetInformation (PciPmeInterface_GetInformation)
+fffff808`d84e1e30 pci!PciPmeInterface = <no type information>
+fffff808`d84f6150 pci!PciFpbResourceUpdateInterface_Reference (PciFpbResourceUpdateInterface_Reference)
+fffff808`d84de730 pci!ExpressRootPortPmeInterruptRoutine (ExpressRootPortPmeInterruptRoutine)
+fffff808`d84f6fd8 pci!PciBridgeStart (PciBridgeStart)
+fffff808`d84ed6c0 pci!pfnEtwRegisterClassicProvider = <no type information>
+fffff808`d84f3258 pci!_imp_KfRaiseIrql = <no type information>
+fffff808`d84d40b4 pci!PciBusPowerDown (PciBusPowerDown)
+fffff808`d84e3b20 pci!GUID_EM_RULE_SKIP_MEMORY_OVERWRITE_REQUEST_CONTROL_LOCK_ACTION = <no type information>
+fffff808`d851bca4 pci!PciFpbAddMemoryRange (PciFpbAddMemoryRange)
+fffff808`d84e3b50 pci!GUID_EM_PCI_DEVICE_HACK_RULE = <no type information>
+fffff808`d8517970 pci!PciAgpTargetInterface_Dereference (PciAgpTargetInterface_Dereference)
+fffff808`d84e5790 pci!WPP_6e9ee6fcab42337d256305aefc04a056_Traceguids = <no type information>
+fffff808`d84f3048 pci!PSHED_NULL_THUNK_DATA = <no type information>
+fffff808`d851c9d8 pci!PciFreeNumaInformation (PciFreeNumaInformation)
+fffff808`d84d3330 pci!PciEarlyRestoreResourcesInternal (PciEarlyRestoreResourcesInternal)
+fffff808`d85151a0 pci!ExpressAspmStateOverrideCallback (ExpressAspmStateOverrideCallback)
+fffff808`d84c15a0 pci!PciDevice_Remove (PciDevice_Remove)
+fffff808`d84e4138 pci!GUID_EM_PCI_DEVICE_TYPE = <no type information>
+fffff808`d85177f0 pci!PciAgpTargetInterface_Constructor (PciAgpTargetInterface_Constructor)
+fffff808`d84e3db8 pci!DEVPKEY_PciDevice_FirmwareErrorHandling = <no type information>
+fffff808`d84dd7d4 pci!ExpressDownstreamSwitchPortDisableInterrupts (ExpressDownstreamSwitchPortDisableInterrupts)
+fffff808`d85225f8 pci!ArbIsConflictWithMmConfigRange (ArbIsConflictWithMmConfigRange)
+fffff808`d84f3480 pci!_imp_RtlFindLeastSignificantBit = <no type information>
+fffff808`d84e2b10 pci!WPP_be1a2b9ab1823de344e46f8b6d3fc818_Traceguids = <no type information>
+fffff808`d84d4810 pci!PciBus_LeavingS0DxDisarming (PciBus_LeavingS0DxDisarming)
+fffff808`d84c14c0 pci!PciPmeInterface_Reference (PciPmeInterface_Reference)
+fffff808`d84f3738 pci!_imp_RtlInvertRangeList = <no type information>
+fffff808`d84e1e50 pci!PciLegacyDeviceDetectionInterface = <no type information>
+fffff808`d84ed620 pci!PciIsaBitExclusionList = <no type information>
+fffff808`d84ec490 pci!PciLockDeviceResources = <no type information>
+fffff808`d85220e4 pci!CmRegUtilWstrValueGetDword (CmRegUtilWstrValueGetDword)
+fffff808`d851f6b8 pci!PciVirtualizationConfigureAcs (PciVirtualizationConfigureAcs)
+fffff808`d851e85c pci!PciFindAddressForRom (PciFindAddressForRom)
+fffff808`d84d7884 pci!WPP_RECORDER_SF_DDDsI (WPP_RECORDER_SF_DDDsI)
+fffff808`d84ec420 pci!PciKsrDataCount = <no type information>
+fffff808`d84dd4c0 pci!ExpressBridgeGetHotPlugInterrupts (ExpressBridgeGetHotPlugInterrupts)
+fffff808`d84f3100 pci!_imp_RtlInitializeBitMap = <no type information>
+fffff808`d8515750 pci!ExpressLinkPowerSchemeCallback (ExpressLinkPowerSchemeCallback)
+fffff808`d84ec548 pci!PciHackTable = <no type information>
+fffff808`d85053f4 pci!PciUnicodeStringStrStr (PciUnicodeStringStrStr)
+fffff808`d84c1480 pci!PciBusInterface_Dereference (PciBusInterface_Dereference)
+fffff808`d85189e0 pci!ExpressBridgeSetInitialSlotState (ExpressBridgeSetInitialSlotState)
+fffff808`d84c14e0 pci!PciNativeIdeInterface_Dereference (PciNativeIdeInterface_Dereference)
+fffff808`d84e43d8 pci!DEVPKEY_PciRootBus_SecondaryBusWidth = <no type information>
+fffff808`d84e2e78 pci!GUID_D3COLD_SUPPORT_INTERFACE = <no type information>
+fffff808`d84f3660 pci!_imp_RtlLengthSecurityDescriptor = <no type information>
+fffff808`d850c350 pci!PciCrashdumpFunctions_Constructor (PciCrashdumpFunctions_Constructor)
+fffff808`d84e4420 pci!DEVPKEY_PciRootBus_CurrentSpeedAndMode = <no type information>
+fffff808`d84d7298 pci!PciSetHardwarePowerStateLogError (PciSetHardwarePowerStateLogError)
+fffff808`d8522500 pci!ArbInitializeRangeList (ArbInitializeRangeList)
+fffff808`d851a264 pci!PciFpbFdopInitializeRootResources (PciFpbFdopInitializeRootResources)
+fffff808`d84d5100 pci!PciBus_PowerCompletion (PciBus_PowerCompletion)
+fffff808`d84d8410 pci!ExpressBridgeGetLatchState (ExpressBridgeGetLatchState)
+fffff808`d8521fd4 pci!CmRegUtilUcValueSetUcString (CmRegUtilUcValueSetUcString)
+fffff808`d84ed6a0 pci!PciRoundRobinCurrentProcessor = <no type information>
+fffff808`d84cb300 pci!PciSurpriseRemoveAndReenumerateSelf (PciSurpriseRemoveAndReenumerateSelf)
+fffff808`d84f3688 pci!_imp_RtlGetGroupSecurityDescriptor = <no type information>
+fffff808`d85180a0 pci!PciDevice_Stop (PciDevice_Stop)
+fffff808`d84d4998 pci!PciBus_PoFxDripsWatchdogCallbackPassive (PciBus_PoFxDripsWatchdogCallbackPassive)
+fffff808`d84f35c8 pci!_imp_IoReleaseRemoveLockEx = <no type information>
+fffff808`d8518b94 pci!ExpressProcessNewDownstreamSwitchPortBridge (ExpressProcessNewDownstreamSwitchPortBridge)
+fffff808`d84d9d7c pci!PciFpbPdopProgramBusNumber (PciFpbPdopProgramBusNumber)
+fffff808`d84cb435 pci!RtlCopyRangeList (RtlCopyRangeList)
+fffff808`d8521de0 pci!CmRegUtilOpenExistingWstrKey (CmRegUtilOpenExistingWstrKey)
+fffff808`d851d454 pci!PciGetMessageAffinityMask (PciGetMessageAffinityMask)
+fffff808`d84ec5c0 pci!PciConfigDoubleBuffer = <no type information>
+fffff808`d84ed6c8 pci!pfnEtwUnregister = <no type information>
+fffff808`d8515678 pci!ExpressDownstreamSwitchPortProcessAspmPolicy (ExpressDownstreamSwitchPortProcessAspmPolicy)
+fffff808`d84d55d0 pci!PciBus_S0Disarmed (PciBus_S0Disarmed)
+fffff808`d85147a8 pci!PciDestroyArbiters (PciDestroyArbiters)
+fffff808`d84dcd88 pci!ExpressDisablePasid (ExpressDisablePasid)
+fffff808`d84e4390 pci!DEVPKEY_PciRootBus_ASPMSupport = <no type information>
+fffff808`d84ec564 pci!PciDebugExpressNativeSaveDone = <no type information>
+fffff808`d85030ac pci!PciFindDeviceInTree (PciFindDeviceInTree)
+fffff808`d84e42d0 pci!DEVPKEY_PciRootBus_PCIExpressCapabilityControl = <no type information>
+fffff808`d8522c90 pci!ArbRetestAllocation (ArbRetestAllocation)
+fffff808`d84c2c48 pci!PciSubtractiveDecodeBridge (PciSubtractiveDecodeBridge)
+fffff808`d84e3e78 pci!DEVPKEY_PciDevice_CurrentLinkWidth = <no type information>
+fffff808`d8521830 pci!PiRegStateReadStackCreationSettingsFromKey (PiRegStateReadStackCreationSettingsFromKey)
+fffff808`d84ed5e0 pci!PciEarlyRestoreList = <no type information>
+fffff808`d84f3220 pci!_imp_KeClearEvent = <no type information>
+fffff808`d8517aac pci!PciControl_DeviceControl (PciControl_DeviceControl)
+fffff808`d85216a0 pci!PiRegStateOpenClassKey (PiRegStateOpenClassKey)
+fffff808`d84d6d00 pci!PciD3ColdSupportInterface_GetLastTransitionStatus (PciD3ColdSupportInterface_GetLastTransitionStatus)
+fffff808`d84e0430 pci!PciEnableSriovDecodes (PciEnableSriovDecodes)
+fffff808`d85187b0 pci!PciIsFunctionLevelResetSupported (PciIsFunctionLevelResetSupported)
+fffff808`d84d5bf0 pci!PciBus_Sx (PciBus_Sx)
+fffff808`d84f3158 pci!_imp_RtlEqualUnicodeString = <no type information>
+fffff808`d84de82c pci!PciKsrGetPersitedCommandRegister (PciKsrGetPersitedCommandRegister)
+fffff808`d84e0d30 pci!WdmlibRtlInitUnicodeStringEx (WdmlibRtlInitUnicodeStringEx)
+fffff808`d84ed708 pci!ArbMmConfigRange = <no type information>
+fffff808`d84ec498 pci!PowerCallbackObj = <no type information>
+fffff808`d850c190 pci!PciIsThunderboltDeviceCallback (PciIsThunderboltDeviceCallback)
+fffff808`d84d6940 pci!PciWriteCommandRegisterRaw (PciWriteCommandRegisterRaw)
+fffff808`d84f3420 pci!_imp_EmClientRuleEvaluate = <no type information>
+fffff808`d851b58c pci!PciFpbpChangeBusNumberRange (PciFpbpChangeBusNumberRange)
+fffff808`d84ec428 pci!PciCrashdumpFunctionsReferenceCount = <no type information>
+fffff808`d84d8abc pci!ExpressRootPortHandlePmeEventOnPowerUp (ExpressRootPortHandlePmeEventOnPowerUp)
+fffff808`d84e3ef0 pci!DEVPKEY_PciDevice_ProgIf = <no type information>
+fffff808`d84f3148 pci!_imp_RtlIntegerToUnicodeString = <no type information>
+fffff808`d84f3510 pci!_imp_IoSetDevicePropertyData = <no type information>
+fffff808`d850c520 pci!PciBusInterface_TranslateBusAddress (PciBusInterface_TranslateBusAddress)
+fffff808`d84f33b8 pci!_imp_IoInvalidateDeviceState = <no type information>
+fffff808`d84db050 pci!PciHotPlugSlotTimer (PciHotPlugSlotTimer)
+fffff808`d84e3b60 pci!GUID_EM_PCI_DEVICE_HACK_CPU_MATCH_RULE = <no type information>
+fffff808`d851e810 pci!PciIsVgaResource (PciIsVgaResource)
+fffff808`d84e3dd0 pci!DEVPKEY_PciDevice_AERCapabilityPresent = <no type information>
+fffff808`d851bab4 pci!PciFpbpRemoveBusNumbers (PciFpbpRemoveBusNumbers)
+fffff808`d84f3298 pci!_imp_IoGetDevicePropertyData = <no type information>
+fffff808`d8523010 pci!GsDriverEntry (GsDriverEntry)
+fffff808`d84f3770 pci!_guard_check_icall_fptr = <no type information>
+fffff808`d84c6534 pci!ExpressRootPortEnablePmeInterrupt (ExpressRootPortEnablePmeInterrupt)
+fffff808`d850a750 pci!ArbAddAllocation (ArbAddAllocation)
+fffff808`d84ec010 pci!CallbackReg = <no type information>
+fffff808`d84e3f78 pci!GUID_ARBITER_INTERFACE_STANDARD = <no type information>
+fffff808`d84f3500 pci!_imp_HalPrivateDispatchTable = <no type information>
+fffff808`d84da618 pci!PciFpbResourceDescriptorMaximumIndex (PciFpbResourceDescriptorMaximumIndex)
+fffff808`d84c14d0 pci!ext_ms_win_ntos_ksr_l1_1_2_KsrMdlToMemoryRuns (ext_ms_win_ntos_ksr_l1_1_2_KsrMdlToMemoryRuns)
+fffff808`d84d3890 pci!PciMultiStageResumeCapable (PciMultiStageResumeCapable)
+fffff808`d84dd098 pci!ExpressQueryPasid (ExpressQueryPasid)
+fffff808`d84c1344 pci!NullResourceRequirement (NullResourceRequirement)
+fffff808`d84e3cf8 pci!DEVPKEY_PciDevice_SriovSupport = <no type information>
+fffff808`d84d778c pci!WPP_RECORDER_SF_Dqq (WPP_RECORDER_SF_Dqq)
+fffff808`d851ff20 pci!PciEvaluateDsmMethodForRequestPerstDelay (PciEvaluateDsmMethodForRequestPerstDelay)
+fffff808`d84e3f50 pci!DEVPKEY_PciDevice_DeviceType = <no type information>
+fffff808`d84f6170 pci!PciRefDereferenceNoop (PciRefDereferenceNoop)
+fffff808`d8521a00 pci!PpRegStateReadCreateClassCreationSettings (PpRegStateReadCreateClassCreationSettings)
+fffff808`d84d7520 pci!WPP_RECORDER_SF_DqD (WPP_RECORDER_SF_DqD)
+fffff808`d84e57c8 pci!PCIe_NOTIFY_TYPE_GUID = <no type information>
+fffff808`d852142c pci!SepSddlGetSidForString (SepSddlGetSidForString)
+fffff808`d84de250 pci!ExpressRootPortInitWheaErrorPacket (ExpressRootPortInitWheaErrorPacket)
+fffff808`d84e3d58 pci!DEVPKEY_PciDevice_ECRC_Errors = <no type information>
+fffff808`d84ed600 pci!PciLegacyDescriptionLock = <no type information>
+fffff808`d84ed69c pci!PciGroupZeroNumaNodeCount = <no type information>
+fffff808`d8524788 pci!PciKsrRestorePersistentContext (PciKsrRestorePersistentContext)
+fffff808`d850c440 pci!PciDevicePresentInterface_Constructor (PciDevicePresentInterface_Constructor)
+fffff808`d84d966c pci!ExpressWaitForPendingTransactions (ExpressWaitForPendingTransactions)
+fffff808`d84f3540 pci!_imp_ObReferenceObjectByHandle = <no type information>
+fffff808`d84cafd4 pci!PciBridgeOnVGAPath (PciBridgeOnVGAPath)
+fffff808`d84e4408 pci!DEVPKEY_PciRootBus_SupportedSpeedsAndModes = <no type information>
+fffff808`d84f35b0 pci!_imp_WheaConfigureErrorSource = <no type information>
+fffff808`d851a148 pci!PciFpbFdopInitializeNode (PciFpbFdopInitializeNode)
+fffff808`d84dd120 pci!ExpressQueryPri (ExpressQueryPri)
+fffff808`d84d4120 pci!PciBusPowerUpCompletion (PciBusPowerUpCompletion)
+fffff808`d84e2740 pci!PciExpressWakeStates = <no type information>
+fffff808`d8514b60 pci!PciMemoryArbiter_RollbackAllocation (PciMemoryArbiter_RollbackAllocation)
+fffff808`d84c1470 pci!PciExpressErrorHandler (PciExpressErrorHandler)
+fffff808`d84d55d0 pci!PciBus_StirringDisarmed (PciBus_StirringDisarmed)
+fffff808`d84e3200 pci!s_VmProxyValue = <no type information>
+fffff808`d84dbe14 pci!PciProcessHotPlugInterrupts (PciProcessHotPlugInterrupts)
+fffff808`d851a734 pci!PciFpbPdoInitializeNode (PciFpbPdoInitializeNode)
+fffff808`d851ac18 pci!PciFpbArbiterInitialize (PciFpbArbiterInitialize)
+fffff808`d84d90a0 pci!ExpressRootPortReadConfigSpace (ExpressRootPortReadConfigSpace)
+fffff808`d84e0d7c pci!ArbLibraryDeinitialize (ArbLibraryDeinitialize)
+fffff808`d85183e0 pci!PciDiagTraceControlCallback (PciDiagTraceControlCallback)
+fffff808`d8503328 pci!PciLocalDeviceUsage (PciLocalDeviceUsage)
+fffff808`d84ec588 pci!PciDebugSaveDone = <no type information>
+fffff808`d851af90 pci!PciFpbDestroyResourceDescriptor (PciFpbDestroyResourceDescriptor)
+fffff808`d84f32c0 pci!_imp_VfFailDeviceNode = <no type information>
+fffff808`d84f3558 pci!_imp_IoBuildSynchronousFsdRequest = <no type information>
+fffff808`d84f3488 pci!_imp_RtlFindMostSignificantBit = <no type information>
+fffff808`d84e1d10 pci!PciD3ColdSupportInterface = <no type information>
+fffff808`d84f3108 pci!_imp_RtlClearAllBits = <no type information>
+fffff808`d84e0608 pci!PciHibernateInfoSetBusNeedScan (PciHibernateInfoSetBusNeedScan)
+fffff808`d84dd430 pci!PciWalkDevicePathCheckE2ETLPPrefixCallback (PciWalkDevicePathCheckE2ETLPPrefixCallback)
+fffff808`d8517e70 pci!PciDevice_Eject (PciDevice_Eject)
+fffff808`d84e2508 pci!PciBridgeOrderingList = <no type information>
+fffff808`d84e4098 pci!GUID_PCI_SECURITY_INTERFACE = <no type information>
+fffff808`d84f6160 pci!PciBridgeQueryFpgaControlInterface (PciBridgeQueryFpgaControlInterface)
+fffff808`d84d6810 pci!PciFindIntelTbVsecCallback (PciFindIntelTbVsecCallback)
+fffff808`d84f3190 pci!_imp_RtlSetBit = <no type information>
+fffff808`d84cb423 pci!ZwOpenKey (ZwOpenKey)
+fffff808`d84da078 pci!PciFpbPdopWriteDescriptor (PciFpbPdopWriteDescriptor)
+fffff808`d8515328 pci!ExpressBridgeEnableCommonClockConfiguration (ExpressBridgeEnableCommonClockConfiguration)
+fffff808`d851f2e4 pci!PciCancelStateTransition (PciCancelStateTransition)
+fffff808`d84d5c70 pci!PciBus_SxOn (PciBus_SxOn)
+fffff808`d84ec550 pci!PciEmProviderHandle = <no type information>
+fffff808`d84dda7c pci!ExpressRootPortAckPmeRequestorsAtDeviceSource (ExpressRootPortAckPmeRequestorsAtDeviceSource)
+fffff808`d84ec000 pci!WPP_GLOBAL_Control = <no type information>
+fffff808`d84f3090 pci!_imp_KsrEnumeratePersistedMemory = <no type information>
+fffff808`d84f3568 pci!_imp_ZwQueryValueKey = <no type information>
+fffff808`d8517620 pci!PciBus_Stop (PciBus_Stop)
+fffff808`d851f450 pci!TlgEnableCallback (_TlgEnableCallback)
+fffff808`d84dea7c pci!WPP_RECORDER_SF_DDLLL (WPP_RECORDER_SF_DDLLL)
+fffff808`d84f33d0 pci!_imp_RtlDeleteOwnersRanges = <no type information>
+fffff808`d84f3700 pci!_imp_VslQuerySecureDevice = <no type information>
+fffff808`d84dc970 pci!PciDeviceResetInterface_DeviceReset (PciDeviceResetInterface_DeviceReset)
+fffff808`d84cb3db pci!RtlFindRange (RtlFindRange)
+fffff808`d84f3180 pci!_imp_KdDeregisterPowerHandler = <no type information>
+fffff808`d84d6a18 pci!PciDeinitConsoleLock (PciDeinitConsoleLock)
+fffff808`d84c1540 pci!PciDevicePresentInterface_Dereference (PciDevicePresentInterface_Dereference)
+fffff808`d84f6180 pci!PciSdevIdentifierInterface_GetIdentifier (PciSdevIdentifierInterface_GetIdentifier)
+fffff808`d84d22a0 pci!ExpressBridgeStallForLinkRetrain (ExpressBridgeStallForLinkRetrain)
+fffff808`d84e3940 pci!WPP_81f9f4fedac13cc5a3d0c1c44dd50940_Traceguids = <no type information>
+fffff808`d84e40e8 pci!GUID_EM_PCI_DEVICE_QUERY_RULE_CALLBACK = <no type information>
+fffff808`d84c5d7c pci!PciDeviceIsInHigherSlot (PciDeviceIsInHigherSlot)
+fffff808`d84ec4c0 pci!PciSystemPowerStateTransitionActive = <no type information>
+fffff808`d84f6160 pci!ArbAddReserved (ArbAddReserved)
+fffff808`d84da6ec pci!PciFpbGetNextMemoryRange (PciFpbGetNextMemoryRange)
+fffff808`d8506430 pci!PciPreScanTraverseSubtree (PciPreScanTraverseSubtree)
+fffff808`d850acc0 pci!ExpressProcessAerCapability (ExpressProcessAerCapability)
+fffff808`d84d3058 pci!PciEarlyRestoreBus (PciEarlyRestoreBus)
+fffff808`d84f3390 pci!_imp_KeReleaseInStackQueuedSpinLock = <no type information>
+fffff808`d84e1790 pci!PciDeviceDefaultPropertyList = <no type information>
+fffff808`d84c6f6c pci!PciIsDeviceFpbRaw (PciIsDeviceFpbRaw)
+fffff808`d84ec598 pci!PciConsoleState = <no type information>
+fffff808`d84dcd44 pci!ExpressDisableAts (ExpressDisableAts)
+fffff808`d851a114 pci!PciFpbFdoDestroyNode (PciFpbFdoDestroyNode)
+fffff808`d84d9eb0 pci!PciFpbPdopTranslateVectorSpaceIndexToAddress (PciFpbPdopTranslateVectorSpaceIndexToAddress)
+fffff808`d84dd2d4 pci!ExpressSetPasidControl (ExpressSetPasidControl)
+fffff808`d84f3270 pci!_imp_PoRequestPowerIrp = <no type information>
+fffff808`d84f34f0 pci!_imp_MmAllocatePagesForMdlEx = <no type information>
+fffff808`d84f30f0 pci!_imp__vsnprintf = <no type information>
+fffff808`d84e07e0 pci!WPP_RECORDER_SF_s (WPP_RECORDER_SF_s)
+fffff808`d84cb320 pci!_security_check_cookie (__security_check_cookie)
+fffff808`d84d4870 pci!PciBus_PoFxDripsWatchdogCallback (PciBus_PoFxDripsWatchdogCallback)
+fffff808`d84d6178 pci!WPP_RECORDER_SF_I (WPP_RECORDER_SF_I)
+fffff808`d84e2170 pci!PciBus_State = <no type information>
+fffff808`d84d3e78 pci!WPP_RECORDER_SF_L (WPP_RECORDER_SF_L)
+fffff808`d84f32d8 pci!_imp_ExCreateCallback = <no type information>
+fffff808`d84d8e5c pci!ExpressCheckForPendingTransactions (ExpressCheckForPendingTransactions)
+fffff808`d84e42b8 pci!DEVPKEY_PciRootBus_NativePciExpressControl = <no type information>
+fffff808`d8518478 pci!PciAttemptDeviceReset (PciAttemptDeviceReset)
+fffff808`d84d6074 pci!WPP_RECORDER_SF_D (WPP_RECORDER_SF_D)
+fffff808`d84ec5a8 pci!PciConsoleLockCallbackHandle = <no type information>
+fffff808`d84d4604 pci!PciBus_DisarmForWake (PciBus_DisarmForWake)
+fffff808`d84e1670 pci!PciInterfacesLastResort = <no type information>
+fffff808`d84f3130 pci!_imp_IoDetachDevice = <no type information>
+fffff808`d84d6844 pci!PciReadNextARIFunctionRaw (PciReadNextARIFunctionRaw)
+fffff808`d84f3400 pci!_imp_ZwQueryKey = <no type information>
+fffff808`d84cac00 pci!PciSetEventCompletion (PciSetEventCompletion)
+fffff808`d84f3500 pci!HalPrivateDispatchTable = <no type information>
+fffff808`d84dcec4 pci!ExpressDisableSvm (ExpressDisableSvm)
+fffff808`d84f3240 pci!_imp_ExInterlockedInsertTailList = <no type information>
+fffff808`d84f3780 pci!_IMPORT_DESCRIPTOR_ntoskrnl = <no type information>
+fffff808`d851b788 pci!PciFpbpCommitBusNumbers (PciFpbpCommitBusNumbers)
+fffff808`d851e630 pci!PciPreScanCommitBridgeBusNumbers (PciPreScanCommitBridgeBusNumbers)
+fffff808`d84f3320 pci!_imp_KeQueryInterruptTimePrecise = <no type information>
+fffff808`d84db0d8 pci!PciProcessCommandCompleteInterrupt (PciProcessCommandCompleteInterrupt)
+fffff808`d84c1590 pci!PciLegacyDeviceInterface_Reference (PciLegacyDeviceInterface_Reference)
+fffff808`d851ea3c pci!PciReadRomImage (PciReadRomImage)
+fffff808`d84ec4c4 pci!PciEnableLegacyPcieRuntimePme = <no type information>
+fffff808`d84e1cf0 pci!PciCrashdumpFunctionsInterface = <no type information>
+fffff808`d84f6010 pci!PciConsoleLockCallback (PciConsoleLockCallback)
+fffff808`d8519210 pci!ExpressPortEnterLinkQuiescentMode (ExpressPortEnterLinkQuiescentMode)
+fffff808`d84e5067 pci!TraceLoggingMetadataEnd = <no type information>
+fffff808`d84f842c pci!PciPopulateMsiRequirements (PciPopulateMsiRequirements)
+fffff808`d8523120 pci!PciKsrEnumeratePersistedMemory (PciKsrEnumeratePersistedMemory)
+fffff808`d84cb014 pci!ExpressRootPortDisableInterrupts (ExpressRootPortDisableInterrupts)
+fffff808`d84e3fb8 pci!GUID_PCI_CARDBUS_INTERFACE_PRIVATE = <no type information>
+fffff808`d84e1d70 pci!ExpressRootPortInterface = <no type information>
+fffff808`d84ec160 pci!PciType2HeaderOperations = <no type information>
+fffff808`d84ec4a0 pci!PciPowerCallbackRegistrationHandle = <no type information>
+fffff808`d84d9890 pci!PciFpbPdoGetResourceDescriptor (PciFpbPdoGetResourceDescriptor)
+fffff808`d850b530 pci!PciBus_QueryLegacyBusInformation (PciBus_QueryLegacyBusInformation)
+fffff808`d84f3418 pci!_imp_EmProviderDeregister = <no type information>
+fffff808`d84c8588 pci!PciRegisterVideoAdapterBus (PciRegisterVideoAdapterBus)
+fffff808`d84e54b8 pci!GUID_PCIEXPRESS_ASPM_POLICY = <no type information>
+fffff808`d84f3398 pci!_imp_IoSizeofWorkItem = <no type information>
+fffff808`d84dc950 pci!PciCrashdumpFunctions_PowerOn (PciCrashdumpFunctions_PowerOn)
+fffff808`d84d7b40 pci!WPP_RECORDER_SF_qDDLD (WPP_RECORDER_SF_qDDLD)
+fffff808`d84cb381 pci!RtlInvertRangeList (RtlInvertRangeList)
+fffff808`d84ec520 pci!PciGlobalLock = <no type information>
+fffff808`d8516eb8 pci!PciBridgeReevaluateWindows (PciBridgeReevaluateWindows)
+fffff808`d84cbfe1 pci!_chkstk (__chkstk)
+fffff808`d84cad20 pci!PciBus_PoFxIdleState (PciBus_PoFxIdleState)
+fffff808`d84f3078 pci!_imp_WppAutoLogStart = <no type information>
+fffff808`d8519520 pci!ExpressProcessSriovCapability (ExpressProcessSriovCapability)
+fffff808`d851b828 pci!PciFpbpComputeAverageBusNumberForChildrenBridge (PciFpbpComputeAverageBusNumberForChildrenBridge)
+fffff808`d8517a6c pci!PciCleanupCtrlDevExt (PciCleanupCtrlDevExt)
+fffff808`d84f31d0 pci!_imp_KeDelayExecutionThread = <no type information>
+fffff808`d84ec404 pci!PciDebugTphSaveNotDone = <no type information>
+fffff808`d8523078 pci!PciCreateConsoleLockCallback (PciCreateConsoleLockCallback)
+fffff808`d84d6c2c pci!PciResetBridge (PciResetBridge)
+fffff808`d84dcfc0 pci!ExpressEnableSvm (ExpressEnableSvm)
+fffff808`d84da978 pci!PciAddCommandToAction (PciAddCommandToAction)
+fffff808`d84f3068 pci!_imp_imp_WppRecorderLogDelete = <no type information>
+fffff808`d84e3ec0 pci!DEVPKEY_PciDevice_MaxPayloadSize = <no type information>
+fffff808`d84e4360 pci!DEVPKEY_PciRootBus_PCISegmentGroupsSupport = <no type information>
+fffff808`d84dc3d0 pci!PciSetHotPlugEventCallback (PciSetHotPlugEventCallback)
+fffff808`d851e300 pci!PciPreScanAssignBridgeBusNumbers (PciPreScanAssignBridgeBusNumbers)
+fffff808`d850c39c pci!TraceLoggingRegisterEx (TraceLoggingRegisterEx)
+fffff808`d84f6270 pci!PciRootSetCustomProperties (PciRootSetCustomProperties)
+fffff808`d84f30e8 pci!_imp_IoInitializeRemoveLockEx = <no type information>
+fffff808`d84fde30 pci!PciProcessNewDevice (PciProcessNewDevice)
+fffff808`d8517e50 pci!PciDevice_CancelStop (PciDevice_CancelStop)
+fffff808`d85198d0 pci!PciFpbArbMempAddResource (PciFpbArbMempAddResource)
+fffff808`d851895c pci!ExpressBridgeDisconnectInterrupt (ExpressBridgeDisconnectInterrupt)
+fffff808`d84dfb08 pci!ExpressSaveTphRequesterCapability (ExpressSaveTphRequesterCapability)
+fffff808`d84f6120 pci!ExpressLinkQuiescentReference (ExpressLinkQuiescentReference)
+fffff808`d851a98c pci!PciFpbPdopGetBestMemoryVectorGranularity (PciFpbPdopGetBestMemoryVectorGranularity)
+fffff808`d84f30a8 pci!_imp_KsrFreePersistedMemory = <no type information>
+fffff808`d84e3e00 pci!DEVPKEY_PciDevice_InterruptMessageMaximum = <no type information>
+fffff808`d84c14f0 pci!PciNativeIdeInterface_Reference (PciNativeIdeInterface_Reference)
+fffff808`d8500af0 pci!PciDevice_QueryResources (PciDevice_QueryResources)
+fffff808`d8515ff4 pci!ExpressUpdateReceiveLaneExitLatency (ExpressUpdateReceiveLaneExitLatency)
+fffff808`d851f3b4 pci!PciTraceLogUninitialize (PciTraceLogUninitialize)
+fffff808`d851ca48 pci!WppCleanupKm (WppCleanupKm)
+fffff808`d851c4e8 pci!PciCreateHotPlugController (PciCreateHotPlugController)
+fffff808`d84dad6c pci!PciEnableDisableHotPlugInterrupts (PciEnableDisableHotPlugInterrupts)
+fffff808`d84e4330 pci!DEVPKEY_PciRootBus_PCIExpressNativeHotPlugControl = <no type information>
+fffff808`d8518f24 pci!ExpressCompatibilitySaveExtendedCapabilities (ExpressCompatibilitySaveExtendedCapabilities)
+fffff808`d84ec560 pci!PciDebugExpressCompatibilitySaveNotDone = <no type information>
+fffff808`d84f3070 pci!_imp_WppAutoLogStop = <no type information>
+fffff808`d84e2490 pci!PciBus_DispatchPowerTable = <no type information>
+fffff808`d84f61e0 pci!ArbPreprocessEntry (ArbPreprocessEntry)
+fffff808`d84d9bb8 pci!PciFpbPdopGetVectorDataByRange (PciFpbPdopGetVectorDataByRange)
+fffff808`d851da00 pci!ExpressRootPortDisconnectInterrupt (ExpressRootPortDisconnectInterrupt)
+fffff808`d8522660 pci!ArbOverrideConflict (ArbOverrideConflict)
+fffff808`d84c3b80 pci!PciNextBusInSegment (PciNextBusInSegment)
+fffff808`d84e40f8 pci!GUID_EM_PCI_DEVICE_SET_MPSSIZE_CALLBACK = <no type information>
+fffff808`d84f3348 pci!_imp_EtwUnregister = <no type information>
+fffff808`d851bfd0 pci!PciFpbResourceUpdateInterface_Constructor (PciFpbResourceUpdateInterface_Constructor)
+fffff808`d84f6530 pci!PciIsInTransitionToState (PciIsInTransitionToState)
+fffff808`d84d9950 pci!PciFpbPdoReadCapabilityByOffset (PciFpbPdoReadCapabilityByOffset)
+fffff808`d84e4318 pci!DEVPKEY_PciRootBus_SHPCNativeHotPlugControl = <no type information>
+fffff808`d84f3038 pci!_imp_PshedRetrieveErrorInfo = <no type information>
+fffff808`d84f31b8 pci!_imp_IoReleaseRemoveLockAndWaitEx = <no type information>
+fffff808`d84e57d8 pci!WHEA_ERROR_PACKET_SECTION_GUID = <no type information>
+fffff808`d8525000 pci!_guard_fids_table = <no type information>
+fffff808`d84f3610 pci!_imp_ZwSetSecurityObject = <no type information>
+fffff808`d84e1680 pci!load_config_used = <no type information>
+fffff808`d84f6140 pci!PciFpbResourceUpdateInterface_Dereference (PciFpbResourceUpdateInterface_Dereference)
+fffff808`d84d4694 pci!PciBus_GenericWakePower (PciBus_GenericWakePower)
+fffff808`d84d43f8 pci!PciBus_CompleteWWPassive (PciBus_CompleteWWPassive)
+fffff808`d8502ff8 pci!PciAddBusToTree (PciAddBusToTree)
+fffff808`d84f3308 pci!_imp_ExDeleteTimer = <no type information>
+fffff808`d84e4038 pci!GUID_MSIX_TABLE_CONFIG_INTERFACE = <no type information>
+fffff808`d84e1cd0 pci!PciReenumerateSelfInterface = <no type information>
+fffff808`d84da434 pci!PciFpbGetRootAvailableBusNumberCount (PciFpbGetRootAvailableBusNumberCount)
+fffff808`d84f33b0 pci!_imp_WheaAddErrorSource = <no type information>
+fffff808`d84f3228 pci!_imp_PoFxCompleteIdleCondition = <no type information>
+fffff808`d84ec178 pci!PciType1HeaderOperations = <no type information>
+fffff808`d8519650 pci!ExpressRootPortInterfaceDereference (ExpressRootPortInterfaceDereference)
+fffff808`d84d21a0 pci!ExpressBridgeRetrainLink (ExpressBridgeRetrainLink)
+fffff808`d84f33e8 pci!_imp_RtlCopyBitMap = <no type information>
+fffff808`d85179a0 pci!PciAgpTargetInterface_Reference (PciAgpTargetInterface_Reference)
+fffff808`d84d9060 pci!ExpressDestroyCompatibilityPort (ExpressDestroyCompatibilityPort)
+fffff808`d84f3278 pci!_imp_IoCancelIrp = <no type information>
+fffff808`d84e30c8 pci!GUID_PCI_BUS_INTERFACE_STANDARD = <no type information>
+fffff808`d84e3b90 pci!GUID_EM_PCI_DEVICE_DMA_REMAPPING_ERROR_HANDLING_RULE = <no type information>
+fffff808`d851a318 pci!PciFpbFdopInsertNodeToTree (PciFpbFdopInsertNodeToTree)
+fffff808`d84d9de0 pci!PciFpbPdopProgramMemory (PciFpbPdopProgramMemory)
+fffff808`d84c1530 pci!PciCrashdumpFunctions_Reference (PciCrashdumpFunctions_Reference)
+fffff808`d84f3128 pci!_imp_ZwClose = <no type information>
+fffff808`d8517660 pci!PciBus_SurpriseRemoval (PciBus_SurpriseRemoval)
+fffff808`d84db3fc pci!PciProcessEventInFullyFunctionalState (PciProcessEventInFullyFunctionalState)
+fffff808`d84e1f10 pci!PciRootBusDefaultPropertyList = <no type information>
+fffff808`d84d4708 pci!PciBus_HandleDirectedDripsTransitions (PciBus_HandleDirectedDripsTransitions)
+fffff808`d8522114 pci!CmRegUtilWstrValueSetFullBuffer (CmRegUtilWstrValueSetFullBuffer)
+fffff808`d84d56ac pci!PciBus_SendD0Unlocked (PciBus_SendD0Unlocked)
+fffff808`d84df990 pci!ExpressAllocTphStEntries (ExpressAllocTphStEntries)
+fffff808`d84d7384 pci!PciStallBetweenPmcsrWrites (PciStallBetweenPmcsrWrites)
+fffff808`d84cb1b8 pci!PciMaskMsiXInterrupt (PciMaskMsiXInterrupt)
+fffff808`d84c2a0c pci!PciSetHardwarePowerStateDispatch (PciSetHardwarePowerStateDispatch)
+fffff808`d84e3530 pci!s_PciId = <no type information>
+fffff808`d8520eb4 pci!SepSddlAddAceToAcl (SepSddlAddAceToAcl)
+fffff808`d84caf6c pci!PciWalkDevicePathFindPathCallback (PciWalkDevicePathFindPathCallback)
+fffff808`d84c1510 pci!PciCardbusInterface_Reference (PciCardbusInterface_Reference)
+fffff808`d8514c14 pci!PciRollbackMemoryOrderingLists (PciRollbackMemoryOrderingLists)
+fffff808`d84f3528 pci!_imp_MmMapIoSpaceEx = <no type information>
+fffff808`d84ec400 pci!PciDebugTphSaveDone = <no type information>
+fffff808`d851be00 pci!PciFpbCopyMemoryRange (PciFpbCopyMemoryRange)
+fffff808`d851d6f0 pci!PciIommuBusInterface_GetSvmCapabilities (PciIommuBusInterface_GetSvmCapabilities)
+fffff808`d84e1c90 pci!PciDeviceResetStandardInterface = <no type information>
+fffff808`d8521d28 pci!CmRegUtilCreateWstrKey (CmRegUtilCreateWstrKey)
+fffff808`d84d92c8 pci!ExpressSavePortRegisters (ExpressSavePortRegisters)
+fffff808`d852049c pci!VmProxyAddRemovePath (VmProxyAddRemovePath)
+fffff808`d84cb2e0 pci!PciWalkDevicePathCheckBusMasterEnabledCallback (PciWalkDevicePathCheckBusMasterEnabledCallback)
+fffff808`d84f35b8 pci!_imp_WheaInitializeRecordHeader = <no type information>
+fffff808`d84ec100 pci!PciVerifierFailureTable = <no type information>
+fffff808`d84f3588 pci!_imp_ZwQueryWnfStateData = <no type information>
+fffff808`d84f30d8 pci!_imp_KeInitializeEvent = <no type information>
+fffff808`d84e40b8 pci!GUID_D3COLD_AUX_POWER_AND_TIMING_INTERFACE = <no type information>
+fffff808`d84f3600 pci!_imp_ObOpenObjectByPointer = <no type information>
+fffff808`d84f34b8 pci!_imp_KeSynchronizeExecution = <no type information>
+fffff808`d84dbcc4 pci!PciProcessHotPlugEvent (PciProcessHotPlugEvent)
+fffff808`d84d6d30 pci!PciD3ColdSupportInterface_SetD3ColdSupport (PciD3ColdSupportInterface_SetD3ColdSupport)
+fffff808`d84f3678 pci!_imp_RtlGetSaclSecurityDescriptor = <no type information>
+fffff808`d84ec5a0 pci!PciConsoleLockCallbackObject = <no type information>
+fffff808`d84db150 pci!PciProcessControllerActionQueue (PciProcessControllerActionQueue)
+fffff808`d84c1d4c pci!PciBus_ArmForWake (PciBus_ArmForWake)
+fffff808`d84c1c3c pci!PciDevice_RetireD0Irp (PciDevice_RetireD0Irp)
+fffff808`d84e3ed8 pci!DEVPKEY_PciDevice_CurrentPayloadSize = <no type information>
+fffff808`d8523f60 pci!PciQueryInterruptSteeringInformation (PciQueryInterruptSteeringInformation)
+fffff808`d84d8120 pci!ExpressBridgeExecuteHotPlugCommandsTimer (ExpressBridgeExecuteHotPlugCommandsTimer)
+fffff808`d84f34a8 pci!_imp_WheaGetErrorSource = <no type information>
+fffff808`d8520df4 pci!VmProxyWriteDevicePathsToRegistry (VmProxyWriteDevicePathsToRegistry)
+fffff808`d84da464 pci!PciFpbResourceDescriptorContainsRange (PciFpbResourceDescriptorContainsRange)
+fffff808`d84f3690 pci!_imp_RtlGetDaclSecurityDescriptor = <no type information>
+fffff808`d84d2f20 pci!PciDebugDevicePowerCallback (PciDebugDevicePowerCallback)
+fffff808`d8521b58 pci!PpRegStateUpdateStackCreationSettings (PpRegStateUpdateStackCreationSettings)
+fffff808`d851b2ac pci!PciFpbResourceDescriptorSetRange (PciFpbResourceDescriptorSetRange)
+fffff808`d84d34e0 pci!PciMarkHiberPhase (PciMarkHiberPhase)
+fffff808`d84f3268 pci!_imp_PoFxIdleComponent = <no type information>
+fffff808`d84d3fe0 pci!PciBusDevicePowerRequired (PciBusDevicePowerRequired)
+fffff808`d850b7e0 pci!PciPreScanSaveBridgeRequirements (PciPreScanSaveBridgeRequirements)
+fffff808`d84f3620 pci!_imp_IoIsWdmVersionAvailable = <no type information>
+fffff808`d84f3428 pci!InitSafeBootMode = <no type information>
+fffff808`d84ec4a8 pci!PciBootFrameBuffer = <no type information>
+fffff808`d851af40 pci!PciFpbCopyResourceDescriptor (PciFpbCopyResourceDescriptor)
+fffff808`d84e4068 pci!GUID_REENUMERATE_SELF_INTERFACE_STANDARD = <no type information>
+fffff808`d84d58a8 pci!PciBus_SendWWPassive (PciBus_SendWWPassive)
+fffff808`d84ec3d0 pci!PiRegStateSysAllInherittedSecurityDescriptor = <no type information>
+fffff808`d84ed700 pci!WdmlibInitialized = <no type information>
+fffff808`d84ec190 pci!PciType0HeaderOperations = <no type information>
+fffff808`d84f3750 pci!_imp_IoUninitializeWorkItem = <no type information>
+fffff808`d84f3018 pci!_imp_HalGetMessageRoutingInfo = <no type information>
+fffff808`d84d2ea0 pci!PciCheckDevicePathBusMasterEnabled (PciCheckDevicePathBusMasterEnabled)
+fffff808`d84da71c pci!PciCompareOperator (PciCompareOperator)
+fffff808`d84e3fd8 pci!GUID_PCI_PME_INTERFACE = <no type information>
+fffff808`d84ed6e2 pci!InterruptNonworkingListDev = <no type information>
+fffff808`d84e3f88 pci!GUID_BUS_INTERFACE_STANDARD = <no type information>
+fffff808`d84f3520 pci!_imp_RtlNumberOfSetBitsUlongPtr = <no type information>
+fffff808`d84d6780 pci!PciDisableBridgeARIRaw (PciDisableBridgeARIRaw)
+fffff808`d84f3050 pci!_imp_imp_WppRecorderLogCreate = <no type information>
+fffff808`d851be88 pci!PciFpbDeleteMemoryRange (PciFpbDeleteMemoryRange)
+fffff808`d84e42e8 pci!DEVPKEY_PciRootBus_PCIExpressAERControl = <no type information>
+fffff808`d8519680 pci!PciFpbArbMem_ForwardTestAllocationUpstream (PciFpbArbMem_ForwardTestAllocationUpstream)
+fffff808`d8521d7c pci!CmRegUtilOpenExistingUcKey (CmRegUtilOpenExistingUcKey)
+fffff808`d84f6678 pci!PciDeleteVolatileInterruptRoutingData (PciDeleteVolatileInterruptRoutingData)
+fffff808`d851a4ac pci!PciFpbPdoDestroyNode (PciFpbPdoDestroyNode)
+fffff808`d84c1470 pci!guard_check_icall_nop (_guard_check_icall_nop)
+fffff808`d84cc000 pci!memcmp (memcmp)
+fffff808`d84f67e0 pci!PciDevice_SurpriseRemoval (PciDevice_SurpriseRemoval)
+fffff808`d84f34e8 pci!_imp_MmMapLockedPagesSpecifyCache = <no type information>
+fffff808`d84d51f0 pci!PciBus_PowerStateM (PciBus_PowerStateM)
+fffff808`d84da57c pci!PciFpbResourceDescriptorFindNextConsecutiveRange (PciFpbResourceDescriptorFindNextConsecutiveRange)
+fffff808`d84f3590 pci!_imp_VfIsVerificationEnabled = <no type information>
+fffff808`d84f31e8 pci!_imp_PoFxRegisterCrashdumpDevice = <no type information>
+fffff808`d852010c pci!PciPrepareInputParametersForDsmMethod (PciPrepareInputParametersForDsmMethod)
+fffff808`d851c614 pci!PciHandleHotPlugDriverRemoval (PciHandleHotPlugDriverRemoval)
+fffff808`d850553c pci!WppLoadTracingSupport (WppLoadTracingSupport)
+fffff808`d84d2340 pci!ExpressEnableDisableDownstreamLinkStatesForRetrain (ExpressEnableDisableDownstreamLinkStatesForRetrain)
+fffff808`d84f32e0 pci!_imp_ExRegisterCallback = <no type information>
+fffff808`d84e4160 pci!GUID_DSD_EXTERNAL_FACING_PORT = <no type information>
+fffff808`d84f3450 pci!_imp_IoWMIRegistrationControl = <no type information>
+fffff808`d85221b4 pci!CmpRegUtilAllocateUnicodeString (CmpRegUtilAllocateUnicodeString)
+fffff808`d84e3e60 pci!DEVPKEY_PciDevice_MaxLinkSpeed = <no type information>
+fffff808`d8517138 pci!PciRemoveBusFromTree (PciRemoveBusFromTree)
+fffff808`d84ed6e8 pci!PciRegistryPath = <no type information>
+fffff808`d84dac20 pci!PciDeviceEjectCallback (PciDeviceEjectCallback)
+fffff808`d84e4150 pci!_xmm = <no type information>
+fffff808`d84d5e90 pci!PciBus_WaitWake (PciBus_WaitWake)
+fffff808`d84c14a0 pci!PciMsiXInterface_RefDeref (PciMsiXInterface_RefDeref)
+fffff808`d84cb3c9 pci!RtlDeleteRange (RtlDeleteRange)
+fffff808`d84ed660 pci!PciNumaNodesProcessorMask = <no type information>
+fffff808`d84f3740 pci!_imp_RtlAddRange = <no type information>
+fffff808`d84d431c pci!PciBus_CancelWWPassive (PciBus_CancelWWPassive)
+fffff808`d84ed6a8 pci!PciNumaNodeCount = <no type information>
+fffff808`d851cf40 pci!PciDevicePresentInterface_DevicePresent (PciDevicePresentInterface_DevicePresent)
+fffff808`d850c150 pci!PciReenumerateSelfInterface_Constructor (PciReenumerateSelfInterface_Constructor)
+fffff808`d84f3460 pci!_imp_ZwQuerySystemInformation = <no type information>
+fffff808`d84ca564 pci!PciWalkDevicePathCheckBusMasterEnabled (PciWalkDevicePathCheckBusMasterEnabled)
+fffff808`d8515b54 pci!ExpressPortUpdateLatencyBound (ExpressPortUpdateLatencyBound)
+fffff808`d84f3080 pci!_imp_imp_WppRecorderReplay = <no type information>
+fffff808`d84e1000 pci!PciDevice_DispatchPowerTable = <no type information>
+fffff808`d84f3470 pci!_imp_ZwQuerySystemInformationEx = <no type information>
+fffff808`d84f3248 pci!_imp_IoInvalidateDeviceRelations = <no type information>
+fffff808`d84f32a8 pci!_imp_KeBugCheckEx = <no type information>
+fffff808`d84cbcac pci!WPP_RECORDER_SF_qDDi (WPP_RECORDER_SF_qDDi)
+fffff808`d84f3410 pci!_imp_EmProviderRegister = <no type information>
+fffff808`d84e3da0 pci!DEVPKEY_PciDevice_Uncorrectable_Error_Mask = <no type information>
+fffff808`d851b450 pci!PciFpbpAssignDeviceConfiguredBusNumbers (PciFpbpAssignDeviceConfiguredBusNumbers)
+fffff808`d84f3378 pci!_imp_EmClientQueryRuleState = <no type information>
+fffff808`d84df138 pci!WPP_RECORDER_SF_DDDi (WPP_RECORDER_SF_DDDi)
+fffff808`d84e3b40 pci!GUID_EM_PCI_D0_DELAY_RULE = <no type information>
+fffff808`d84e3f68 pci!GUID_TRANSLATOR_INTERFACE_STANDARD = <no type information>
+fffff808`d84c4cc4 pci!PciResizableBarGetInfoPtr (PciResizableBarGetInfoPtr)
+fffff808`d84f6160 pci!PciPtmControlInterface_Constructor (PciPtmControlInterface_Constructor)
+fffff808`d84f36f0 pci!_imp_PoReportDirectedDripsCandidateDevice = <no type information>
+fffff808`d85228e0 pci!ArbQueryConflict (ArbQueryConflict)
+fffff808`d84f3318 pci!_imp_ExSetTimer = <no type information>
+fffff808`d84e2d28 pci!PCI_DSM_UUID = <no type information>
+fffff808`d84dbf04 pci!PciProcessSlotEventQueue (PciProcessSlotEventQueue)
+fffff808`d8519ec0 pci!PciFpbArbMempResourcesRevertFromFpb (PciFpbArbMempResourcesRevertFromFpb)
+fffff808`d84d2e80 pci!PciBridgeInterface_Stall (PciBridgeInterface_Stall)
+fffff808`d84d84e4 pci!ExpressBridgePowerDown (ExpressBridgePowerDown)
+fffff808`d8516244 pci!PciBridgeCheckLocationCompatibility (PciBridgeCheckLocationCompatibility)
+fffff808`d84e5480 pci!WPP_fe37415d1c6c31bf29bf31132a013c81_Traceguids = <no type information>
+fffff808`d84cbdc4 pci!WPP_RECORDER_SF_qDDii (WPP_RECORDER_SF_qDDii)
+fffff808`d84f31a8 pci!_imp_KeAcquireSpinLockRaiseToDpc = <no type information>
+fffff808`d84f3028 pci!_imp_KeQueryPerformanceCounter = <no type information>
+fffff808`d84cb140 pci!PciBus_PoFxIdle (PciBus_PoFxIdle)
+fffff808`d84f3160 pci!_imp_ZwDeleteKey = <no type information>
+fffff808`d84f3098 pci!_imp_KsrClaimPersistedMemory = <no type information>
+fffff808`d85154c4 pci!ExpressBridgeRegisterDeviceForAspmCallbacks (ExpressBridgeRegisterDeviceForAspmCallbacks)
+fffff808`d84e3f20 pci!DEVPKEY_PciDevice_BaseClass = <no type information>
+fffff808`d84d68b0 pci!PciWriteBusNumsRaw (PciWriteBusNumsRaw)
+fffff808`d8521504 pci!SepSddlLookupAccessMaskInTable (SepSddlLookupAccessMaskInTable)
+fffff808`d84f61c0 pci!PciVirtualization_GetResources (PciVirtualization_GetResources)
+fffff808`d84de888 pci!PciKsrInvalidatePersitedCommandRegister (PciKsrInvalidatePersitedCommandRegister)
+fffff808`d84f34a0 pci!_imp_KeInsertQueueDpc = <no type information>
+fffff808`d84ec230 pci!_security_cookie = <no type information>
+fffff808`d851cd50 pci!PciCardbusInterface_Constructor (PciCardbusInterface_Constructor)
+fffff808`d84dcbb0 pci!PciMsiXInterface_UnmaskTableEntry (PciMsiXInterface_UnmaskTableEntry)
+fffff808`d851fd7c pci!PciEvaluateDsmMethodForRequestD3ColdAuxPower (PciEvaluateDsmMethodForRequestD3ColdAuxPower)
+fffff808`d84df24c pci!WPP_RECORDER_SF_ddq (WPP_RECORDER_SF_ddq)
+fffff808`d84f3430 pci!_imp_KeCancelTimer = <no type information>
+fffff808`d8518040 pci!PciDevice_ReadConfig (PciDevice_ReadConfig)
+fffff808`d8522168 pci!CmRegUtilWstrValueSetWstrString (CmRegUtilWstrValueSetWstrString)
+fffff808`d84c2290 pci!PciPmeInterface_GetPmeControl (PciPmeInterface_GetPmeControl)
+fffff808`d84c6850 pci!PciPreScanSpreadExtraResourcesSubtree (PciPreScanSpreadExtraResourcesSubtree)
+fffff808`d84d7a50 pci!WPP_RECORDER_SF_dDD (WPP_RECORDER_SF_dDD)
+fffff808`d84ded94 pci!WPP_RECORDER_SF_DDDDDDddddd (WPP_RECORDER_SF_DDDDDDddddd)
+fffff808`d84f3478 pci!_imp_NtQuerySystemInformationEx = <no type information>
+fffff808`d84caee0 pci!PciD3ColdSupportInterface_Dereference (PciD3ColdSupportInterface_Dereference)
+fffff808`d84ec408 pci!PciPostVgaDeviceId = <no type information>
+fffff808`d851d800 pci!ExpressBridgeConnectInterrupt (ExpressBridgeConnectInterrupt)
+fffff808`d84dcdc8 pci!ExpressDisablePri (ExpressDisablePri)
+fffff808`d84dafb0 pci!PciHotPlugCommandTimer (PciHotPlugCommandTimer)
+fffff808`d851c830 pci!PciDriverUnload (PciDriverUnload)
+fffff808`d84d3300 pci!PciEarlyRestoreResources (PciEarlyRestoreResources)
+fffff808`d8516144 pci!PciBridgeAddRequirements (PciBridgeAddRequirements)
+fffff808`d84e3cb0 pci!DEVPKEY_PciDevice_AcsCompatibleUpHierarchy = <no type information>
+fffff808`d8517b8c pci!PciSaveSlotInformation (PciSaveSlotInformation)
+fffff808`d85179d4 pci!PciSetBusDisabledByConsoleLock (PciSetBusDisabledByConsoleLock)
+fffff808`d84f6200 pci!PciRootFilterStartResources (PciRootFilterStartResources)
+fffff808`d84c14d0 pci!PciIrpNotSupported (PciIrpNotSupported)
+fffff808`d84e3e90 pci!DEVPKEY_PciDevice_CurrentLinkSpeed = <no type information>
+fffff808`d84cacf0 pci!PciLocationInterface_Reference (PciLocationInterface_Reference)
+fffff808`d84d5400 pci!PciBus_QueueChildD0Irp (PciBus_QueueChildD0Irp)
+fffff808`d84c14d0 pci!ext_ms_win_ntos_ksr_l1_1_2_KsrClaimPersistedMemory (ext_ms_win_ntos_ksr_l1_1_2_KsrClaimPersistedMemory)
+fffff808`d84e3b80 pci!GUID_EM_PCI_DEVICE_INTERRUPT_REMAPPING_NOT_ALL_REMAPPED_RULE = <no type information>
+fffff808`d84c14a0 pci!PciInterface_Noop (PciInterface_Noop)
+fffff808`d84e2b40 pci!GUID_EM_PCI_ARBITER_UNREPORTED_MEMORY_AT_F8_RULE = <no type information>
+fffff808`d84e31f0 pci!GUID_EM_RULE_IGNORE_PCI_ROOTBUS_NUMBER_RANGE = <no type information>
+fffff808`d84d91c0 pci!ExpressRootPortWriteConfigSpace (ExpressRootPortWriteConfigSpace)
+fffff808`d84f34c8 pci!_imp_ExInterlockedRemoveHeadList = <no type information>
+fffff808`d84e4348 pci!DEVPKEY_PciRootBus_MSISupport = <no type information>
+fffff808`d84f30b8 pci!_imp_KsrPersistMemory = <no type information>
+fffff808`d84c1480 pci!PciVirtualization_Dereference (PciVirtualization_Dereference)
+fffff808`d850a070 pci!PciArbiter_PackResource (PciArbiter_PackResource)
+fffff808`d84f3360 pci!_imp_KeInitializeTimer = <no type information>
+fffff808`d8518984 pci!ExpressBridgeSetAriEnable (ExpressBridgeSetAriEnable)
+fffff808`d84e43a8 pci!DEVPKEY_PciRootBus_ExtendedPCIConfigOpRegionSupport = <no type information>
+fffff808`d84e1e10 pci!PciDevicePresentInterface = <no type information>
+fffff808`d84dea3c pci!ExpressSaveLtrCapability (ExpressSaveLtrCapability)
+fffff808`d84e4378 pci!DEVPKEY_PciRootBus_ClockPowerManagementSupport = <no type information>
+fffff808`d84f61f0 pci!ArbpQueryConflictCallback (ArbpQueryConflictCallback)
+fffff808`d851ab48 pci!PciFpbAlignMemoryIoResourceDescriptorByGranularity (PciFpbAlignMemoryIoResourceDescriptorByGranularity)
+fffff808`d84e3fe8 pci!GUID_PCI_DEVICE_PRESENT_INTERFACE = <no type information>
+fffff808`d84ed7d0 pci!PcipSavedTranslateBusAddress = <no type information>
+fffff808`d84de1cc pci!ExpressRootPortFindErrorDevice (ExpressRootPortFindErrorDevice)
+fffff808`d84f3388 pci!_imp_KeAcquireInStackQueuedSpinLock = <no type information>
+fffff808`d84d7674 pci!WPP_RECORDER_SF_DqLL (WPP_RECORDER_SF_DqLL)
+fffff808`d8521e90 pci!CmRegUtilUcValueGetFullBuffer (CmRegUtilUcValueGetFullBuffer)
+fffff808`d84ec580 pci!ExpressWakeControlLock = <no type information>
+fffff808`d8502780 pci!PciOverrideRequirement (PciOverrideRequirement)
+fffff808`d84f3350 pci!_imp_EtwWrite = <no type information>
+fffff808`d852063c pci!VmProxyClearPath (VmProxyClearPath)
+fffff808`d84ec260 pci!PciBridgeOrderings = <no type information>
+fffff808`d84ed7b0 pci!PciCreateControlDeviceCount = <no type information>
+fffff808`d84f3290 pci!_imp_PoFxCompleteDevicePowerNotRequired = <no type information>
+fffff808`d84f36d0 pci!_imp__vsnwprintf = <no type information>
+fffff808`d8507240 pci!PciPreScanIsDeviceCritical (PciPreScanIsDeviceCritical)
+fffff808`d85176f8 pci!BusPowerUnregisterPep (BusPowerUnregisterPep)
+fffff808`d84d99c0 pci!PciFpbPdoSetResourceDescriptor (PciFpbPdoSetResourceDescriptor)
+fffff808`d8522454 pci!ArbFreeOrderingList (ArbFreeOrderingList)
+fffff808`d84f3300 pci!_imp_MmUnmapIoSpace = <no type information>
+fffff808`d851ba3c pci!PciFpbpConfigureDeviceBusNumbers (PciFpbpConfigureDeviceBusNumbers)
+fffff808`d8503e08 pci!ExpressRootPortConnectInterrupt (ExpressRootPortConnectInterrupt)
+fffff808`d84db758 pci!PciProcessEventInWaitingWhileDisabledState (PciProcessEventInWaitingWhileDisabledState)
+fffff808`d851eef0 pci!PciD3ColdAuxPowerAndTimingInterface_RequestAuxPower (PciD3ColdAuxPowerAndTimingInterface_RequestAuxPower)
+fffff808`d84e3c50 pci!DEVPKEY_PciDevice_RequiresReservedMemoryRegion = <no type information>
+fffff808`d84f31c0 pci!_imp_KeFlushQueuedDpcs = <no type information>
+fffff808`d84ec538 pci!PciInterruptSteeringEnabled = <no type information>
+fffff808`d84f3428 pci!_imp_InitSafeBootMode = <no type information>
+fffff808`d8516298 pci!PciBridgeComputeRequirements (PciBridgeComputeRequirements)
+fffff808`d8523044 pci!_security_init_cookie (__security_init_cookie)
+fffff808`d84c9a20 pci!PciType1_PrefetchMemoryLimit (PciType1_PrefetchMemoryLimit)
+fffff808`d84ed640 pci!PciVgaAndIsaBitExclusionList = <no type information>
+fffff808`d84f3760 pci!_imp___chkstk = <no type information>
+fffff808`d84f32c8 pci!_imp_KeQueryTimeIncrement = <no type information>
+fffff808`d84f3340 pci!_imp_EtwRegister = <no type information>
+fffff808`d85223a4 pci!ArbDeleteArbiterInstance (ArbDeleteArbiterInstance)
+fffff808`d84ed6b0 pci!WPPTraceSuite = <no type information>
+fffff808`d84e4078 pci!GUID_IOMMU_BUS_INTERFACE = <no type information>
+fffff808`d851b314 pci!PciFpbpAllocateBusNumber (PciFpbpAllocateBusNumber)
+fffff808`d84f36a0 pci!_imp_KeSetEvent = <no type information>
+fffff808`d84c6820 pci!PciPassIrp (PciPassIrp)
+fffff808`d84cb3b7 pci!RtlGetNextRange (RtlGetNextRange)
+fffff808`d84f32a0 pci!_imp_ZwPowerInformation = <no type information>
+fffff808`d84f6f1c pci!PciIsExternalFacingPort (PciIsExternalFacingPort)
+fffff808`d84dd44c pci!ExpressBridgeClearSpuriousHotPlugStatus (ExpressBridgeClearSpuriousHotPlugStatus)
+fffff808`d8522328 pci!ArbCopyOrderingList (ArbCopyOrderingList)
+fffff808`d85194a0 pci!ExpressProcessAriCapability (ExpressProcessAriCapability)
+fffff808`d84f35f8 pci!_imp_RtlFindRange = <no type information>
+fffff808`d84dd024 pci!ExpressQueryAts (ExpressQueryAts)
+fffff808`d84d6a70 pci!PciCanDisableDevice (PciCanDisableDevice)
+fffff808`d84ec590 pci!PciControlDevice = <no type information>
+fffff808`d84dda00 pci!ExpressDownstreamSwitchPortInterruptRoutine (ExpressDownstreamSwitchPortInterruptRoutine)
+fffff808`d84d5630 pci!PciBus_S0Dozing (PciBus_S0Dozing)
+fffff808`d8517500 pci!PciBus_QueryStop (PciBus_QueryStop)
+fffff808`d84ed6e0 pci!PciEnableConsoleLockHandling = <no type information>
+fffff808`d84f36e0 pci!_imp_RtlIoDecodeMemIoResource = <no type information>
+fffff808`d84f3120 pci!_imp_IoOpenDeviceRegistryKey = <no type information>
+fffff808`d850bbdc pci!SeUtilSecurityInfoFromSecurityDescriptor (SeUtilSecurityInfoFromSecurityDescriptor)
+fffff808`d84f3608 pci!IoDeviceObjectType = <no type information>
+fffff808`d84dbe58 pci!PciProcessHotPlugQueues (PciProcessHotPlugQueues)
+fffff808`d84dcef0 pci!ExpressEnablePri (ExpressEnablePri)
+fffff808`d85191e0 pci!ExpressLinkQuiescentDereference (ExpressLinkQuiescentDereference)
+fffff808`d84e31a0 pci!GUID_EM_RULE_DISABLE_PCI_EXPRESS_ASPM = <no type information>
+fffff808`d851560c pci!ExpressBridgeUnregisterBridgeForAspmCallbacks (ExpressBridgeUnregisterBridgeForAspmCallbacks)
+fffff808`d84f3628 pci!_imp_RtlLengthSid = <no type information>
+fffff808`d84da9b0 pci!PciCreateHotPlugAction (PciCreateHotPlugAction)
+fffff808`d84e57f8 pci!WPP_71072f9dfc9530d1678bf06678e8adf3_Traceguids = <no type information>
+fffff808`d84d5ec0 pci!PciBus_WaitWakeCompletion (PciBus_WaitWakeCompletion)
+fffff808`d8516fa8 pci!PciQueryDeviceUsageInTree (PciQueryDeviceUsageInTree)
+fffff808`d84c1354 pci!PciD3ColdAuxPowerAndTimingDeviceInfoInit (PciD3ColdAuxPowerAndTimingDeviceInfoInit)
+fffff808`d84ed6ac pci!__PchSym_ = <no type information>
+fffff808`d84e4118 pci!GUID_EM_PCI_DEVICE_SET_HACKFLAGS_CALLBACK = <no type information>
+fffff808`d84e0b30 pci!PciWheaCorrectErrorSource (PciWheaCorrectErrorSource)
+fffff808`d84d96c0 pci!PciFpbPdoCommitResourceDescriptor (PciFpbPdoCommitResourceDescriptor)
+fffff808`d84f3748 pci!_imp_RtlInitializeRangeList = <no type information>
+fffff808`d8520ccc pci!VmProxyRemovePath (VmProxyRemovePath)
+fffff808`d84cb350 pci!_report_gsfailure (__report_gsfailure)
+fffff808`d84f3260 pci!_imp_KeLowerIrql = <no type information>
+fffff808`d84df438 pci!PciResourceFromRomBar (PciResourceFromRomBar)
+fffff808`d84f35f0 pci!_imp_RtlIsRangeAvailable = <no type information>
+fffff808`d84de460 pci!ExpressRootPortInterruptDpc (ExpressRootPortInterruptDpc)
+fffff808`d84e2688 pci!WPP_3156d917037e3c67601dfc4e477ca06a_Traceguids = <no type information>
+fffff808`d84dbfd4 pci!PciProcessSlotInterrupts (PciProcessSlotInterrupts)
+fffff808`d84e1cb0 pci!PciIommuBusInterfaceInterface = <no type information>
+fffff808`d84e1e70 pci!PciCardbusPrivateInterface = <no type information>
+fffff808`d851fac0 pci!PciVirtualization_GetLocation (PciVirtualization_GetLocation)
+fffff808`d84ec258 pci!PciWHEARecordPreallocationCount = <no type information>
+fffff808`d851d210 pci!PciSecurityInterface_SetAcs (PciSecurityInterface_SetAcs)
+fffff808`d84f3280 pci!_imp_PoCallDriver = <no type information>
+fffff808`d851e500 pci!PciPreScanAssignBusNumbersSubtree (PciPreScanAssignBusNumbersSubtree)
+fffff808`d84f3578 pci!_imp_RtlTestBit = <no type information>
+fffff808`d84f31f0 pci!_imp_PoFxRegisterDevice = <no type information>
+fffff808`d84db9cc pci!PciProcessHotPlugCommand (PciProcessHotPlugCommand)
+fffff808`d84f6130 pci!ExpressRootPortInterfaceReference (ExpressRootPortInterfaceReference)
+fffff808`d84f35a0 pci!_imp_IoUnregisterPlugPlayNotification = <no type information>
+fffff808`d8514c74 pci!PciAddOrBacktrackIoAllocation (PciAddOrBacktrackIoAllocation)
+fffff808`d84f3058 pci!_imp_WppAutoLogTrace = <no type information>
+fffff808`d84f34c0 pci!_imp_KeWaitForMultipleObjects = <no type information>
+fffff808`d8522ec8 pci!ArbpBuildAlternative (ArbpBuildAlternative)
+fffff808`d851c4a0 pci!PciSetMpsSizeCallback (PciSetMpsSizeCallback)
+fffff808`d84ec491 pci!PciSystemMsiEnabled = <no type information>
+fffff808`d84d2dd0 pci!PciBridgeInterface_SetExternalFacingPort (PciBridgeInterface_SetExternalFacingPort)
+fffff808`d84ec578 pci!ExpressDevicesEnabledForWake = <no type information>
+fffff808`d84f3150 pci!_imp_ZwCreateKey = <no type information>
+fffff808`d84e4290 pci!GUID_BUS_TYPE_PCI = <no type information>
+fffff808`d8517204 pci!PciCaptureBusNumbers (PciCaptureBusNumbers)
+fffff808`d84e3d88 pci!DEVPKEY_PciDevice_Uncorrectable_Error_Severity = <no type information>
+fffff808`d84cb447 pci!RtlDeleteOwnersRanges (RtlDeleteOwnersRanges)
+fffff808`d84e1bf0 pci!PciFpbResourceUpdateInterface = <no type information>
+fffff808`d84d2d70 pci!PciBridgeInterface_AriForwardingEnable (PciBridgeInterface_AriForwardingEnable)
+fffff808`d851a4f0 pci!PciFpbPdoGetCurrentResourceList (PciFpbPdoGetCurrentResourceList)
+fffff808`d84d69e8 pci!PciBusShouldBeDisabledByConsoleLock (PciBusShouldBeDisabledByConsoleLock)
+fffff808`d84d8f0c pci!ExpressCompatibilitySavePortRegisters (ExpressCompatibilitySavePortRegisters)
+fffff808`d84e1bd0 pci!PciTranslatorInterface = <no type information>
+fffff808`d84e3ba0 pci!GUID_EM_PCI_DEVICE_DISABLE_PCI_EXPRESS_ASPM_RULE = <no type information>
+fffff808`d84ec0b0 pci!EntryReg = <no type information>
+fffff808`d84f33f8 pci!_imp_RtlFindLastBackwardRunClear = <no type information>
+fffff808`d84f30c0 pci!ext-ms-win-ntos-ksr-l1-1-2_NULL_THUNK_DATA = <no type information>
+fffff808`d84f33a0 pci!_imp_IoInitializeWorkItem = <no type information>
+fffff808`d84e50e0 pci!PciConventionalWakeStates = <no type information>
+fffff808`d8518ab8 pci!ExpressBridgeStop (ExpressBridgeStop)
+fffff808`d84e4018 pci!GUID_PCI_EXPRESS_LINK_QUIESCENT_INTERFACE = <no type information>
+fffff808`d84f31a0 pci!_imp_RtlFindLongestRunClear = <no type information>
+fffff808`d84dc3f4 pci!PciStartHotPlugController (PciStartHotPlugController)
+fffff808`d84f3768 pci!ntoskrnl_NULL_THUNK_DATA = <no type information>
+fffff808`d84f3550 pci!_imp_IoGetAttachedDeviceReference = <no type information>
+fffff808`d84ec425 pci!PciKSREnabled = <no type information>
+fffff808`d84f3758 pci!_imp_ExFreePoolWithTag = <no type information>
+fffff808`d84dcc50 pci!PciProgramHtMsiMapCapability (PciProgramHtMsiMapCapability)
+fffff808`d84f36b0 pci!_imp_KeEnterCriticalRegion = <no type information>
+fffff808`d84f3710 pci!_imp_KdPowerTransitionEx = <no type information>
+fffff808`d84f3720 pci!_imp_PoDirectedDripsSetDeviceFlags = <no type information>
+fffff808`d84e444c pci!PciAcsBitsForIov = <no type information>
+fffff808`d84ed698 pci!PciProcessorCount = <no type information>
+fffff808`d8514980 pci!PciMemoryArbiter_OverrideConflict (PciMemoryArbiter_OverrideConflict)
+fffff808`d84e1c10 pci!PciPtmControlInterface = <no type information>
+fffff808`d84f3200 pci!_imp_PoFxActivateComponent = <no type information>
+fffff808`d84ed7f0 pci!PciVerifierRegistered = <no type information>
+fffff808`d8509e28 pci!PciRootFilterRequirementsList (PciRootFilterRequirementsList)
+fffff808`d84f35c0 pci!_imp_RtlIoEncodeMemIoResource = <no type information>
+fffff808`d84c1500 pci!PciCardbusInterface_Dereference (PciCardbusInterface_Dereference)
+fffff808`d84f34b0 pci!_imp_WheaReportHwError = <no type information>
+fffff808`d84da000 pci!PciFpbPdopVectorSizeEncodingToVecotSizeInBits (PciFpbPdopVectorSizeEncodingToVecotSizeInBits)
+fffff808`d84e1ef0 pci!PciArbiterInterface = <no type information>
+fffff808`d84e4058 pci!GUID_QUERY_CRASHDUMP_FUNCTIONS = <no type information>
+fffff808`d851f5ac pci!PciVirtualizationCheckAcsSupport (PciVirtualizationCheckAcsSupport)
+fffff808`d851b8cc pci!PciFpbpConfigureBestBusNumberRangeForNonFpbBridge (PciFpbpConfigureBestBusNumberRangeForNonFpbBridge)
+fffff808`d851c214 pci!PciFpbpCleanUpMemoryRange (PciFpbpCleanUpMemoryRange)
+fffff808`d84f32f8 pci!_imp_PoSetPowerState = <no type information>
+fffff808`d84ec4f8 pci!PciDebugPortsCount = <no type information>
+fffff808`d84f32b0 pci!_imp_IoGetDmaAdapter = <no type information>
+fffff808`d84f6190 pci!PciIommuBusInterface_Reference (PciIommuBusInterface_Reference)
+fffff808`d84e2f98 pci!WPP_b37e38feab743ee911c4b7c14d965edc_Traceguids = <no type information>
+fffff808`d84e0b60 pci!PciWheaCreateErrorRecord (PciWheaCreateErrorRecord)
+fffff808`d84f3178 pci!_imp_KdRegisterPowerHandler = <no type information>
+fffff808`d84f3618 pci!_imp_RtlSetDaclSecurityDescriptor = <no type information>
+fffff808`d84dd400 pci!PciWalkDevicePathCheckE2ETLPPrefix (PciWalkDevicePathCheckE2ETLPPrefix)
+fffff808`d851c060 pci!PciFpbResourceUpdateInterface_GetUpdatedBusResource (PciFpbResourceUpdateInterface_GetUpdatedBusResource)
+fffff808`d84d9a20 pci!PciFpbPdoWriteCapabilityByOffset (PciFpbPdoWriteCapabilityByOffset)
+fffff808`d8521c80 pci!CmRegUtilCreateUcKey (CmRegUtilCreateUcKey)
+fffff808`d84dd50c pci!ExpressBridgeHotPlugInterruptRoutine (ExpressBridgeHotPlugInterruptRoutine)
+fffff808`d8519f80 pci!PciFpbArbMempUpdateUnavailableRange (PciFpbArbMempUpdateUnavailableRange)
+fffff808`d850489c pci!PciOpenKey (PciOpenKey)
+fffff808`d84f35e0 pci!_imp_PoUnregisterPowerSettingCallback = <no type information>
+fffff808`d84d85f0 pci!ExpressBridgePowerUp (ExpressBridgePowerUp)
+fffff808`d8517f10 pci!PciDevice_QueryRemove (PciDevice_QueryRemove)
+fffff808`d84f3570 pci!_imp_memcpy_s = <no type information>
+fffff808`d84ec250 pci!PciDeviceSequenceNumber = <no type information>
+fffff808`d84ed6d0 pci!pfnWppTraceMessage = <no type information>
+fffff808`d8522718 pci!ArbPruneOrdering (ArbPruneOrdering)
+fffff808`d84d33d0 pci!PciEarlyRestoreSkipAllowed (PciEarlyRestoreSkipAllowed)
+fffff808`d84f3358 pci!_imp_ZwOpenKey = <no type information>
+fffff808`d851cdb0 pci!PciCardbusInterface_GetLocation (PciCardbusInterface_GetLocation)
+fffff808`d84d9c8c pci!PciFpbPdopMemoryVectorGranularityInBytesToEncoding (PciFpbPdopMemoryVectorGranularityInBytesToEncoding)
+fffff808`d851775c pci!PciBus_RunDownWake (PciBus_RunDownWake)
+fffff808`d84f3030 pci!HAL_NULL_THUNK_DATA = <no type information>
+fffff808`d84cc440 pci!memset (memset)
+fffff808`d84f37e4 pci!_NULL_IMPORT_DESCRIPTOR = <no type information>
+fffff808`d84ec418 pci!PciKsrData = <no type information>
+fffff808`d84e4108 pci!GUID_EM_PCI_DEVICE_SET_D0DELAY_CALLBACK = <no type information>
+fffff808`d84f37a8 pci!_IMPORT_DESCRIPTOR_PSHED = <no type information>
+fffff808`d84c93ec pci!PciVerifierRetrieveFailureData (PciVerifierRetrieveFailureData)
+fffff808`d84f35d8 pci!_imp_IoGetDeviceProperty = <no type information>

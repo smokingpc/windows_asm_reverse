@@ -18,11 +18,11 @@ fffff802`e1bc2d66 4533c9          xor     r9d,r9d
 fffff802`e1bc2d69 8364242000      and     dword ptr [rsp+20h],0
 fffff802`e1bc2d6e 488b4908        mov     rcx,qword ptr [rcx+8]
 fffff802`e1bc2d72 0fb65001        movzx   edx,byte ptr [rax+1]
-fffff802`e1bc2d76 e8f912faff      call    storport!RaidPnPPassToMiniPort (fffff802`e1b64074)
+fffff802`e1bc2d76 e8f912faff      call    storport!RaidPnPPassToMiniPort (fffff802`e1b64074)    //call 
 
 storport!RaidAdapterReleaseResources+0x3f:
 fffff802`e1bc2d7b 488b8b90160000  mov     rcx,qword ptr [rbx+1690h]
-fffff802`e1bc2d82 4885c9          test    rcx,rcx       ;if (AdapterExtension->PowerWorkItem) IoFreeWorkItem(AdapterExtension->PowerWorkItem);
+fffff802`e1bc2d82 4885c9          test    rcx,rcx       ;if (AdapterExt->PowerWorkItem->WorkItem) IoFreeWorkItem(AdapterExtension->PowerWorkItem);
 fffff802`e1bc2d85 7414            je      storport!RaidAdapterReleaseResources+0x5f (fffff802`e1bc2d9b)  Branch
 
 storport!RaidAdapterReleaseResources+0x4b:

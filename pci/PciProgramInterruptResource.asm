@@ -5,7 +5,7 @@ fffff808`d84c4ad0 48895c2420      mov     qword ptr [rsp+20h],rbx
 fffff808`d84c4ad5 57              push    rdi
 fffff808`d84c4ad6 4883ec60        sub     rsp,60h
 fffff808`d84c4ada 80792d00        cmp     byte ptr [rcx+2Dh],0
-fffff808`d84c4ade 488bd9          mov     rbx,rcx
+fffff808`d84c4ade 488bd9          mov     rbx,rcx                   ;rcx = ACPI PDO
 fffff808`d84c4ae1 0f8480000000    je      pci!PciProgramInterruptResource+0x97 (fffff808`d84c4b67)  Branch
 
 pci!PciProgramInterruptResource+0x17:
@@ -17,7 +17,7 @@ fffff808`d84c4af7 c744242802000000 mov     dword ptr [rsp+28h],2
 fffff808`d84c4aff 488b4820        mov     rcx,qword ptr [rax+20h]
 fffff808`d84c4b03 c744242004000000 mov     dword ptr [rsp+20h],4
 fffff808`d84c4b0b 488b4120        mov     rax,qword ptr [rcx+20h]   ;rax = acpi!AcpiWrapperReadConfig
-fffff808`d84c4b0f 488b4908        mov     rcx,qword ptr [rcx+8]     ;rcx = ACPI PDO
+fffff808`d84c4b0f 488b4908        mov     rcx,qword ptr [rcx+8]     ;rcx = ACPI PDO, rcx+8 == ?  1??
 fffff808`d84c4b13 ff155fec0200    call    qword ptr [pci!_guard_dispatch_icall_fptr (fffff808`d84f3778)]
 fffff808`d84c4b19 83f802          cmp     eax,2
 fffff808`d84c4b1c 0f851e9c0000    jne     pci!PciProgramInterruptResource+0x9c70 (fffff808`d84ce740)  Branch

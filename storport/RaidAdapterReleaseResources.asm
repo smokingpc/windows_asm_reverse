@@ -18,7 +18,7 @@ fffff802`e1bc2d66 4533c9          xor     r9d,r9d
 fffff802`e1bc2d69 8364242000      and     dword ptr [rsp+20h],0
 fffff802`e1bc2d6e 488b4908        mov     rcx,qword ptr [rcx+8]
 fffff802`e1bc2d72 0fb65001        movzx   edx,byte ptr [rax+1]
-fffff802`e1bc2d76 e8f912faff      call    storport!RaidPnPPassToMiniPort (fffff802`e1b64074)    //call 
+fffff802`e1bc2d76 e8f912faff      call    storport!RaidPnPPassToMiniPort (fffff802`e1b64074) ;call to SRB_FUNCTION_PNP with STOR_PNP_ACTION::StorRemoveDevice 
 
 storport!RaidAdapterReleaseResources+0x3f:
 fffff802`e1bc2d7b 488b8b90160000  mov     rcx,qword ptr [rbx+1690h]

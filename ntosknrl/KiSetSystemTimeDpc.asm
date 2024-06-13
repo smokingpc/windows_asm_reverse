@@ -10,9 +10,9 @@ fffff801`11c28efc 4155            push    r13
 fffff801`11c28efe 4156            push    r14
 fffff801`11c28f00 4157            push    r15
 fffff801`11c28f02 4883ec40        sub     rsp,40h
-fffff801`11c28f06 498bd9          mov     rbx,r9
-fffff801`11c28f09 4d8bf8          mov     r15,r8
-fffff801`11c28f0c 488bfa          mov     rdi,rdx
+fffff801`11c28f06 498bd9          mov     rbx,r9        ;SysArg2
+fffff801`11c28f09 4d8bf8          mov     r15,r8        ;SysArg1
+fffff801`11c28f0c 488bfa          mov     rdi,rdx       ;DeferredContext
 fffff801`11c28f0f 83c8ff          or      eax,0FFFFFFFFh
 fffff801`11c28f12 f0410fc101      lock xadd dword ptr [r9],eax
 fffff801`11c28f17 ffc8            dec     eax

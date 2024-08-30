@@ -382,10 +382,10 @@ fffff808`de9dbc6e 4885c9          test    rcx,rcx
 fffff808`de9dbc71 0f84b7010000    je      storport!RaidUnitCompleteRequest+0x55e (fffff808`de9dbe2e)  Branch
 
 storport!RaidUnitCompleteRequest+0x3a7:
-fffff808`de9dbc77 410fb65e02      movzx   ebx,byte ptr [r14+2]
+fffff808`de9dbc77 410fb65e02      movzx   ebx,byte ptr [r14+2]      ;ebx = Srb->Function
 fffff808`de9dbc7c 4532e4          xor     r12b,r12b
-fffff808`de9dbc7f 410fb67e03      movzx   edi,byte ptr [r14+3]
-fffff808`de9dbc84 4d8bfd          mov     r15,r13
+fffff808`de9dbc7f 410fb67e03      movzx   edi,byte ptr [r14+3]      ;edi = Srb->SrbStataus
+fffff808`de9dbc84 4d8bfd          mov     r15,r13                   ;R13 is zero
 fffff808`de9dbc87 4c896db8        mov     qword ptr [rbp-48h],r13
 fffff808`de9dbc8b 4488642471      mov     byte ptr [rsp+71h],r12b
 fffff808`de9dbc90 40887c2472      mov     byte ptr [rsp+72h],dil
@@ -394,13 +394,13 @@ fffff808`de9dbc9a 80fb28          cmp     bl,28h
 fffff808`de9dbc9d 757c            jne     storport!RaidUnitCompleteRequest+0x44b (fffff808`de9dbd1b)  Branch
 
 storport!RaidUnitCompleteRequest+0x3cf:
-fffff808`de9dbc9f 45397e14        cmp     dword ptr [r14+14h],r15d
+fffff808`de9dbc9f 45397e14        cmp     dword ptr [r14+14h],r15d  ;if (Srb->SrbFunction != SRB_EXECUTE_SCSI) goto 0x444
 fffff808`de9dbca3 756f            jne     storport!RaidUnitCompleteRequest+0x444 (fffff808`de9dbd14)  Branch
 
 storport!RaidUnitCompleteRequest+0x3d5:
-fffff808`de9dbca5 458b5e38        mov     r11d,dword ptr [r14+38h]
+fffff808`de9dbca5 458b5e38        mov     r11d,dword ptr [r14+38h]  ;r11d = Srb->NumSrbExData
 fffff808`de9dbca9 4533d2          xor     r10d,r10d
-fffff808`de9dbcac 4585db          test    r11d,r11d
+fffff808`de9dbcac 4585db          test    r11d,r11d     ;if (0==Srb->NumSrbExData) goto 0x455
 fffff808`de9dbcaf 7474            je      storport!RaidUnitCompleteRequest+0x455 (fffff808`de9dbd25)  Branch
 
 storport!RaidUnitCompleteRequest+0x3e1:
@@ -408,18 +408,18 @@ fffff808`de9dbcb1 0f1f4000        nop     dword ptr [rax]
 fffff808`de9dbcb5 6666660f1f840000000000 nop word ptr [rax+rax]
 
 storport!RaidUnitCompleteRequest+0x3f0:
-fffff808`de9dbcc0 438b4c9678      mov     ecx,dword ptr [r14+r10*4+78h]
+fffff808`de9dbcc0 438b4c9678      mov     ecx,dword ptr [r14+r10*4+78h]     ;ecx = Srb->SrbExDataOffset[0] , it is usually 0x98
 fffff808`de9dbcc5 418bc2          mov     eax,r10d
 fffff808`de9dbcc8 81f980000000    cmp     ecx,80h
 fffff808`de9dbcce 722d            jb      storport!RaidUnitCompleteRequest+0x42d (fffff808`de9dbcfd)  Branch
 
 storport!RaidUnitCompleteRequest+0x400:
-fffff808`de9dbcd0 418b5610        mov     edx,dword ptr [r14+10h]
+fffff808`de9dbcd0 418b5610        mov     edx,dword ptr [r14+10h]   ;Srb->SrbLength
 fffff808`de9dbcd4 3bca            cmp     ecx,edx
 fffff808`de9dbcd6 7325            jae     storport!RaidUnitCompleteRequest+0x42d (fffff808`de9dbcfd)  Branch
 
 storport!RaidUnitCompleteRequest+0x408:
-fffff808`de9dbcd8 4e8d0c31        lea     r9,[rcx+r14]
+fffff808`de9dbcd8 4e8d0c31        lea     r9,[rcx+r14]  ;取SrbEx data ptr. rcx == Srb->SrbExDataOffset[0]
 fffff808`de9dbcdc 448bc1          mov     r8d,ecx
 fffff808`de9dbcdf 418b09          mov     ecx,dword ptr [r9]
 fffff808`de9dbce2 83e940          sub     ecx,40h
@@ -715,7 +715,7 @@ fffff808`de9dbf66 897d84          mov     dword ptr [rbp-7Ch],edi
 fffff808`de9dbf69 eb3f            jmp     storport!RaidUnitCompleteRequest+0x6da (fffff808`de9dbfaa)  Branch
 
 storport!RaidUnitCompleteRequest+0x69b:
-fffff808`de9dbf6b 4180fd02        cmp     r13b,2
+fffff808`de9dbf6b 4180fd02        cmp     r13b,2    
 fffff808`de9dbf6f 7414            je      storport!RaidUnitCompleteRequest+0x6b5 (fffff808`de9dbf85)  Branch
 
 storport!RaidUnitCompleteRequest+0x6a1:

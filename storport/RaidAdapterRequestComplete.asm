@@ -8,7 +8,7 @@ fffff80e`6c5eecfd 488b058cf50400  mov     rax,qword ptr [storport!_security_cook
 fffff80e`6c5eed04 4833c4          xor     rax,rsp
 fffff80e`6c5eed07 48898424b0000000 mov     qword ptr [rsp+0B0h],rax
 fffff80e`6c5eed0f f6812002000002  test    byte ptr [rcx+220h],2 ;if AdapterExt->Miniport.Flags != 2 (HBA is in ResetBus), goto 0x208b8
-fffff80e`6c5eed16 488bda          mov     rbx,rdx       ;Srb->PortContext
+fffff80e`6c5eed16 488bda          mov     rbx,rdx       ;Srb->PortContext => EXTENDED_REQUEST_BLOCK => XRB
 fffff80e`6c5eed19 488bf9          mov     rdi,rcx       ;AdapterExt
 fffff80e`6c5eed1c 0f8586080200    jne     storport!RaidAdapterRequestComplete+0x208b8 (fffff80e`6c60f5a8)  Branch
 
@@ -27,26 +27,26 @@ fffff80e`6c5eed3d 2410            and     al,10h            ;if (AdapterExt->Por
 fffff80e`6c5eed3f 0f8578080200    jne     storport!RaidAdapterRequestComplete+0x208cd (fffff80e`6c60f5bd)  Branch
 
 storport!RaidAdapterRequestComplete+0x55:  ;RBX is Srb->PortContext
-fffff80e`6c5eed45 488b8ba0000000  mov     rcx,qword ptr [rbx+0A0h]  ;RBX is Srb->PortContext
+fffff80e`6c5eed45 488b8ba0000000  mov     rcx,qword ptr [rbx+0A0h]  ;rcx = ((XRB*)Srb->PortContext)->Irp
 fffff80e`6c5eed4c 4885c9          test    rcx,rcx
 fffff80e`6c5eed4f 7418            je      storport!RaidAdapterRequestComplete+0x79 (fffff80e`6c5eed69)  Branch
 
 storport!RaidAdapterRequestComplete+0x61:
-fffff80e`6c5eed51 0fb6818d000000  movzx   eax,byte ptr [rcx+8Dh]
+fffff80e`6c5eed51 0fb6818d000000  movzx   eax,byte ptr [rcx+8Dh]    ;Irp->Tail.Overlay.DriverContext?
 fffff80e`6c5eed58 0455            add     al,55h
 fffff80e`6c5eed5a 3c01            cmp     al,1
 fffff80e`6c5eed5c 0f8634010000    jbe     storport!RaidAdapterRequestComplete+0x1a6 (fffff80e`6c5eee96)  Branch
 
 storport!RaidAdapterRequestComplete+0x72:
-fffff80e`6c5eed62 c6818d000000ab  mov     byte ptr [rcx+8Dh],0ABh
+fffff80e`6c5eed62 c6818d000000ab  mov     byte ptr [rcx+8Dh],0ABh   ;Irp->Tail.Overlay.DriverContext?
 
 storport!RaidAdapterRequestComplete+0x79:
 fffff80e`6c5eed69 0fb64310        movzx   eax,byte ptr [rbx+10h]
 fffff80e`6c5eed6d b9ffff0000      mov     ecx,0FFFFh
-fffff80e`6c5eed72 24f3            and     al,0F3h
-fffff80e`6c5eed74 0c10            or      al,10h
+fffff80e`6c5eed72 24f3            and     al,0F3h       ;XRB->OwnMdl開始的1 byte flags，取 "除了State以外的所有Flags"
+fffff80e`6c5eed74 0c10            or      al,10h        ;hidden flag, mark as completed??
 fffff80e`6c5eed76 884310          mov     byte ptr [rbx+10h],al
-fffff80e`6c5eed79 8b4312          mov     eax,dword ptr [rbx+12h]
+fffff80e`6c5eed79 8b4312          mov     eax,dword ptr [rbx+12h]   ;XRB->InitiatingProcessor
 fffff80e`6c5eed7c 89442434        mov     dword ptr [rsp+34h],eax
 fffff80e`6c5eed80 663bc1          cmp     ax,cx
 fffff80e`6c5eed83 0f84b7000000    je      storport!RaidAdapterRequestComplete+0x150 (fffff80e`6c5eee40)  Branch

@@ -5,8 +5,8 @@ fffff807`3da1a445 48896c2410      mov     qword ptr [rsp+10h],rbp
 fffff807`3da1a44a 4889742418      mov     qword ptr [rsp+18h],rsi
 fffff807`3da1a44f 57              push    rdi
 fffff807`3da1a450 4883ec30        sub     rsp,30h
-fffff807`3da1a454 488bfa          mov     rdi,rdx
-fffff807`3da1a457 488bf1          mov     rsi,rcx
+fffff807`3da1a454 488bfa          mov     rdi,rdx           ;IRP
+fffff807`3da1a457 488bf1          mov     rsi,rcx           ;DeviceObject
 fffff807`3da1a45a 488b0d9f3b0500  mov     rcx,qword ptr [storport!WPP_GLOBAL_Control (fffff807`3da6e000)]
 fffff807`3da1a461 488d2d983b0500  lea     rbp,[storport!WPP_GLOBAL_Control (fffff807`3da6e000)]
 fffff807`3da1a468 483bcd          cmp     rcx,rbp
@@ -18,14 +18,14 @@ fffff807`3da1a470 a810            test    al,10h
 fffff807`3da1a472 0f85a42c0200    jne     storport!RaDriverDeviceControlIrp+0x22cdc (fffff807`3da3d11c)  Branch
 
 storport!RaDriverDeviceControlIrp+0x38:
-fffff807`3da1a478 c6878d000000a8  mov     byte ptr [rdi+8Dh],0A8h
-fffff807`3da1a47f 4c8b4640        mov     r8,qword ptr [rsi+40h]
-fffff807`3da1a483 418b08          mov     ecx,dword ptr [r8]
-fffff807`3da1a486 85c9            test    ecx,ecx
+fffff807`3da1a478 c6878d000000a8  mov     byte ptr [rdi+8Dh],0A8h   ;write something to Irp->Tail.Overlay.DriverContext
+fffff807`3da1a47f 4c8b4640        mov     r8,qword ptr [rsi+40h]    ;R8 = devobj->DeviceExtension = AdapterExt
+fffff807`3da1a483 418b08          mov     ecx,dword ptr [r8]        ;ECX = AdapterExt->ObjectType
+fffff807`3da1a486 85c9            test    ecx,ecx       ;if ObjectType == RaidAdapterObject, goto 0x8a
 fffff807`3da1a488 7440            je      storport!RaDriverDeviceControlIrp+0x8a (fffff807`3da1a4ca)  Branch
 
 storport!RaDriverDeviceControlIrp+0x4a:
-fffff807`3da1a48a 83f901          cmp     ecx,1
+fffff807`3da1a48a 83f901          cmp     ecx,1         ;if ObjectType != RaidUnitObject, goto 0x97
 fffff807`3da1a48d 7548            jne     storport!RaDriverDeviceControlIrp+0x97 (fffff807`3da1a4d7)  Branch
 
 storport!RaDriverDeviceControlIrp+0x4f:
@@ -56,8 +56,8 @@ fffff807`3da1a4c8 5f              pop     rdi
 fffff807`3da1a4c9 c3              ret
 
 storport!RaDriverDeviceControlIrp+0x8a:
-fffff807`3da1a4ca 488bd7          mov     rdx,rdi
-fffff807`3da1a4cd 498bc8          mov     rcx,r8
+fffff807`3da1a4ca 488bd7          mov     rdx,rdi       ;IRP
+fffff807`3da1a4cd 498bc8          mov     rcx,r8        ;AdapterExt
 fffff807`3da1a4d0 e85f100000      call    storport!RaidAdapterDeviceControlIrp (fffff807`3da1b534)
 fffff807`3da1a4d5 ebc3            jmp     storport!RaDriverDeviceControlIrp+0x5a (fffff807`3da1a49a)  Branch
 

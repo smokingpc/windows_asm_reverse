@@ -11,8 +11,8 @@ fffff807`d7d1bf9e 418ae8          mov     bpl,r8b
 fffff807`d7d1bfa1 488bda          mov     rbx,rdx
 fffff807`d7d1bfa4 488bca          mov     rcx,rdx
 fffff807`d7d1bfa7 448b4818        mov     r9d,dword ptr [rax+18h]
-fffff807`d7d1bfab 4181e944d00400  sub     r9d,4D044h    ;IOCTL_SCSI_PASS_THROUGH_EX
-fffff807`d7d1bfb2 41f7c1fbffffff  test    r9d,0FFFFFFFBh
+fffff807`d7d1bfab 4181e944d00400  sub     r9d,4D044h        ;IOCTL_SCSI_PASS_THROUGH_EX
+fffff807`d7d1bfb2 41f7c1fbffffff  test    r9d,0FFFFFFFBh    ;if ioctl==IOCTL_SCSI_PASS_THROUGH_DIRECT_EX or IOCTL_SCSI_PASS_THROUGH_EX, goto 0x29a6
 fffff807`d7d1bfb9 0f8467290000    je      storport!RaidAdapterPassThrough+0x29a6 (fffff807`d7d1e926)  Branch
 
 storport!RaidAdapterPassThrough+0x3f:

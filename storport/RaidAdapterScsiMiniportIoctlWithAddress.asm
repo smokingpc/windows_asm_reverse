@@ -46,7 +46,7 @@ fffff800`294b7ade 4889442450      mov     qword ptr [rsp+50h],rax
 fffff800`294b7ae3 418d5102        lea     edx,[r9+2]
 fffff800`294b7ae7 e814050000      call    storport!RaidAllocateSrb (fffff800`294b8000)
 fffff800`294b7aec 4c8bf0          mov     r14,rax
-fffff800`294b7aef 4885c0          test    rax,rax
+fffff800`294b7aef 4885c0          test    rax,rax   ;if RaidAllocateSrb() failed, return C0000017(STATUS_NO_MEMORY)
 fffff800`294b7af2 750a            jne     storport!RaidAdapterScsiMiniportIoctlWithAddress+0x9e (fffff800`294b7afe)  Branch
 
 storport!RaidAdapterScsiMiniportIoctlWithAddress+0x94:
@@ -58,7 +58,7 @@ fffff800`294b7afe 8b8ecc010000    mov     ecx,dword ptr [rsi+1CCh]
 fffff800`294b7b04 4c8bc6          mov     r8,rsi
 fffff800`294b7b07 83c107          add     ecx,7
 fffff800`294b7b0a 83e1f8          and     ecx,0FFFFFFF8h
-fffff800`294b7b0d 81c140040000    add     ecx,440h
+fffff800`294b7b0d 81c140040000    add     ecx,440h      ;Allocate XRB
 fffff800`294b7b13 e8e0030000      call    storport!StorAllocateContiguousIoResources (fffff800`294b7ef8)
 fffff800`294b7b18 488be8          mov     rbp,rax
 fffff800`294b7b1b 4885c0          test    rax,rax

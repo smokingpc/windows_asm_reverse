@@ -68,7 +68,7 @@ storport!RaidAdapterDeviceControlIrp+0xcc:
 fffff803`8bc32fb8 0f84539c0200    je      storport!RaidAdapterDeviceControlIrp+0x29d25 (fffff803`8bc5cc11)  Branch
 
 storport!RaidAdapterDeviceControlIrp+0xd2:
-fffff803`8bc32fbe b814d00400      mov     eax,4D014h    ;IOCTL_SCSI_PASS_THROUGH_DIRECT
+fffff803`8bc32fbe b814d00400      mov     eax,4D014h    ;IOCTL_SCSI_PASS_THROUGH_DIRECT / IOCTL_SCSI_MINIPORT / IOCTL_SCSI_PASS_THROUGH
 fffff803`8bc32fc3 3be8            cmp     ebp,eax
 fffff803`8bc32fc5 0f8685000000    jbe     storport!RaidAdapterDeviceControlIrp+0x164 (fffff803`8bc33050)  Branch
 
@@ -129,22 +129,22 @@ fffff803`8bc33050 7462            je      storport!RaidAdapterDeviceControlIrp+0
 
 storport!RaidAdapterDeviceControlIrp+0x166:
 fffff803`8bc33052 8bc5            mov     eax,ebp
-fffff803`8bc33054 2d0c100400      sub     eax,4100Ch
+fffff803`8bc33054 2d0c100400      sub     eax,4100Ch    ;IOCTL_SCSI_GET_INQUIRY_DATA
 fffff803`8bc33059 0f84749b0200    je      storport!RaidAdapterDeviceControlIrp+0x29ce7 (fffff803`8bc5cbd3)  Branch
 
 storport!RaidAdapterDeviceControlIrp+0x173:
-fffff803`8bc3305f 83e804          sub     eax,4
+fffff803`8bc3305f 83e804          sub     eax,4         ;IOCTL_SCSI_GET_CAPABILITIES
 fffff803`8bc33062 0f845a9b0200    je      storport!RaidAdapterDeviceControlIrp+0x29cd6 (fffff803`8bc5cbc2)  Branch
 
 storport!RaidAdapterDeviceControlIrp+0x17c:
-fffff803`8bc33068 83e808          sub     eax,8
+fffff803`8bc33068 83e808          sub     eax,8         ;IOCTL_SCSI_GET_ADDRESS
 fffff803`8bc3306b 0f84409b0200    je      storport!RaidAdapterDeviceControlIrp+0x29cc5 (fffff803`8bc5cbb1)  Branch
 
 storport!RaidAdapterDeviceControlIrp+0x185:
-fffff803`8bc33071 83e804          sub     eax,4
+fffff803`8bc33071 83e804          sub     eax,4         ;goto 0x29c8d if (ioctl != IOCTL_SCSI_RESCAN_BUS)
 fffff803`8bc33074 0f85ff9a0200    jne     storport!RaidAdapterDeviceControlIrp+0x29c8d (fffff803`8bc5cb79)  Branch
 
-storport!RaidAdapterDeviceControlIrp+0x18e:
+storport!RaidAdapterDeviceControlIrp+0x18e:             ;IOCTL_SCSI_RESCAN_BUS
 fffff803`8bc3307a 488b4e20        mov     rcx,qword ptr [rsi+20h]
 fffff803`8bc3307e 33d2            xor     edx,edx
 fffff803`8bc33080 c6466a01        mov     byte ptr [rsi+6Ah],1
@@ -175,13 +175,13 @@ fffff803`8bc330bd e81eba0600      call    storport!RaidAdapterPassThrough (fffff
 fffff803`8bc330c2 e939ffffff      jmp     storport!RaidAdapterDeviceControlIrp+0x114 (fffff803`8bc33000)  Branch
 
 storport!RaidAdapterDeviceControlIrp+0x1db:
-fffff803`8bc330c7 b800d22d00      mov     eax,2DD200h
+fffff803`8bc330c7 b800d22d00      mov     eax,2DD200h   ;IOCTL_STORAGE_SET_TEMPERATURE_THRESHOLD
 fffff803`8bc330cc 3be8            cmp     ebp,eax
 fffff803`8bc330ce 0f864e9b0200    jbe     storport!RaidAdapterDeviceControlIrp+0x29d36 (fffff803`8bc5cc22)  Branch
 
 storport!RaidAdapterDeviceControlIrp+0x1e8:
 fffff803`8bc330d4 8bc5            mov     eax,ebp
-fffff803`8bc330d6 2dc0d32d00      sub     eax,2DD3C0h
+fffff803`8bc330d6 2dc0d32d00      sub     eax,2DD3C0h   ;IOCTL_STORAGE_PROTOCOL_COMMAND
 fffff803`8bc330db 0f84239c0200    je      storport!RaidAdapterDeviceControlIrp+0x29e18 (fffff803`8bc5cd04)  Branch
 
 storport!RaidAdapterDeviceControlIrp+0x1f5:
@@ -189,19 +189,19 @@ fffff803`8bc330e1 2dc4020000      sub     eax,2C4h
 fffff803`8bc330e6 0f84079c0200    je      storport!RaidAdapterDeviceControlIrp+0x29e07 (fffff803`8bc5ccf3)  Branch
 
 storport!RaidAdapterDeviceControlIrp+0x200:
-fffff803`8bc330ec 2d80050000      sub     eax,580h
+fffff803`8bc330ec 2d80050000      sub     eax,580h      ;IOCTL_STORAGE_FIRMWARE_DOWNLOAD
 fffff803`8bc330f1 0f84eb9b0200    je      storport!RaidAdapterDeviceControlIrp+0x29df6 (fffff803`8bc5cce2)  Branch
 
 storport!RaidAdapterDeviceControlIrp+0x20b:
-fffff803`8bc330f7 83e804          sub     eax,4
+fffff803`8bc330f7 83e804          sub     eax,4         ;IOCTL_STORAGE_FIRMWARE_ACTIVATE
 fffff803`8bc330fa 0f84d19b0200    je      storport!RaidAdapterDeviceControlIrp+0x29de5 (fffff803`8bc5ccd1)  Branch
 
 storport!RaidAdapterDeviceControlIrp+0x214:
-fffff803`8bc33100 3df8e30400      cmp     eax,4E3F8h
+fffff803`8bc33100 3df8e30400      cmp     eax,4E3F8h    ;IOCTL_ACPI_ASYNC_EVAL_METHOD??
 fffff803`8bc33105 0f85bb9b0200    jne     storport!RaidAdapterDeviceControlIrp+0x29dda (fffff803`8bc5ccc6)  Branch
 
 storport!RaidAdapterDeviceControlIrp+0x21f:
-fffff803`8bc3310b 488b4e18        mov     rcx,qword ptr [rsi+18h]
+fffff803`8bc3310b 488b4e18        mov     rcx,qword ptr [rsi+18h]   ;RCX = AdapterExt->LowerDeviceObject
 fffff803`8bc3310f 488bd3          mov     rdx,rbx
 fffff803`8bc33112 e8790c0100      call    storport!RaForwardIrp (fffff803`8bc43d90)
 fffff803`8bc33117 e9e4feffff      jmp     storport!RaidAdapterDeviceControlIrp+0x114 (fffff803`8bc33000)  Branch
@@ -267,11 +267,11 @@ fffff803`8bc5cb73 90              nop
 fffff803`8bc5cb74 e93264fdff      jmp     storport!RaidAdapterDeviceControlIrp+0xbf (fffff803`8bc32fab)  Branch
 
 storport!RaidAdapterDeviceControlIrp+0x29c8d:
-fffff803`8bc5cb79 2de8bf0000      sub     eax,0BFE8h
+fffff803`8bc5cb79 2de8bf0000      sub     eax,0BFE8h;??   IOCTL_SCSI_RESCAN_BUS - 0bfe8?
 fffff803`8bc5cb7e 0f849865fdff    je      storport!RaidAdapterDeviceControlIrp+0x230 (fffff803`8bc3311c)  Branch
 
 storport!RaidAdapterDeviceControlIrp+0x29c98:
-fffff803`8bc5cb84 83f804          cmp     eax,4
+fffff803`8bc5cb84 83f804          cmp     eax,4     ;??
 fffff803`8bc5cb87 0f8539010000    jne     storport!RaidAdapterDeviceControlIrp+0x29dda (fffff803`8bc5ccc6)  Branch
 
 storport!RaidAdapterDeviceControlIrp+0x29ca1:

@@ -12,7 +12,7 @@ fffff806`474ffc3c 385a6b          cmp     byte ptr [rdx+6Bh],bl
 fffff806`474ffc3f 7465            je      storport!RaidpAdapterMSIInterruptRoutine+0x86 (fffff806`474ffca6)  Branch
 
 storport!RaidpAdapterMSIInterruptRoutine+0x21:
-fffff806`474ffc41 83ba1c01000001  cmp     dword ptr [rdx+11Ch],1
+fffff806`474ffc41 83ba1c01000001  cmp     dword ptr [rdx+11Ch],1    ;if AdapterExt->Power->DeviceState > 1(D0), return FALSE
 fffff806`474ffc48 7f5c            jg      storport!RaidpAdapterMSIInterruptRoutine+0x86 (fffff806`474ffca6)  Branch
 
 storport!RaidpAdapterMSIInterruptRoutine+0x2a:

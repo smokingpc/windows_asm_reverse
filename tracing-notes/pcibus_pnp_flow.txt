@@ -1,0 +1,26 @@
+Device call IoCreateDevice() 
+=> call to PciDispatchPnpPower(IRP_MJ_PNP / IRP_MN_QUERY_INTERFACE)
+=> the device extension of PCI Device (struct PCI_DEVICE) has EnumFailureCode==PCI_FAILED_HARDWARE_UPDATE
+=> Device query bus interface
+    ->call to PciDispatchPnpPower(IRP_MJ_PNP / IRP_MN_QUERY_INTERFACE)
+=> IopQueryLegacyBusInformation()
+    ->call to PciDispatchPnpPower(IRP_MJ_PNP / IRP_MN_QUERY_INTERFACE)
+=> PnpAssignResourcesToDevice()
+    ->PnpAssignResourcesToDevices()
+    ->PnpAllocateResources()
+    ->PnpGetResourceRequirementsForAssignTable()
+    ->IopQueryDeviceResources() , filter resource requirements defined by Pnp System 
+    ->IopFilterResourceRequirementsCall()
+    ->call (IRP_MJ_PNP / IRP_MN_FILTER_RESOURCE_REQUIREMENTS) to device, 
+        then goto PciDispatchPnpPower(IRP_MJ_PNP / IRP_MN_FILTER_RESOURCE_REQUIREMENTS)
+    ->after filter resource requirement, Pnp Manager call IopQueryResourceHandlerInterface(),
+        interface type == {6C154A92-AACF-11D0-8D2A-00A0C906B244} GUID_TRANSLATOR_INTERFACE_STANDARD
+        it seems to be interrupt translator?
+        
+    ->After WDF EvtDeviceRemoveAddedResources(), back to Pnp system PnpStartDevice()
+    ->call PciDispatchPnpPower(IRP_MJ_PNP / IRP_MN_START_DEVICE)
+
+=> Resource Filtering is only valid for VGA DEVICE!
+   Refer to pci!PciDeviceCallCritical() -> pci!PciUpdateHardware() -> pci!PciType0_SetResources()
+ 
+ 

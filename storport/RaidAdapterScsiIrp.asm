@@ -2,8 +2,8 @@
 storport!RaidAdapterScsiIrp:
 fffff80d`80873f5c 4053            push    rbx
 fffff80d`80873f5e 4883ec30        sub     rsp,30h
-fffff80d`80873f62 488bda          mov     rbx,rdx
-fffff80d`80873f65 4c8bc9          mov     r9,rcx
+fffff80d`80873f62 488bda          mov     rbx,rdx   ;IRP
+fffff80d`80873f65 4c8bc9          mov     r9,rcx    ;AdapterExt
 fffff80d`80873f68 488b0d91d0feff  mov     rcx,qword ptr [storport!WPP_GLOBAL_Control (fffff80d`80861000)]
 fffff80d`80873f6f 488d058ad0feff  lea     rax,[storport!WPP_GLOBAL_Control (fffff80d`80861000)]
 fffff80d`80873f76 483bc8          cmp     rcx,rax

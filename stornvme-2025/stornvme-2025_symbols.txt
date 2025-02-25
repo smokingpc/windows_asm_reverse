@@ -1,0 +1,547 @@
+3: kd> x stornvme!*
+fffff804`3c48e460 stornvme!AssignQueueId (void)
+fffff804`3c4c6078 stornvme!wil_InitializeFeatureStaging (void)
+fffff804`3c48de90 stornvme!GetSrbScsiData (void)
+fffff804`3c48b660 stornvme!ProcessorToIoSqMappingBase (void)
+fffff804`3c48a6f0 stornvme!ScsiReadWriteRequest (void)
+fffff804`3c482aa0 stornvme!NVMeCompletionDpcRoutine (void)
+fffff804`3c4871f0 stornvme!NVMeSetArbitration (void)
+fffff804`3c481710 stornvme!ProcessCompletionQueues (void)
+fffff804`3c4865c0 stornvme!NVMeIoCompletionQueueCreate (void)
+fffff804`3c48bae0 stornvme!SetPrpFromSrb (void)
+fffff804`3c48cda0 stornvme!NVMeAdminCommandErrorLog (void)
+fffff804`3c48ce80 stornvme!FirmwareGetInfo (void)
+fffff804`3c48b2b0 stornvme!SrbAssignQueueId (void)
+fffff804`3c488830 stornvme!ScsiReadCapacityRequest (void)
+fffff804`3c48e7f0 stornvme!ProcessPendingIoCommands (void)
+fffff804`3c484480 stornvme!IsInternalSrb (void)
+fffff804`3c48f950 stornvme!ScsiSyncCacheRequest (void)
+fffff804`3c4900d0 stornvme!GetProcessorInformation (void)
+fffff804`3c483770 stornvme!NVMeIoSubmissionQueueCreate (void)
+fffff804`3c483bb0 stornvme!WaitForCommandCompleteWithCustomTimeout (void)
+fffff804`3c4872f0 stornvme!NVMeControllerInitPart3 (void)
+fffff804`3c4869c0 stornvme!NVMeControllerInitPart2 (void)
+fffff804`3c481b30 stornvme!NVMeHwAdapterControl (void)
+fffff804`3c4893b0 stornvme!NVMeHwBuildIo (void)
+fffff804`3c48a510 stornvme!IoctlToNVMe (void)
+fffff804`3c48c6e0 stornvme!ScsiModeSenseRequest (void)
+fffff804`3c490af0 stornvme!GetLunExtension (void)
+fffff804`3c48b770 stornvme!NVMeModeSenseGetLogPageHealthInfoCompletion (void)
+fffff804`3c48cb50 stornvme!NVMeSetIoQueueCountCompletion (void)
+fffff804`3c48fe30 stornvme!GetStreamId (void)
+fffff804`3c4847a0 stornvme!RequestPendingCompletion (void)
+fffff804`3c487590 stornvme!NVMeEnableThrottling (void)
+fffff804`3c4868d0 stornvme!NVMeIssueAsyncEventCommand (void)
+fffff804`3c486550 stornvme!ProcessCommandTrace (void)
+fffff804`3c48d820 stornvme!SetPrpFromBuffer (void)
+fffff804`3c482790 stornvme!IoQueuesDeletion (void)
+fffff804`3c4908c0 stornvme!IoctlFirmwareProcess (void)
+fffff804`3c484520 stornvme!NVMeHwMSIInterrupt (void)
+fffff804`3c48dfe0 stornvme!IoTimeoutCallback (void)
+fffff804`3c490860 stornvme!NVMeHwUnitControl (void)
+fffff804`3c485ec0 stornvme!ProcessCommandInSpecificQueue (void)
+fffff804`3c486de0 stornvme!IoQueuesCreation (void)
+fffff804`3c4adb20 stornvme!wil_details_RecordFeatureUsageReporting (wil_details_RecordFeatureUsageReporting)
+fffff804`3c4be1e0 stornvme!Feature_Servicing_Dcr_24_05_NonSec__private_descriptor = <no type information>
+fffff804`3c4c30f0 stornvme!_guard_xfg_dispatch_icall_fptr = <no type information>
+fffff804`3c4bf2b0 stornvme!Feature_Standalone_24_07_NonSec__private_featureState = <no type information>
+fffff804`3c4a1db0 stornvme!QueryTemperatureInfoHealthLogCompletion (QueryTemperatureInfoHealthLogCompletion)
+fffff804`3c4ad6d4 stornvme!wil_details_FeatureStateCache_TryEnableDeviceUsageFastPath (wil_details_FeatureStateCache_TryEnableDeviceUsageFastPath)
+fffff804`3c4bf280 stornvme!Feature_SFS_CD_BugFixes_2408__private_featureState = <no type information>
+fffff804`3c49c40c stornvme!IoctlCreateReservedQueuePair (IoctlCreateReservedQueuePair)
+fffff804`3c490fc0 stornvme!NVMeFStateIdleTimerCallback (NVMeFStateIdleTimerCallback)
+fffff804`3c4bf268 stornvme!Feature_RevertOCPSetFeatureCode__private_featureState = <no type information>
+fffff804`3c49b1a0 stornvme!BuildIdentifyCommandGeneric (BuildIdentifyCommandGeneric)
+fffff804`3c4be058 stornvme!Feature_Servicing_Dcr_24_06_NonSec__private_descriptor = <no type information>
+fffff804`3c494cc0 stornvme!NVMeHwPassiveInitialize (NVMeHwPassiveInitialize)
+fffff804`3c4ba488 stornvme!Feature_UxConfTest_logged_traits = <no type information>
+fffff804`3c493ab8 stornvme!NVMeReadRegisterUlong64 (NVMeReadRegisterUlong64)
+fffff804`3c48e2c0 stornvme!ProcessIrpCommand (ProcessIrpCommand)
+fffff804`3c4bf008 stornvme!_security_cookie_complement = <no type information>
+fffff804`3c4c3010 stornvme!_imp_RtlUnregisterFeatureUsageProvider = <no type information>
+fffff804`3c4b6c90 stornvme!`HexFromUshort'::`2'::hexDigits = <no type information>
+fffff804`3c4a255c stornvme!SetCommandUUIDIndex (SetCommandUUIDIndex)
+fffff804`3c4be090 stornvme!Feature_SFS_CD_BugFixes_2406__private_descriptor = <no type information>
+fffff804`3c49a434 stornvme!NVMePowerInitialize (NVMePowerInitialize)
+fffff804`3c4ba480 stornvme!Feature_SFS_CD_BugFixes_2406_logged_traits = <no type information>
+fffff804`3c4c3078 stornvme!_imp_StorPortGetDeviceBase = <no type information>
+fffff804`3c49aba4 stornvme!NVMePowerSetPerfState (NVMePowerSetPerfState)
+fffff804`3c4a364c stornvme!NVMeDirectiveIdentifyReturnParameters (NVMeDirectiveIdentifyReturnParameters)
+fffff804`3c4819a0 stornvme!NVMeSetHostMemoryBuffer (NVMeSetHostMemoryBuffer)
+fffff804`3c48ffc0 stornvme!NVMeIsAllowedWithinThrottleLimit (NVMeIsAllowedWithinThrottleLimit)
+fffff804`3c48fe90 stornvme!NVMeSetFStateIdleTimer (NVMeSetFStateIdleTimer)
+fffff804`3c4adda0 stornvme!guard_dispatch_icall_nop (_guard_dispatch_icall_nop)
+fffff804`3c4a6e74 stornvme!NVMeReenumerateNameSpaceRescan (NVMeReenumerateNameSpaceRescan)
+fffff804`3c4833c0 stornvme!NVMeRequestComplete (NVMeRequestComplete)
+fffff804`3c4c30a8 stornvme!_imp_StorPortInitialize = <no type information>
+fffff804`3c488a30 stornvme!FormInquiryStandardData (FormInquiryStandardData)
+fffff804`3c4a91f4 stornvme!ProcessMultipleCommands (ProcessMultipleCommands)
+fffff804`3c49ed70 stornvme!NVMeGetLogPageHealthInfoCompletion (NVMeGetLogPageHealthInfoCompletion)
+fffff804`3c49de60 stornvme!LogSenseTemperature (LogSenseTemperature)
+fffff804`3c4a8758 stornvme!NVMeSetNonOperationalPowerStatePermissiveMode (NVMeSetNonOperationalPowerStatePermissiveMode)
+fffff804`3c492a50 stornvme!NVMeGetLogPageCompletion (NVMeGetLogPageCompletion)
+fffff804`3c4c3060 stornvme!_imp_StorPortGetScatterGatherList = <no type information>
+fffff804`3c4c30c8 stornvme!_imp_StorPortGetPhysicalAddress = <no type information>
+fffff804`3c48fdd0 stornvme!NVMeCancelFStateIdleTimer (NVMeCancelFStateIdleTimer)
+fffff804`3c49733c stornvme!NVMeAllocateAsyncEventCommandsForMFND (NVMeAllocateAsyncEventCommandsForMFND)
+fffff804`3c4c6150 stornvme!wil_details_PopulateInitialConfiguredFeatureStates (wil_details_PopulateInitialConfiguredFeatureStates)
+fffff804`3c493930 stornvme!NVMeVersionCheck (NVMeVersionCheck)
+fffff804`3c488da0 stornvme!CompareId (CompareId)
+fffff804`3c4a8d08 stornvme!ProcessCommandNvmePacket (ProcessCommandNvmePacket)
+fffff804`3c495c44 stornvme!BuildSetFeaturesCacheCommand (BuildSetFeaturesCacheCommand)
+fffff804`3c49cfdc stornvme!IoctlQueryReservedQueueEntries (IoctlQueryReservedQueueEntries)
+fffff804`3c4938e0 stornvme!NVMeVersionCheck2 (NVMeVersionCheck2)
+fffff804`3c4bf100 stornvme!g_DumpPreInitializeInvoked = <no type information>
+fffff804`3c4943dc stornvme!IsIntelChatham (IsIntelChatham)
+fffff804`3c4a962c stornvme!ProcessNvmeSanitizeStatus (ProcessNvmeSanitizeStatus)
+fffff804`3c483750 stornvme!WaitForCommandComplete (WaitForCommandComplete)
+fffff804`3c48d8a0 stornvme!NVMeGetLogPageFirmwareSlotCompletion (NVMeGetLogPageFirmwareSlotCompletion)
+fffff804`3c4bf168 stornvme!Feature_RevertOCPSetFeatureCode__private_reporting = <no type information>
+fffff804`3c4c30a0 stornvme!_imp_StorPortGetBusData = <no type information>
+fffff804`3c495504 stornvme!NVMeLogTelemetryControllerInfo (NVMeLogTelemetryControllerInfo)
+fffff804`3c49a074 stornvme!NVMeInitializeProcessorIoQueueMapping (NVMeInitializeProcessorIoQueueMapping)
+fffff804`3c4a4a44 stornvme!NVMeGetHealthInfoLog (NVMeGetHealthInfoLog)
+fffff804`3c4a2a80 stornvme!IoResetCompletion (IoResetCompletion)
+fffff804`3c4a386c stornvme!NVMeDirectiveStreamsGetStatus (NVMeDirectiveStreamsGetStatus)
+fffff804`3c48ff30 stornvme!NVMePerfStateTransition (NVMePerfStateTransition)
+fffff804`3c4a5ea0 stornvme!NVMeParseNameSpaceIdentifyData (NVMeParseNameSpaceIdentifyData)
+fffff804`3c4a2ba8 stornvme!NVMeBuildPollingConfiguration (NVMeBuildPollingConfiguration)
+fffff804`3c4b6c90 stornvme!`HexFromUchar'::`2'::hexDigits = <no type information>
+fffff804`3c4c437c stornvme!wil_details_UpdateFeatureConfiguredStates (wil_details_UpdateFeatureConfiguredStates)
+fffff804`3c497b48 stornvme!NVMeCompletePendingForwardIoRequests (NVMeCompletePendingForwardIoRequests)
+fffff804`3c4a50e0 stornvme!NVMeGetNamespaceMetadata (NVMeGetNamespaceMetadata)
+fffff804`3c4c30e0 stornvme!_guard_dispatch_icall_fptr = <no type information>
+fffff804`3c4bf170 stornvme!Feature_Standalone_24_07_NonSec__private_reporting = <no type information>
+fffff804`3c4a4d70 stornvme!NVMeGetNamespaceDescriptorListIdentify (NVMeGetNamespaceDescriptorListIdentify)
+fffff804`3c4897e0 stornvme!ScsiToNVMe (ScsiToNVMe)
+fffff804`3c49501c stornvme!NVMeLogEtwControllerInfo (NVMeLogEtwControllerInfo)
+fffff804`3c490b10 stornvme!NVMeSubmissionQueueInit (NVMeSubmissionQueueInit)
+fffff804`3c48b010 stornvme!ScsiUnmapRequest (ScsiUnmapRequest)
+fffff804`3c4bf1a8 stornvme!StorPortDriverUnload = <no type information>
+fffff804`3c497f24 stornvme!NVMeCompletionQueueInit (NVMeCompletionQueueInit)
+fffff804`3c4bf160 stornvme!Feature_CadTest__private_reporting = <no type information>
+fffff804`3c4a24b4 stornvme!SerialNumberFromNvmeId (SerialNumberFromNvmeId)
+fffff804`3c4c3098 stornvme!_imp_StorPortExtendedFunction = <no type information>
+fffff804`3c49afd0 stornvme!NvmSubsystemReset (NvmSubsystemReset)
+fffff804`3c4c3068 stornvme!_imp_StorPortFreeRegistryBuffer = <no type information>
+fffff804`3c49e650 stornvme!NVMeFirmwareActivateCompletionAfterReset (NVMeFirmwareActivateCompletionAfterReset)
+fffff804`3c4ac5e4 stornvme!UlongToHex (UlongToHex)
+fffff804`3c4bf118 stornvme!Feature_SFS_CD_BugFixes_2406__private_reporting = <no type information>
+fffff804`3c4c4300 stornvme!wil_details_OnFeatureUsageProviderFlushNotification (wil_details_OnFeatureUsageProviderFlushNotification)
+fffff804`3c49fa3c stornvme!NVMeReservationAcquireCommand (NVMeReservationAcquireCommand)
+fffff804`3c4a8fd8 stornvme!ProcessMFNDChildControllerEventLog (ProcessMFNDChildControllerEventLog)
+fffff804`3c49afc0 stornvme!NVMeWriteRegisterUlong64 (NVMeWriteRegisterUlong64)
+fffff804`3c4ae480 stornvme!_memset_spec_ermsb (__memset_spec_ermsb)
+fffff804`3c4b5070 stornvme!Feature_SFS_CD_BugFixes_2406__private_requiresFeatures = <no type information>
+fffff804`3c499988 stornvme!NVMeGetCompletionQueueForAssignment (NVMeGetCompletionQueueForAssignment)
+fffff804`3c49fbec stornvme!NVMeReservationRegisterAndMoveCommand (NVMeReservationRegisterAndMoveCommand)
+fffff804`3c4a40e0 stornvme!NVMeGetCloudSSDErrorRecoveryLogPageCompletion (NVMeGetCloudSSDErrorRecoveryLogPageCompletion)
+fffff804`3c49b688 stornvme!DiagGeneric (DiagGeneric)
+fffff804`3c4adf40 stornvme!memcpy (memcpy)
+fffff804`3c488c60 stornvme!IoctlQueryProtocolInfoProcess (IoctlQueryProtocolInfoProcess)
+fffff804`3c4be170 stornvme!Feature_UxSettingTest__private_descriptor = <no type information>
+fffff804`3c4881b0 stornvme!GetStringLength (GetStringLength)
+fffff804`3c4b5080 stornvme!Feature_UxConfTest__private_requiresFeatures = <no type information>
+fffff804`3c487490 stornvme!NVMeControllerSetWriteCacheEnable (NVMeControllerSetWriteCacheEnable)
+fffff804`3c481540 stornvme!SubmissionQueueReInit (SubmissionQueueReInit)
+fffff804`3c4a8858 stornvme!NVMeSetNonOperationalPowerStatePermissiveMode2 (NVMeSetNonOperationalPowerStatePermissiveMode2)
+fffff804`3c4a2fc0 stornvme!NVMeControllerPanicResetActionWorkItem (NVMeControllerPanicResetActionWorkItem)
+fffff804`3c4815a0 stornvme!CompletionQueueReInit (CompletionQueueReInit)
+fffff804`3c4c30f8 stornvme!_guard_xfg_table_dispatch_icall_fptr = <no type information>
+fffff804`3c49c39c stornvme!GetScsiReservationType (GetScsiReservationType)
+fffff804`3c4a7338 stornvme!NVMeReenumerateReissueGetLogNamespaceChangeList (NVMeReenumerateReissueGetLogNamespaceChangeList)
+fffff804`3c4bf120 stornvme!Feature_UxConfTest__private_reporting = <no type information>
+fffff804`3c4a4ed4 stornvme!NVMeGetNamespaceIoCommandSetIdentify (NVMeGetNamespaceIoCommandSetIdentify)
+fffff804`3c490a10 stornvme!NVMeSetInterruptCoalescing (NVMeSetInterruptCoalescing)
+fffff804`3c4c3040 stornvme!_imp_RtlNotifyFeatureUsage = <no type information>
+fffff804`3c4a85d0 stornvme!NVMeSetHostBehaviorSupport (NVMeSetHostBehaviorSupport)
+fffff804`3c4adf40 stornvme!memmove (memmove)
+fffff804`3c49eadc stornvme!NVMeGetDeviceTelemetryHeader (NVMeGetDeviceTelemetryHeader)
+fffff804`3c4a7580 stornvme!NVMeReenumerateReissueGetLogNamespaceChangeListCompletion (NVMeReenumerateReissueGetLogNamespaceChangeListCompletion)
+fffff804`3c481690 stornvme!NVMeUpdateResumeLatencyTolerance (NVMeUpdateResumeLatencyTolerance)
+fffff804`3c490c60 stornvme!NVMePowerStateGetMaxPower (NVMePowerStateGetMaxPower)
+fffff804`3c490640 stornvme!FreeProcessorInfo (FreeProcessorInfo)
+fffff804`3c495214 stornvme!NVMeLogTelemetry (NVMeLogTelemetry)
+fffff804`3c4bf258 stornvme!Feature_CadTest__private_featureState = <no type information>
+fffff804`3c49e2d0 stornvme!NVMeControllerIdentifyWorkItem (NVMeControllerIdentifyWorkItem)
+fffff804`3c4c3050 stornvme!_imp_StorPortSetDeviceQueueDepth = <no type information>
+fffff804`3c482a50 stornvme!NVMeHwInterrupt (NVMeHwInterrupt)
+fffff804`3c4acff0 stornvme!Feature_LocalCommandPoolInStorNVMe__private_IsEnabledDeviceUsageNoInline (Feature_LocalCommandPoolInStorNVMe__private_IsEnabledDeviceUsageNoInline)
+fffff804`3c499524 stornvme!NVMeControllerSetHostIdentifier (NVMeControllerSetHostIdentifier)
+fffff804`3c4adbec stornvme!_GSHandlerCheckCommon (__GSHandlerCheckCommon)
+fffff804`3c4bf250 stornvme!Feature_LocalCommandPoolInStorNVMe__private_featureState = <no type information>
+fffff804`3c49d3dc stornvme!IoctlSetProtocolInfoProcess (IoctlSetProtocolInfoProcess)
+fffff804`3c48f850 stornvme!GetSrbDataBuffer (GetSrbDataBuffer)
+fffff804`3c4addd0 stornvme!guard_xfg_dispatch_icall_nop (_guard_xfg_dispatch_icall_nop)
+fffff804`3c4ae640 stornvme!_memset_spec_plain (__memset_spec_plain)
+fffff804`3c482220 stornvme!ControllerReset (ControllerReset)
+fffff804`3c4931e0 stornvme!NVMeControllerAsyncReset (NVMeControllerAsyncReset)
+fffff804`3c4a0ba0 stornvme!NVMeSanitizeRecoverCompletionRoutine (NVMeSanitizeRecoverCompletionRoutine)
+fffff804`3c49adf8 stornvme!NVMeTelemetryHeterogeneousQueueMappingFallback (NVMeTelemetryHeterogeneousQueueMappingFallback)
+fffff804`3c49d498 stornvme!IoctlSetTemperatureThresholdProcess (IoctlSetTemperatureThresholdProcess)
+fffff804`3c4a3c40 stornvme!NVMeFreeNamespaceEnumerationContext (NVMeFreeNamespaceEnumerationContext)
+fffff804`3c4a264c stornvme!SetProtocolInfoFeatureData (SetProtocolInfoFeatureData)
+fffff804`3c498128 stornvme!NVMeCompletionQueuesDedicatedSubmissionQueuesInit (NVMeCompletionQueuesDedicatedSubmissionQueuesInit)
+fffff804`3c4b4010 stornvme!guard_dispatch_icall$thunk$10345483385596137414 (_guard_dispatch_icall$thunk$10345483385596137414)
+fffff804`3c49a154 stornvme!NVMeLogHeterogeneousQueueMappingFallback (NVMeLogHeterogeneousQueueMappingFallback)
+fffff804`3c49e1b8 stornvme!NVMeControllerDeleteLocalCommandPool (NVMeControllerDeleteLocalCommandPool)
+fffff804`3c4c3028 stornvme!_imp_RtlQueryFeatureConfiguration = <no type information>
+fffff804`3c4ba480 stornvme!Feature_PerfTestCen2_logged_traits = <no type information>
+fffff804`3c4be288 stornvme!Feature_PerfTestCen2__private_descriptor = <no type information>
+fffff804`3c4ad2e0 stornvme!wil_details_FeatureReporting_RecordUsageInCache (wil_details_FeatureReporting_RecordUsageInCache)
+fffff804`3c4ae380 stornvme!_memset_repmovs (__memset_repmovs)
+fffff804`3c488700 stornvme!ScsiInquiryRequest (ScsiInquiryRequest)
+fffff804`3c49b244 stornvme!CopyCachedLogPage (CopyCachedLogPage)
+fffff804`3c49b08c stornvme!ProcessorToDedicatedIoSqMapping (ProcessorToDedicatedIoSqMapping)
+fffff804`3c4a1570 stornvme!QueryEnduranceInfoLogCompletion (QueryEnduranceInfoLogCompletion)
+fffff804`3c49ac30 stornvme!NVMeSetFeaturesCacheCompletion (NVMeSetFeaturesCacheCompletion)
+fffff804`3c4c3058 stornvme!_imp_StorPortQuerySystemTime = <no type information>
+fffff804`3c4be330 stornvme!Feature_LocalCommandPoolInStorNVMe__private_descriptor = <no type information>
+fffff804`3c4915d0 stornvme!QueryProtocolInfoLogPageData (QueryProtocolInfoLogPageData)
+fffff804`3c4878a0 stornvme!NVMeControllerGetFeaturesSupportedCacheCapabilities (NVMeControllerGetFeaturesSupportedCacheCapabilities)
+fffff804`3c48ff90 stornvme!NVMeGetPowerState (NVMeGetPowerState)
+fffff804`3c483a70 stornvme!NVMeSetPowerState (NVMeSetPowerState)
+fffff804`3c4ba480 stornvme!Feature_CadTest_logged_traits = <no type information>
+fffff804`3c4881e0 stornvme!FormInquiryDeviceIdentifiersData (FormInquiryDeviceIdentifiersData)
+fffff804`3c48d6f0 stornvme!BuildGetLogPageCommand (BuildGetLogPageCommand)
+fffff804`3c4c3088 stornvme!_imp_StorPortStallExecution = <no type information>
+fffff804`3c4bf180 stornvme!g_wil_details_recordFeatureUsage = <no type information>
+fffff804`3c4a5780 stornvme!NVMeIoSubmissionQueueCreateCompletion (NVMeIoSubmissionQueueCreateCompletion)
+fffff804`3c4bf240 stornvme!Feature_TestUx32__private_featureState = <no type information>
+fffff804`3c490ce0 stornvme!NVMeGetTemperatureThreshold (NVMeGetTemperatureThreshold)
+fffff804`3c4a1340 stornvme!NVMeWriteBufferFirmwareDownloadCompletion (NVMeWriteBufferFirmwareDownloadCompletion)
+fffff804`3c4c3080 stornvme!_imp_StorPortPause = <no type information>
+fffff804`3c493190 stornvme!NVMeDeRegisterThrottling (NVMeDeRegisterThrottling)
+fffff804`3c493960 stornvme!NVMePowerCleanUp (NVMePowerCleanUp)
+fffff804`3c4a8360 stornvme!NVMeSanitizeRecoverWorkItem (NVMeSanitizeRecoverWorkItem)
+fffff804`3c48d370 stornvme!NVMeGetFeaturesSupportedCacheCapabilitiesCompletion (NVMeGetFeaturesSupportedCacheCapabilitiesCompletion)
+fffff804`3c487dd0 stornvme!NVMeGetFeatureIdentifiersSupportedLog (NVMeGetFeatureIdentifiersSupportedLog)
+fffff804`3c499c2c stornvme!NVMeHardwareReset (NVMeHardwareReset)
+fffff804`3c48e610 stornvme!ProcessForwardIoControl (ProcessForwardIoControl)
+fffff804`3c4bf190 stornvme!Feature_UxSettingTest__private_reporting = <no type information>
+fffff804`3c4a3f40 stornvme!NVMeGetAutoPowerStateTransitionCompletion (NVMeGetAutoPowerStateTransitionCompletion)
+fffff804`3c4acd34 stornvme!NVMeSendLunInternalData (NVMeSendLunInternalData)
+fffff804`3c4bf101 stornvme!g_ControllerExtensionIndex = <no type information>
+fffff804`3c484ba0 stornvme!LocalCommandReuse (LocalCommandReuse)
+fffff804`3c4b5048 stornvme!Feature_RevertOCPSetFeatureCode__private_requiresFeatures = <no type information>
+fffff804`3c49f960 stornvme!NVMePersistentReserveOutCompletionRoutine (NVMePersistentReserveOutCompletionRoutine)
+fffff804`3c4bf1c0 stornvme!HotPatchSpareGlobals = <no type information>
+fffff804`3c48f880 stornvme!CheckDpcWatchdogTimerExpireSoon (CheckDpcWatchdogTimerExpireSoon)
+fffff804`3c4be0c8 stornvme!Feature_CadTest__private_descriptor = <no type information>
+fffff804`3c4be368 stornvme!wil_details_featureDescriptors_z = <no type information>
+fffff804`3c4adc60 stornvme!_cpu_features_init (__cpu_features_init)
+fffff804`3c494c50 stornvme!NVMeHwInitialize (NVMeHwInitialize)
+fffff804`3c4ac1cc stornvme!ReadMultiSzRegistryValueAndCompareId (ReadMultiSzRegistryValueAndCompareId)
+fffff804`3c482010 stornvme!NVMeControllerStartFailureEventLog (NVMeControllerStartFailureEventLog)
+fffff804`3c494e50 stornvme!NVMeHwStartIo (NVMeHwStartIo)
+fffff804`3c4b5028 stornvme!Feature_PerfTestCen2__private_requiresFeatures = <no type information>
+fffff804`3c4be100 stornvme!Feature_Standalone_24_07_NonSec__private_descriptor = <no type information>
+fffff804`3c4adbc8 stornvme!_GSHandlerCheck (__GSHandlerCheck)
+fffff804`3c4c4360 stornvme!wil_details_ReevaluateOnFeatureConfigurationChange (wil_details_ReevaluateOnFeatureConfigurationChange)
+fffff804`3c4c30e8 stornvme!_guard_xfg_check_icall_fptr = <no type information>
+fffff804`3c4ad450 stornvme!wil_details_FeatureReporting_ReportUsageToService (wil_details_FeatureReporting_ReportUsageToService)
+fffff804`3c48d070 stornvme!NVMeAllocateDmaBuffer (NVMeAllocateDmaBuffer)
+fffff804`3c4a3df0 stornvme!NVMeGetAutoPowerStateTransition (NVMeGetAutoPowerStateTransition)
+fffff804`3c49ecc0 stornvme!NVMeGetErrorInfoLogPageCompletion (NVMeGetErrorInfoLogPageCompletion)
+fffff804`3c49f740 stornvme!NVMeGetSanitizeLogWorkItem (NVMeGetSanitizeLogWorkItem)
+fffff804`3c4a8518 stornvme!NVMeSetAutoPowerStateTransition (NVMeSetAutoPowerStateTransition)
+fffff804`3c4bf148 stornvme!Feature_PerfTestCen2__private_reporting = <no type information>
+fffff804`3c4c3030 stornvme!_imp_RtlRegisterFeatureConfigurationChangeNotification = <no type information>
+fffff804`3c4bf040 stornvme!_isa_info = <no type information>
+fffff804`3c4a6468 stornvme!NVMeReenumerateNameSpaceCompare (NVMeReenumerateNameSpaceCompare)
+fffff804`3c4be250 stornvme!Feature_RevertOCPSetFeatureCode__private_descriptor = <no type information>
+fffff804`3c498300 stornvme!NVMeControllerCompleteAllIORequests (NVMeControllerCompleteAllIORequests)
+fffff804`3c4906c0 stornvme!ControllerEnable (ControllerEnable)
+fffff804`3c494de0 stornvme!NVMeHwRegistryNotify (NVMeHwRegistryNotify)
+fffff804`3c4a54b0 stornvme!NVMeIoCompletionQueueCreateCompletion (NVMeIoCompletionQueueCreateCompletion)
+fffff804`3c49ff60 stornvme!NVMeReservationReleaseCommand (NVMeReservationReleaseCommand)
+fffff804`3c4bf138 stornvme!g_wil_details_featureUsageCached = <no type information>
+fffff804`3c497d0c stornvme!NVMeCompleteSubmissionQueueRequests (NVMeCompleteSubmissionQueueRequests)
+fffff804`3c4876a0 stornvme!NVMeGetCommandEffectsLog (NVMeGetCommandEffectsLog)
+fffff804`3c4b5a40 stornvme!GUID_NVME_POWER_IDLE_TIMEOUT2 = <no type information>
+fffff804`3c48d170 stornvme!NVMeCheckOCPCompliance (NVMeCheckOCPCompliance)
+fffff804`3c4b5a20 stornvme!GUID_NVME_POWER_IDLE_TIMEOUT1 = <no type information>
+fffff804`3c49d244 stornvme!IoctlQueryTemperatureInfoProcess (IoctlQueryTemperatureInfoProcess)
+fffff804`3c4909e0 stornvme!RoundUp64 (RoundUp64)
+fffff804`3c4c4008 stornvme!wil_RtlStagingConfig_QueryFeatureState (wil_RtlStagingConfig_QueryFeatureState)
+fffff804`3c4c3018 stornvme!_imp_RtlQueryFeatureConfigurationChangeStamp = <no type information>
+fffff804`3c4a8710 stornvme!NVMeSetHostBehaviorSupportCompletion (NVMeSetHostBehaviorSupportCompletion)
+fffff804`3c4b59f0 stornvme!GUID_DIAGNOSTIC_PROVIDER_STORNVME = <no type information>
+fffff804`3c4c30d0 stornvme!storport_NULL_THUNK_DATA = <no type information>
+fffff804`3c4a47dc stornvme!NVMeGetControllerIoCommandSetIdentify (NVMeGetControllerIoCommandSetIdentify)
+fffff804`3c4a43a8 stornvme!NVMeGetControllerInitiatedTelemetryHeader (NVMeGetControllerInitiatedTelemetryHeader)
+fffff804`3c49a35c stornvme!NVMeMaxOperationalPower (NVMeMaxOperationalPower)
+fffff804`3c4a2290 stornvme!ScsiPersistentReserveOut (ScsiPersistentReserveOut)
+fffff804`3c4c3038 stornvme!_imp_RtlRegisterFeatureUsageProvider = <no type information>
+fffff804`3c4c422c stornvme!wil_details_EvaluateFeatureDependencies_ReevaluateCachedFeatureEnabledState (wil_details_EvaluateFeatureDependencies_ReevaluateCachedFeatureEnabledState)
+fffff804`3c4ba478 stornvme!Feature_Standalone_24_07_NonSec_logged_traits = <no type information>
+fffff804`3c4bf260 stornvme!Feature_Servicing_Dcr_24_05_NonSec__private_featureState = <no type information>
+fffff804`3c49c2b8 stornvme!GUIDToSCSINameString (GUIDToSCSINameString)
+fffff804`3c4a6790 stornvme!NVMeReenumerateNameSpaceIdentifyWorkItem (NVMeReenumerateNameSpaceIdentifyWorkItem)
+fffff804`3c4a4bc4 stornvme!NVMeGetNVMSetAttributeList (NVMeGetNVMSetAttributeList)
+fffff804`3c4bf2a0 stornvme!Feature_Servicing_Dcr_24_06_NonSec__private_featureState = <no type information>
+fffff804`3c495a28 stornvme!AdminQueueInitialize (AdminQueueInitialize)
+fffff804`3c4ba480 stornvme!Feature_RevertOCPSetFeatureCode_logged_traits = <no type information>
+fffff804`3c484910 stornvme!ProcessCommand (ProcessCommand)
+fffff804`3c4979bc stornvme!NVMeCleanUpSqCqMapping (NVMeCleanUpSqCqMapping)
+fffff804`3c4c30c0 stornvme!_imp_StorPortRegistryRead = <no type information>
+fffff804`3c497780 stornvme!NVMeCancelAllCompletionQueueDpc (NVMeCancelAllCompletionQueueDpc)
+fffff804`3c4a3cc8 stornvme!NVMeGetActiveNameSpaceIdList (NVMeGetActiveNameSpaceIdList)
+fffff804`3c493a80 stornvme!NVMeIsDeviceGone (NVMeIsDeviceGone)
+fffff804`3c496b8c stornvme!IoSqToIoCqMapping (IoSqToIoCqMapping)
+fffff804`3c4a1ab0 stornvme!QueryProtocolInfoIdentifyData (QueryProtocolInfoIdentifyData)
+fffff804`3c4879c0 stornvme!NVMeInitHostMemoryBuffer (NVMeInitHostMemoryBuffer)
+fffff804`3c481960 stornvme!NVMeMaskInterrupt (NVMeMaskInterrupt)
+fffff804`3c4a5470 stornvme!NVMeGetTemperatureThresholdCompletion (NVMeGetTemperatureThresholdCompletion)
+fffff804`3c49e13c stornvme!NVMeControllerCreateLocalCommandPool (NVMeControllerCreateLocalCommandPool)
+fffff804`3c488fd0 stornvme!NVMeWriteBufferFirmwareDownload (NVMeWriteBufferFirmwareDownload)
+fffff804`3c4a5a28 stornvme!NVMeNameSpaceIdentify (NVMeNameSpaceIdentify)
+fffff804`3c49e340 stornvme!NVMeControllerValidateFirmwareActivateCapability (NVMeControllerValidateFirmwareActivateCapability)
+fffff804`3c4c6010 stornvme!GsDriverEntry (GsDriverEntry)
+fffff804`3c4c30d8 stornvme!_guard_check_icall_fptr = <no type information>
+fffff804`3c49f180 stornvme!NVMeGetLogPageTelemetryHeaderCompletion (NVMeGetLogPageTelemetryHeaderCompletion)
+fffff804`3c498280 stornvme!NVMeControllerAsyncResetWorker (NVMeControllerAsyncResetWorker)
+fffff804`3c491170 stornvme!QueryProtocolInfoCompletion (QueryProtocolInfoCompletion)
+fffff804`3c49e6c0 stornvme!NVMeFirmwareDownloadCompletion (NVMeFirmwareDownloadCompletion)
+fffff804`3c4ba478 stornvme!Feature_Standalone_24_08_NonSec_logged_traits = <no type information>
+fffff804`3c494e00 stornvme!NVMeHwResetBus (NVMeHwResetBus)
+fffff804`3c49ad00 stornvme!NVMeSubmissionQueueAssignmentPolicyInit (NVMeSubmissionQueueAssignmentPolicyInit)
+fffff804`3c48dbe0 stornvme!FormInquiryBlockLimitsData (FormInquiryBlockLimitsData)
+fffff804`3c4b6ca8 stornvme!IoQueuesCreationAsyncTimeout = <no type information>
+fffff804`3c495000 stornvme!NVMeHwTracingEnabled (NVMeHwTracingEnabled)
+fffff804`3c481600 stornvme!NVMeSystemPowerHint (NVMeSystemPowerHint)
+fffff804`3c498d50 stornvme!NVMeControllerInitPart1 (NVMeControllerInitPart1)
+fffff804`3c4a3a38 stornvme!NVMeDirectiveStreamsReleaseId (NVMeDirectiveStreamsReleaseId)
+fffff804`3c4a4498 stornvme!NVMeGetControllerInitiatedTelemetryLog (NVMeGetControllerInitiatedTelemetryLog)
+fffff804`3c4a659c stornvme!NVMeReenumerateNameSpaceIdentify (NVMeReenumerateNameSpaceIdentify)
+fffff804`3c4a7920 stornvme!NVMeReservedCompletionQueueCreate (NVMeReservedCompletionQueueCreate)
+fffff804`3c482540 stornvme!NVMeIoCompletionQueueDelete (NVMeIoCompletionQueueDelete)
+fffff804`3c493df0 stornvme!ControllerAllocateUncachedExtension (ControllerAllocateUncachedExtension)
+fffff804`3c4a7d9c stornvme!NVMeReservedSubmissionQueueCreate (NVMeReservedSubmissionQueueCreate)
+fffff804`3c4a37b0 stornvme!NVMeDirectiveStreamsAllocateResources (NVMeDirectiveStreamsAllocateResources)
+fffff804`3c4a57f4 stornvme!NVMeLogNameSpaceIdentificationStatus (NVMeLogNameSpaceIdentificationStatus)
+fffff804`3c49d7a0 stornvme!IoctlStorageStreamsGetParameters (IoctlStorageStreamsGetParameters)
+fffff804`3c493110 stornvme!NVMeDisableThrottling (NVMeDisableThrottling)
+fffff804`3c4a41b0 stornvme!NVMeGetControllerInitiatedTelemetry (NVMeGetControllerInitiatedTelemetry)
+fffff804`3c4ad124 stornvme!wil_details_FeatureReporting_IncrementOpportunityInCache (wil_details_FeatureReporting_IncrementOpportunityInCache)
+fffff804`3c4c3020 stornvme!_imp_RtlArmFeatureUsageProviderFlushNotification = <no type information>
+fffff804`3c4be218 stornvme!Feature_Standalone_24_08_NonSec__private_descriptor = <no type information>
+fffff804`3c4a6240 stornvme!NVMeReConfigAsyncEventCompletion (NVMeReConfigAsyncEventCompletion)
+fffff804`3c4abf10 stornvme!GetRegistrySettingsForSpecificKey (GetRegistrySettingsForSpecificKey)
+fffff804`3c4add70 stornvme!guard_dispatch_icall (_guard_dispatch_icall)
+fffff804`3c4ba478 stornvme!Feature_Servicing_Dcr_24_06_NonSec_logged_traits = <no type information>
+fffff804`3c4be1a8 stornvme!Feature_UxConfTest__private_descriptor = <no type information>
+fffff804`3c4a8950 stornvme!NVMeSetNonOperationalPowerStatePermissiveModeCompletion (NVMeSetNonOperationalPowerStatePermissiveModeCompletion)
+fffff804`3c484c00 stornvme!NVMeMapError (NVMeMapError)
+fffff804`3c4c30b8 stornvme!_imp_StorPortGetUncachedExtension = <no type information>
+fffff804`3c4a9b14 stornvme!GetNVMeRegisterAddress (GetNVMeRegisterAddress)
+fffff804`3c4add30 stornvme!_security_check_cookie (__security_check_cookie)
+fffff804`3c4ba478 stornvme!Feature_Servicing_Dcr_24_05_NonSec_logged_traits = <no type information>
+fffff804`3c4a1300 stornvme!NVMeWriteBufferFirmwareActivateCompletionAfterReset (NVMeWriteBufferFirmwareActivateCompletionAfterReset)
+fffff804`3c4820a0 stornvme!NVMeQueuesReInit (NVMeQueuesReInit)
+fffff804`3c49c244 stornvme!FormInquiryVpdSupportedPagesData (FormInquiryVpdSupportedPagesData)
+fffff804`3c4bf080 stornvme!g_ControllerExtension = <no type information>
+fffff804`3c49ee20 stornvme!NVMeGetLogPageTelemetryDataCompletion (NVMeGetLogPageTelemetryDataCompletion)
+fffff804`3c4a0ec0 stornvme!NVMeSplitIoCommandCompletion (NVMeSplitIoCommandCompletion)
+fffff804`3c4877f0 stornvme!NVMeStartAsyncEventCommands (NVMeStartAsyncEventCommands)
+fffff804`3c4ae5c0 stornvme!_memset_spec_ermsb_repmovsb (__memset_spec_ermsb_repmovsb)
+fffff804`3c4c3008 stornvme!_imp_RtlUnregisterFeatureConfigurationChangeNotification = <no type information>
+fffff804`3c4c311c stornvme!_IMPORT_DESCRIPTOR_ntoskrnl = <no type information>
+fffff804`3c4c40d4 stornvme!wil_details_BuildFeatureStateCacheFromQueryResults (wil_details_BuildFeatureStateCacheFromQueryResults)
+fffff804`3c4a9900 stornvme!GetDynamicRegistrySettings (GetDynamicRegistrySettings)
+fffff804`3c4bf128 stornvme!g_wil_details_subscribeFeatureStateCacheToConfigurationChanges = <no type information>
+fffff804`3c4bf198 stornvme!g_wil_details_pfnFeatureLoggingHook = <no type information>
+fffff804`3c495fb0 stornvme!IoQueuesCreationAsync (IoQueuesCreationAsync)
+fffff804`3c4a8a0c stornvme!NVMeSyncHostTime (NVMeSyncHostTime)
+fffff804`3c4a6328 stornvme!NVMeReenumerateMergeNamespaceChangeList (NVMeReenumerateMergeNamespaceChangeList)
+fffff804`3c489220 stornvme!NVMeSetSenseData (NVMeSetSenseData)
+fffff804`3c49e828 stornvme!NVMeGetDeviceTelemetryData (NVMeGetDeviceTelemetryData)
+fffff804`3c4b5098 stornvme!Feature_UxSettingTest__private_requiresFeatures = <no type information>
+fffff804`3c4a2d30 stornvme!NVMeConfigAsyncEvent (NVMeConfigAsyncEvent)
+fffff804`3c4bf1a0 stornvme!Feature_TestUx32__private_reporting = <no type information>
+fffff804`3c4ad0a0 stornvme!StorNVMeDriverUnload (StorNVMeDriverUnload)
+fffff804`3c49b89c stornvme!FirmwareActivate (FirmwareActivate)
+fffff804`3c4ba480 stornvme!Feature_UxSettingTest_logged_traits = <no type information>
+fffff804`3c4ac098 stornvme!ReadBinaryRegistryValue (ReadBinaryRegistryValue)
+fffff804`3c4bf158 stornvme!Feature_Servicing_Dcr_24_06_NonSec__private_reporting = <no type information>
+fffff804`3c4bf108 stornvme!g_wil_details_featureUsageProvider = <no type information>
+fffff804`3c4bf178 stornvme!Feature_Servicing_Dcr_24_05_NonSec__private_reporting = <no type information>
+fffff804`3c4a13b0 stornvme!ProtocolCommandCompletion (ProtocolCommandCompletion)
+fffff804`3c490c30 stornvme!NVMeIsLunActive (NVMeIsLunActive)
+fffff804`3c49c32c stornvme!GetFirmwareGranularity (GetFirmwareGranularity)
+fffff804`3c4b4020 stornvme!memset$thunk$772440563353939046 (memset$thunk$772440563353939046)
+fffff804`3c490810 stornvme!CalculateTimeDurationIn100ns (CalculateTimeDurationIn100ns)
+fffff804`3c4ac580 stornvme!StringToULONG (StringToULONG)
+fffff804`3c4ad4d4 stornvme!wil_details_FeatureReporting_ReportUsageToServiceDirect (wil_details_FeatureReporting_ReportUsageToServiceDirect)
+fffff804`3c4a2b20 stornvme!NVMeBuildDevicePollingConfiguration (NVMeBuildDevicePollingConfiguration)
+fffff804`3c486ec0 stornvme!IoQueuesFreeResources (IoQueuesFreeResources)
+fffff804`3c497314 stornvme!IsPci3MsiInterrupt (IsPci3MsiInterrupt)
+fffff804`3c4bf248 stornvme!Feature_ValConf__private_featureState = <no type information>
+fffff804`3c4ad044 stornvme!Feature_RevertOCPSetFeatureCode__private_IsEnabledDeviceUsageNoInline (Feature_RevertOCPSetFeatureCode__private_IsEnabledDeviceUsageNoInline)
+fffff804`3c4c7000 stornvme!_guard_fids_table = <no type information>
+fffff804`3c4a2a3c stornvme!TemperatureFromKelvinToCelsius (TemperatureFromKelvinToCelsius)
+fffff804`3c4889a0 stornvme!NVMeCopyFirmwareRevision (NVMeCopyFirmwareRevision)
+fffff804`3c4b50b0 stornvme!load_config_used = <no type information>
+fffff804`3c49fd88 stornvme!NVMeReservationRegisterCommand (NVMeReservationRegisterCommand)
+fffff804`3c499784 stornvme!NVMeControllerStop (NVMeControllerStop)
+fffff804`3c4a2114 stornvme!ScsiModeSelectRequest (ScsiModeSelectRequest)
+fffff804`3c49bfd0 stornvme!FormInquiryDeviceCharacteristicsData (FormInquiryDeviceCharacteristicsData)
+fffff804`3c4a6bbc stornvme!NVMeReenumerateNameSpaceMerge (NVMeReenumerateNameSpaceMerge)
+fffff804`3c4c3070 stornvme!_imp_StorPortAllocateRegistryBuffer = <no type information>
+fffff804`3c497810 stornvme!NVMeCaptureLiveDumpWorkItem (NVMeCaptureLiveDumpWorkItem)
+fffff804`3c493fd0 stornvme!DumpUninitialize (DumpUninitialize)
+fffff804`3c486c40 stornvme!NVMeSetIoQueueCount (NVMeSetIoQueueCount)
+fffff804`3c4bf290 stornvme!Feature_PerfTestCen2__private_featureState = <no type information>
+fffff804`3c490f70 stornvme!NVMeControllerPostPowerUp (NVMeControllerPostPowerUp)
+fffff804`3c48c1a0 stornvme!GetSrbExtension (GetSrbExtension)
+fffff804`3c4a2590 stornvme!SetProtocolInfoCompletion (SetProtocolInfoCompletion)
+fffff804`3c4836b0 stornvme!NVMeIoSubmissionQueueDelete (NVMeIoSubmissionQueueDelete)
+fffff804`3c498ff0 stornvme!NVMeControllerPreparePLDR (NVMeControllerPreparePLDR)
+fffff804`3c49dc7c stornvme!IsFirmwareActivateWithoutResetEnabled (IsFirmwareActivateWithoutResetEnabled)
+fffff804`3c499bac stornvme!NVMeGetControllerSerialNumber (NVMeGetControllerSerialNumber)
+fffff804`3c499868 stornvme!NVMeFreeHostMemoryBuffer (NVMeFreeHostMemoryBuffer)
+fffff804`3c4a989c stornvme!ResumeIrpCommands (ResumeIrpCommands)
+fffff804`3c4c413c stornvme!wil_details_EvaluateFeatureDependencies (wil_details_EvaluateFeatureDependencies)
+fffff804`3c4a48dc stornvme!NVMeGetControllerUUIDListIdentify (NVMeGetControllerUUIDListIdentify)
+fffff804`3c4ac3e8 stornvme!SendNVMeEventNotification (SendNVMeEventNotification)
+fffff804`3c49f5cc stornvme!NVMeGetRichDeviceDescription (NVMeGetRichDeviceDescription)
+fffff804`3c4bf150 stornvme!Feature_ValConf__private_reporting = <no type information>
+fffff804`3c481010 stornvme!NVMeControllerRemove (NVMeControllerRemove)
+fffff804`3c4a33c0 stornvme!NVMeDirectiveCompletion (NVMeDirectiveCompletion)
+fffff804`3c49c044 stornvme!FormInquirySerialNumberData (FormInquirySerialNumberData)
+fffff804`3c4ad9cc stornvme!wil_details_RecordCachedUsage (wil_details_RecordCachedUsage)
+fffff804`3c49cde8 stornvme!IoctlQueryEnduranceInformation (IoctlQueryEnduranceInformation)
+fffff804`3c4c3090 stornvme!_imp_StorPortResume = <no type information>
+fffff804`3c4be138 stornvme!Feature_TestUx32__private_descriptor = <no type information>
+fffff804`3c4ba478 stornvme!Feature_TestUx32_logged_traits = <no type information>
+fffff804`3c488470 stornvme!ScsiSanitizeRequest (ScsiSanitizeRequest)
+fffff804`3c49d5d4 stornvme!IoctlStorageStreamsGetOpenStreams (IoctlStorageStreamsGetOpenStreams)
+fffff804`3c487c50 stornvme!NVMeGetSupportedLogPagesLog (NVMeGetSupportedLogPagesLog)
+fffff804`3c499e48 stornvme!NVMeInitStreams (NVMeInitStreams)
+fffff804`3c4adbb0 stornvme!guard_check_icall_nop (_guard_check_icall_nop)
+fffff804`3c4ade20 stornvme!memcmp (memcmp)
+fffff804`3c481f80 stornvme!NVMeControllerPowerUp (NVMeControllerPowerUp)
+fffff804`3c49995c stornvme!NVMeFreePool (NVMeFreePool)
+fffff804`3c4a5710 stornvme!NVMeIoPollingTimerExCallback (NVMeIoPollingTimerExCallback)
+fffff804`3c4c41f4 stornvme!wil_details_EvaluateFeatureDependencies_GetCachedFeatureEnabledState (wil_details_EvaluateFeatureDependencies_GetCachedFeatureEnabledState)
+fffff804`3c490db0 stornvme!NVMeControllerSupportsUUIDList (NVMeControllerSupportsUUIDList)
+fffff804`3c4ad898 stornvme!wil_details_IsEnabledFallback (wil_details_IsEnabledFallback)
+fffff804`3c4a0d60 stornvme!NVMeSplitIoCommand (NVMeSplitIoCommand)
+fffff804`3c49f9cc stornvme!NVMeQueueWorkItem (NVMeQueueWorkItem)
+fffff804`3c49aac0 stornvme!NVMePowerSetFState (NVMePowerSetFState)
+fffff804`3c4a0400 stornvme!NVMeReservationReportStatusCompletion (NVMeReservationReportStatusCompletion)
+fffff804`3c4b5a30 stornvme!GUID_NVME_POWER_STATE_TRANSITION_LATENCY_TOLERANCE1 = <no type information>
+fffff804`3c48de60 stornvme!IsDeallocateSupported (IsDeallocateSupported)
+fffff804`3c4b5a50 stornvme!GUID_NVME_POWER_STATE_TRANSITION_LATENCY_TOLERANCE2 = <no type information>
+fffff804`3c4a332c stornvme!NVMeControllerReinitialize (NVMeControllerReinitialize)
+fffff804`3c4a0204 stornvme!NVMeReservationReportStatus (NVMeReservationReportStatus)
+fffff804`3c4bf278 stornvme!Feature_UxSettingTest__private_featureState = <no type information>
+fffff804`3c49b110 stornvme!BuildGetLogPageCommandForTelemetryLog (BuildGetLogPageCommandForTelemetryLog)
+fffff804`3c48d6b0 stornvme!GetControllerMaxTransferSize (GetControllerMaxTransferSize)
+fffff804`3c4bf130 stornvme!Feature_SFS_CD_BugFixes_2408__private_reporting = <no type information>
+fffff804`3c4a10c0 stornvme!NVMeWriteBufferFirmwareActivateCompletion (NVMeWriteBufferFirmwareActivateCompletion)
+fffff804`3c4be2c0 stornvme!Feature_ValConf__private_descriptor = <no type information>
+fffff804`3c494020 stornvme!FillControllerConfiguration (FillControllerConfiguration)
+fffff804`3c4a71cc stornvme!NVMeReenumerateNameSpaceWaitForAllIOComplete (NVMeReenumerateNameSpaceWaitForAllIOComplete)
+fffff804`3c4a7140 stornvme!NVMeReenumerateNameSpaceStart (NVMeReenumerateNameSpaceStart)
+fffff804`3c49b284 stornvme!DiagAllDiagnosticData (DiagAllDiagnosticData)
+fffff804`3c4b5058 stornvme!Feature_SFS_CD_BugFixes_2408__private_requiresFeatures = <no type information>
+fffff804`3c49af14 stornvme!NVMeValidatePowerStates (NVMeValidatePowerStates)
+fffff804`3c49c908 stornvme!IoctlDeleteReservedQueuePair (IoctlDeleteReservedQueuePair)
+fffff804`3c49bb04 stornvme!FirmwareDownload (FirmwareDownload)
+fffff804`3c493300 stornvme!GetInterruptMessageInformation (GetInterruptMessageInformation)
+fffff804`3c4a1f80 stornvme!QueryTemperatureThresholdCompletion (QueryTemperatureThresholdCompletion)
+fffff804`3c4c3100 stornvme!_castguard_check_failure_os_handled_fptr = <no type information>
+fffff804`3c4bf000 stornvme!_security_cookie = <no type information>
+fffff804`3c49ac60 stornvme!NVMeStartAsyncEventCommandsForMFND (NVMeStartAsyncEventCommandsForMFND)
+fffff804`3c4a2e4c stornvme!NVMeControllerIdentify (NVMeControllerIdentify)
+fffff804`3c4ad07c stornvme!Feature_RevertOCPSetFeatureCode__private_IsEnabledFallback (Feature_RevertOCPSetFeatureCode__private_IsEnabledFallback)
+fffff804`3c4ad0fc stornvme!wil_details_FeatureDescriptors_SkipPadding (wil_details_FeatureDescriptors_SkipPadding)
+fffff804`3c4a5530 stornvme!NVMeIoPollingDpcRoutine (NVMeIoPollingDpcRoutine)
+fffff804`3c4ba490 stornvme!_xmm = <no type information>
+fffff804`3c4ba4a0 stornvme!_xmm = <no type information>
+fffff804`3c49a2a8 stornvme!NVMeLunCompleteAllIORequests (NVMeLunCompleteAllIORequests)
+fffff804`3c4a92b4 stornvme!ProcessMultipleCommandsInSpecificQueue (ProcessMultipleCommandsInSpecificQueue)
+fffff804`3c487f50 stornvme!NVMeAllocateAsyncEventCommands (NVMeAllocateAsyncEventCommands)
+fffff804`3c4bf102 stornvme!g_HeteroSystem = <no type information>
+fffff804`3c496364 stornvme!IoQueuesInitialize (IoQueuesInitialize)
+fffff804`3c495cac stornvme!GetProcessorGroupInformation (GetProcessorGroupInformation)
+fffff804`3c493500 stornvme!NVMeValidateProtocolCommandRequest (NVMeValidateProtocolCommandRequest)
+fffff804`3c48c1d0 stornvme!GetLbaFromCdb (GetLbaFromCdb)
+fffff804`3c4ba480 stornvme!Feature_LocalCommandPoolInStorNVMe_logged_traits = <no type information>
+fffff804`3c49c3dc stornvme!HexFromUchar (HexFromUchar)
+fffff804`3c4ad028 stornvme!Feature_LocalCommandPoolInStorNVMe__private_IsEnabledFallback (Feature_LocalCommandPoolInStorNVMe__private_IsEnabledFallback)
+fffff804`3c4ad92c stornvme!wil_details_MapReportingKind (wil_details_MapReportingKind)
+fffff804`3c4a3af4 stornvme!NVMeDirectiveStreamsReturnParameters (NVMeDirectiveStreamsReturnParameters)
+fffff804`3c4981c0 stornvme!NVMeCompletionQueuesSubmissionQueuesInit (NVMeCompletionQueuesSubmissionQueuesInit)
+fffff804`3c4a00d0 stornvme!NVMeReservationReportCapabilitiesCompletion (NVMeReservationReportCapabilitiesCompletion)
+fffff804`3c48db80 stornvme!NVMeFreeDmaBuffer (NVMeFreeDmaBuffer)
+fffff804`3c4825e0 stornvme!NVMeControllerPowerDown (NVMeControllerPowerDown)
+fffff804`3c48d3d0 stornvme!ProtocolCommandToNVMe (ProtocolCommandToNVMe)
+fffff804`3c490c90 stornvme!BuildGetFeaturesTemperatureThresholdCommand (BuildGetFeaturesTemperatureThresholdCommand)
+fffff804`3c4ba480 stornvme!Feature_ValConf_logged_traits = <no type information>
+fffff804`3c4ad738 stornvme!wil_details_GetCurrentFeatureEnabledState (wil_details_GetCurrentFeatureEnabledState)
+fffff804`3c4ad1fc stornvme!wil_details_FeatureReporting_IncrementUsageInCache (wil_details_FeatureReporting_IncrementUsageInCache)
+fffff804`3c493b1c stornvme!NVMePendingIoCheck (NVMePendingIoCheck)
+fffff804`3c4c6044 stornvme!_security_init_cookie (__security_init_cookie)
+fffff804`3c495e4c stornvme!InitializePerfOptions (InitializePerfOptions)
+fffff804`3c4a9b84 stornvme!GetRegistrySettings (GetRegistrySettings)
+fffff804`3c4c3108 stornvme!_IMPORT_DESCRIPTOR_storport = <no type information>
+fffff804`3c4bf298 stornvme!Feature_UxConfTest__private_featureState = <no type information>
+fffff804`3c4bf270 stornvme!Feature_SFS_CD_BugFixes_2406__private_featureState = <no type information>
+fffff804`3c49dccc stornvme!LogSenseInformationalExceptions (LogSenseInformationalExceptions)
+fffff804`3c488ec0 stornvme!NVMeWriteBufferFirmwareActivate (NVMeWriteBufferFirmwareActivate)
+fffff804`3c49c354 stornvme!GetFreeReservedQueueIndex (GetFreeReservedQueueIndex)
+fffff804`3c4a3598 stornvme!NVMeDirectiveIdentifyEnableDirective (NVMeDirectiveIdentifyEnableDirective)
+fffff804`3c4c3000 stornvme!_imp_RtlRecordFeatureUsage = <no type information>
+fffff804`3c48c9a0 stornvme!NVMeGetFeaturesCurrentCacheValueCompletion (NVMeGetFeaturesCurrentCacheValueCompletion)
+fffff804`3c4bf2a8 stornvme!wil_details_featureChangeNotification = <no type information>
+fffff804`3c4bf110 stornvme!Feature_LocalCommandPoolInStorNVMe__private_reporting = <no type information>
+fffff804`3c493a00 stornvme!FreeMsiInfo (FreeMsiInfo)
+fffff804`3c498438 stornvme!NVMeControllerFilterResourceRequirements (NVMeControllerFilterResourceRequirements)
+fffff804`3c48c290 stornvme!ProcessNvmeHealthInfoLog (ProcessNvmeHealthInfoLog)
+fffff804`3c4ac614 stornvme!NVMeSendControllerInternalData (NVMeSendControllerInternalData)
+fffff804`3c4be2f8 stornvme!Feature_SFS_CD_BugFixes_2408__private_descriptor = <no type information>
+fffff804`3c499188 stornvme!NVMeControllerReset (NVMeControllerReset)
+fffff804`3c4ba480 stornvme!Feature_SFS_CD_BugFixes_2408_logged_traits = <no type information>
+fffff804`3c4a6408 stornvme!NVMeReenumerateNameSpaceCancelMerge (NVMeReenumerateNameSpaceCancelMerge)
+fffff804`3c49db70 stornvme!IoctlStorageStreamsReleaseId (IoctlStorageStreamsReleaseId)
+fffff804`3c493de0 stornvme!_report_gsfailure (__report_gsfailure)
+fffff804`3c49e390 stornvme!NVMeFirmwareActivateCompletion (NVMeFirmwareActivateCompletion)
+fffff804`3c4b5018 stornvme!Feature_LocalCommandPoolInStorNVMe__private_requiresFeatures = <no type information>
+fffff804`3c493fb0 stornvme!DumpPreInitialize (DumpPreInitialize)
+fffff804`3c490970 stornvme!IsNVMeControllerOnFatalError (IsNVMeControllerOnFatalError)
+fffff804`3c4bf140 stornvme!Feature_Standalone_24_08_NonSec__private_reporting = <no type information>
+fffff804`3c4be058 stornvme!wil_details_featureDescriptors_a = <no type information>
+fffff804`3c4ad5c4 stornvme!wil_details_FeatureStateCache_ReevaluateCachedFeatureEnabledState (wil_details_FeatureStateCache_ReevaluateCachedFeatureEnabledState)
+fffff804`3c493ad0 stornvme!FreeProcessorGroupInfo (FreeProcessorGroupInfo)
+fffff804`3c4bf288 stornvme!Feature_Standalone_24_08_NonSec__private_featureState = <no type information>
+fffff804`3c4a63f0 stornvme!NVMeReenumerateNameSpaceBusChangeCallback (NVMeReenumerateNameSpaceBusChangeCallback)
+fffff804`3c493710 stornvme!RecordCommandTimingHistory (RecordCommandTimingHistory)
+fffff804`3c48f620 stornvme!AssignCommandId (AssignCommandId)
+fffff804`3c48f7e0 stornvme!GetSrbScsiAddress (GetSrbScsiAddress)
+fffff804`3c4a1664 stornvme!QueryProtocolInfoFeatureData (QueryProtocolInfoFeatureData)
+fffff804`3c495c70 stornvme!GetMaxDedicatedSqPerCqCount (GetMaxDedicatedSqPerCqCount)
+fffff804`3c4c3048 stornvme!ntoskrnl_NULL_THUNK_DATA = <no type information>
+fffff804`3c49427c stornvme!FillControllerRuntimeLog (FillControllerRuntimeLog)
+fffff804`3c49e024 stornvme!NVMeControllerAllocateLocalCommand (NVMeControllerAllocateLocalCommand)
+fffff804`3c4b5000 stornvme!Feature_ValConf__private_requiresFeatures = <no type information>
+fffff804`3c4a0af0 stornvme!NVMeSanitizeCommandCompletion (NVMeSanitizeCommandCompletion)
+fffff804`3c496a7c stornvme!IoReservedQueuesInitialize (IoReservedQueuesInitialize)
+fffff804`3c49b7bc stornvme!FillClippedSGL (FillClippedSGL)
+fffff804`3c49dcac stornvme!KelvinToCelsius (KelvinToCelsius)
+fffff804`3c494400 stornvme!NVMeHwFindAdapter (NVMeHwFindAdapter)
+fffff804`3c490df0 stornvme!DriverEntry (DriverEntry)
+fffff804`3c4c30b0 stornvme!_imp_StorPortNotification = <no type information>
+fffff804`3c4bf188 stornvme!g_wil_details_ensureSubscribedToFeatureConfigurationChanges = <no type information>
+fffff804`3c493bb0 stornvme!AdminQueuesFreeResources (AdminQueuesFreeResources)
+fffff804`3c4a5300 stornvme!NVMeGetNamespaceMetadataCompletion (NVMeGetNamespaceMetadataCompletion)
+fffff804`3c49bee8 stornvme!FormInquiryBlockProvisioningData (FormInquiryBlockProvisioningData)
+fffff804`3c491010 stornvme!NVMePowerSettingChangeNotification (NVMePowerSettingChangeNotification)
+fffff804`3c4a3f90 stornvme!NVMeGetCloudSSDErrorRecoveryLog (NVMeGetCloudSSDErrorRecoveryLog)
+fffff804`3c49e260 stornvme!NVMeControllerGetLocalCommand (NVMeControllerGetLocalCommand)
+fffff804`3c491ed0 stornvme!NVMeAsyncEventRequestCompletion (NVMeAsyncEventRequestCompletion)
+fffff804`3c4ae400 stornvme!_memset_query (__memset_query)
+fffff804`3c4b5a10 stornvme!GUID_NVME_POWER_NOPPME = <no type information>
+fffff804`3c4ae240 stornvme!memset (memset)
+fffff804`3c4c3130 stornvme!_NULL_IMPORT_DESCRIPTOR = <no type information>

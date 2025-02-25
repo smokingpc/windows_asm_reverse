@@ -9,21 +9,21 @@ fffff800`0c154410 4154            push    r12
 fffff800`0c154412 4155            push    r13
 fffff800`0c154414 4156            push    r14
 fffff800`0c154416 4157            push    r15
-fffff800`0c154418 488d6888        lea     rbp,[rax-78h]
+fffff800`0c154418 488d6888        lea     rbp,[rax-78h]     ;
 fffff800`0c15441c 4881ec50010000  sub     rsp,150h
 fffff800`0c154423 488b05d6ab0200  mov     rax,qword ptr [stornvme!_security_cookie (fffff800`0c17f000)]
 fffff800`0c15442a 4833c4          xor     rax,rsp
 fffff800`0c15442d 48894540        mov     qword ptr [rbp+40h],rax
-fffff800`0c154431 488bbda0000000  mov     rdi,qword ptr [rbp+0A0h]
+fffff800`0c154431 488bbda0000000  mov     rdi,qword ptr [rbp+0A0h]  ;rdi == rbp+0xA0 == frame base +0x28 == 5th arg == PPORT_CONFIGURATION_INFORMATION
 fffff800`0c154438 4533ed          xor     r13d,r13d
-fffff800`0c15443b 488bd9          mov     rbx,rcx
-fffff800`0c15443e 66c7453a0100    mov     word ptr [rbp+3Ah],1
+fffff800`0c15443b 488bd9          mov     rbx,rcx           ;DevExt
+fffff800`0c15443e 66c7453a0100    mov     word ptr [rbp+3Ah],1      ;DevEXt+0x3a, flag or BOOL?
 fffff800`0c154444 33d2            xor     edx,edx
-fffff800`0c154446 6644896d3d      mov     word ptr [rbp+3Dh],r13w
+fffff800`0c154446 6644896d3d      mov     word ptr [rbp+3Dh],r13w   ;DevExt+0x3D , flag?
 fffff800`0c15444b 488d4d80        lea     rcx,[rbp-80h]
 fffff800`0c15444f 458bfd          mov     r15d,r13d
-fffff800`0c154452 4c8b7740        mov     r14,qword ptr [rdi+40h]
-fffff800`0c154456 458d4558        lea     r8d,[r13+58h]
+fffff800`0c154452 4c8b7740        mov     r14,qword ptr [rdi+40h]   ;r14 == PORT_CONFIGURATION_INFORMATION::MiniportDumpData
+fffff800`0c154456 458d4558        lea     r8d,[r13+58h]             ;r8d == 0x58
 fffff800`0c15445a e821a00100      call    stornvme!_memset_spec_ermsb (fffff800`0c16e480)
 fffff800`0c15445f 448b6318        mov     r12d,dword ptr [rbx+18h]
 fffff800`0c154463 418d7502        lea     esi,[r13+2]
@@ -35,17 +35,17 @@ fffff800`0c154477 c7453000010101  mov     dword ptr [rbp+30h],1010100h
 fffff800`0c15447e c7453401010101  mov     dword ptr [rbp+34h],1010101h
 fffff800`0c154485 66c745380101    mov     word ptr [rbp+38h],101h
 fffff800`0c15448b 88453c          mov     byte ptr [rbp+3Ch],al
-fffff800`0c15448e 4438afc5000000  cmp     byte ptr [rdi+0C5h],r13b
+fffff800`0c15448e 4438afc5000000  cmp     byte ptr [rdi+0C5h],r13b      ;if PORT_CONFIGURATION_INFORMATION::DumpMode != 0, goto 0x9a
 fffff800`0c154495 7503            jne     stornvme!NVMeHwFindAdapter+0x9a (fffff800`0c15449a)  Branch
 
 stornvme!NVMeHwFindAdapter+0x97:
 fffff800`0c154497 88453e          mov     byte ptr [rbp+3Eh],al
 
 stornvme!NVMeHwFindAdapter+0x9a:
-fffff800`0c15449a 41b80f000000    mov     r8d,0Fh
-fffff800`0c1544a0 4c8d4d30        lea     r9,[rbp+30h]
-fffff800`0c1544a4 488bd3          mov     rdx,rbx
-fffff800`0c1544a7 418d4858        lea     ecx,[r8+58h]
+fffff800`0c15449a 41b80f000000    mov     r8d,0Fh           ;15 feratures in R9
+fffff800`0c1544a0 4c8d4d30        lea     r9,[rbp+30h]      ;STORPORT_FEATURE_TYPE[15] ptr
+fffff800`0c1544a4 488bd3          mov     rdx,rbx           ;hbaext
+fffff800`0c1544a7 418d4858        lea     ecx,[r8+58h]      ;ExtFunctionSetFeatureList
 fffff800`0c1544ab 4c8b15e6eb0200  mov     r10,qword ptr [stornvme!_imp_StorPortExtendedFunction (fffff800`0c183098)]
 fffff800`0c1544b2 e849a0d5ff      call    storport!StorPortExtendedFunction (fffff800`0beae500)
 fffff800`0c1544b7 4585e4          test    r12d,r12d
@@ -53,11 +53,13 @@ fffff800`0c1544ba 751d            jne     stornvme!NVMeHwFindAdapter+0xd9 (fffff
 
 stornvme!NVMeHwFindAdapter+0xbc:
 fffff800`0c1544bc 0fb60d3eac0200  movzx   ecx,byte ptr [stornvme!g_ControllerExtensionIndex (fffff800`0c17f101)]
-fffff800`0c1544c3 488d15b6ab0200  lea     rdx,[stornvme!g_ControllerExtension (fffff800`0c17f080)]
+fffff800`0c1544c3 488d15b6ab0200  lea     rdx,[stornvme!g_ControllerExtension (fffff800`0c17f080)] 
+                        ; stornvme!g_ControllerExtension[index] saved all DevExt in array. max 16 ptrs
+                        ; g_ControllerExtension[g_ControllerExtensionIndex++] = current DevExt
 fffff800`0c1544ca 48891cca        mov     qword ptr [rdx+rcx*8],rbx
 fffff800`0c1544ce fec1            inc     cl
 fffff800`0c1544d0 80e10f          and     cl,0Fh
-fffff800`0c1544d3 880d28ac0200    mov     byte ptr [stornvme!g_ControllerExtensionIndex (fffff800`0c17f101)],cl
+fffff800`0c1544d3 880d28ac0200    mov     byte ptr [stornvme!g_ControllerExtensionIndex (fffff800`0c17f101)],cl ;update index
 
 stornvme!NVMeHwFindAdapter+0xd9:
 fffff800`0c1544d9 8a8fc5000000    mov     cl,byte ptr [rdi+0C5h]
@@ -77,7 +79,7 @@ fffff800`0c154504 84c9            test    cl,cl
 fffff800`0c154506 0f84c5000000    je      stornvme!NVMeHwFindAdapter+0x1d1 (fffff800`0c1545d1)  Branch
 
 stornvme!NVMeHwFindAdapter+0x10c:
-fffff800`0c15450c 4d85f6          test    r14,r14
+fffff800`0c15450c 4d85f6          test    r14,r14       ;if no dumpdata, gogo 0x1c9
 fffff800`0c15450f 0f84b4000000    je      stornvme!NVMeHwFindAdapter+0x1c9 (fffff800`0c1545c9)  Branch
 
 stornvme!NVMeHwFindAdapter+0x115:
@@ -121,7 +123,7 @@ fffff800`0c1545be 8983d8000000    mov     dword ptr [rbx+0D8h],eax
 fffff800`0c1545c4 e99d000000      jmp     stornvme!NVMeHwFindAdapter+0x266 (fffff800`0c154666)  Branch
 
 stornvme!NVMeHwFindAdapter+0x1c9:
-fffff800`0c1545c9 89731c          mov     dword ptr [rbx+1Ch],esi
+fffff800`0c1545c9 89731c          mov     dword ptr [rbx+1Ch],esi   ;rbx+1c = 2, should be state machine state...
 fffff800`0c1545cc e9db040000      jmp     stornvme!NVMeHwFindAdapter+0x6ac (fffff800`0c154aac)  Branch
 
 stornvme!NVMeHwFindAdapter+0x1d1:
@@ -129,25 +131,25 @@ fffff800`0c1545d1 4c8bc0          mov     r8,rax
 fffff800`0c1545d4 488d4de0        lea     rcx,[rbp-20h]
 fffff800`0c1545d8 33d2            xor     edx,edx
 fffff800`0c1545da e8a19e0100      call    stornvme!_memset_spec_ermsb (fffff800`0c16e480)
-fffff800`0c1545df 448b4f64        mov     r9d,dword ptr [rdi+64h]
+fffff800`0c1545df 448b4f64        mov     r9d,dword ptr [rdi+64h]       ;rdi == PPORT_CONFIGURATION_INFORMATION, rdi+64 == SlotNumber
 fffff800`0c1545e3 488d45e0        lea     rax,[rbp-20h]
-fffff800`0c1545e7 448b4704        mov     r8d,dword ptr [rdi+4]
+fffff800`0c1545e7 448b4704        mov     r8d,dword ptr [rdi+4]         ;rdi == PPORT_CONFIGURATION_INFORMATION, rdi+64 == SystemIoBusNumber
 fffff800`0c1545eb 41be40000000    mov     r14d,40h
 fffff800`0c1545f1 4489742428      mov     dword ptr [rsp+28h],r14d
 fffff800`0c1545f6 488bcb          mov     rcx,rbx
 fffff800`0c1545f9 4889442420      mov     qword ptr [rsp+20h],rax
 fffff800`0c1545fe 418d56c4        lea     edx,[r14-3Ch]
 fffff800`0c154602 4c8b1597ea0200  mov     r10,qword ptr [stornvme!_imp_StorPortGetBusData (fffff800`0c1830a0)]
-fffff800`0c154609 e88292d9ff      call    storport!StorPortGetBusData (fffff800`0beed890)
-fffff800`0c15460e 413bc6          cmp     eax,r14d
+fffff800`0c154609 e88292d9ff      call    storport!StorPortGetBusData (fffff800`0beed890)   ;get PCI_COMMON_HEADER data
+fffff800`0c15460e 413bc6          cmp     eax,r14d      ;if StorPortGetBusData() != sizeof(PCI_COMMON_HEADER) , goto 0x698
 fffff800`0c154611 0f8581040000    jne     stornvme!NVMeHwFindAdapter+0x698 (fffff800`0c154a98)  Branch
 
 stornvme!NVMeHwFindAdapter+0x217:
 fffff800`0c154617 0fb745e0        movzx   eax,word ptr [rbp-20h]
 fffff800`0c15461b 488bcb          mov     rcx,rbx
-fffff800`0c15461e 66894304        mov     word ptr [rbx+4],ax
+fffff800`0c15461e 66894304        mov     word ptr [rbx+4],ax       ;DevExt+4 == VendorID
 fffff800`0c154622 0fb745e2        movzx   eax,word ptr [rbp-1Eh]
-fffff800`0c154626 66894306        mov     word ptr [rbx+6],ax
+fffff800`0c154626 66894306        mov     word ptr [rbx+6],ax       ;DevExt+6 == DeviceID
 fffff800`0c15462a 8a45e8          mov     al,byte ptr [rbp-18h]
 fffff800`0c15462d 884308          mov     byte ptr [rbx+8],al
 fffff800`0c154630 e8a7fdffff      call    stornvme!IsIntelChatham (fffff800`0c1543dc)
@@ -174,21 +176,21 @@ fffff800`0c15465f 4c8983a8000000  mov     qword ptr [rbx+0A8h],r8
 stornvme!NVMeHwFindAdapter+0x266:
 fffff800`0c154666 488bd7          mov     rdx,rdi
 fffff800`0c154669 488bcb          mov     rcx,rbx
-fffff800`0c15466c e8a3540100      call    stornvme!GetNVMeRegisterAddress (fffff800`0c169b14)
-fffff800`0c154671 488983b0000000  mov     qword ptr [rbx+0B0h],rax
-fffff800`0c154678 4885c0          test    rax,rax
+fffff800`0c15466c e8a3540100      call    stornvme!GetNVMeRegisterAddress (fffff800`0c169b14)   ;get PNVME_CONTROLLER_REGISTERS addr, map to BAR0
+fffff800`0c154671 488983b0000000  mov     qword ptr [rbx+0B0h],rax      ;DEVEXT+0xB0 == PNVME_CONTROLLER_REGISTERS addr "RegCtrl"
+fffff800`0c154678 4885c0          test    rax,rax   ;if NULL != RegCtrl, goto 0x293 else goto 0x6ac
 fffff800`0c15467b 7516            jne     stornvme!NVMeHwFindAdapter+0x293 (fffff800`0c154693)  Branch
 
 stornvme!NVMeHwFindAdapter+0x27d:
-fffff800`0c15467d c7431c04000000  mov     dword ptr [rbx+1Ch],4
-fffff800`0c154684 4c8d3d6d100200  lea     r15,[stornvme!`string` (fffff800`0c1756f8)]
+fffff800`0c15467d c7431c04000000  mov     dword ptr [rbx+1Ch],4         ;DEVEXT+0x1C => flag? state?
+fffff800`0c154684 4c8d3d6d100200  lea     r15,[stornvme!`string` (fffff800`0c1756f8)]       ;L"MLBAR/MUBAR"
 fffff800`0c15468b 8d7003          lea     esi,[rax+3]
 fffff800`0c15468e e919040000      jmp     stornvme!NVMeHwFindAdapter+0x6ac (fffff800`0c154aac)  Branch
 
 stornvme!NVMeHwFindAdapter+0x293:
 fffff800`0c154693 90              nop
 fffff800`0c154694 ba04000000      mov     edx,4
-fffff800`0c154699 488b00          mov     rax,qword ptr [rax]
+fffff800`0c154699 488b00          mov     rax,qword ptr [rax]       ;RegCtrl
 fffff800`0c15469c 488983c0000000  mov     qword ptr [rbx+0C0h],rax
 fffff800`0c1546a3 488b83b0000000  mov     rax,qword ptr [rbx+0B0h]
 fffff800`0c1546aa 90              nop
@@ -462,7 +464,7 @@ fffff800`0c154984 85c0            test    eax,eax
 fffff800`0c154986 740c            je      stornvme!NVMeHwFindAdapter+0x594 (fffff800`0c154994)  Branch
 
 stornvme!NVMeHwFindAdapter+0x588:
-fffff800`0c154988 4c8d3df10d0200  lea     r15,[stornvme!`string` (fffff800`0c175780)]
+fffff800`0c154988 4c8d3df10d0200  lea     r15,[stornvme!`string` (fffff800`0c175780)]   ;L"Controller Reset Failed"
 fffff800`0c15498f e918010000      jmp     stornvme!NVMeHwFindAdapter+0x6ac (fffff800`0c154aac)  Branch
 
 stornvme!NVMeHwFindAdapter+0x594:
@@ -473,7 +475,7 @@ fffff800`0c15499f 85c0            test    eax,eax
 fffff800`0c1549a1 740c            je      stornvme!NVMeHwFindAdapter+0x5af (fffff800`0c1549af)  Branch
 
 stornvme!NVMeHwFindAdapter+0x5a3:
-fffff800`0c1549a3 4c8d3d060e0200  lea     r15,[stornvme!`string` (fffff800`0c1757b0)]
+fffff800`0c1549a3 4c8d3d060e0200  lea     r15,[stornvme!`string` (fffff800`0c1757b0)]   ;L"Controller initialize part1 failed"
 fffff800`0c1549aa e9fd000000      jmp     stornvme!NVMeHwFindAdapter+0x6ac (fffff800`0c154aac)  Branch
 
 stornvme!NVMeHwFindAdapter+0x5af:
@@ -553,17 +555,17 @@ fffff800`0c154aa5 4489731c        mov     dword ptr [rbx+1Ch],r14d
 fffff800`0c154aa9 418bf6          mov     esi,r14d
 
 stornvme!NVMeHwFindAdapter+0x6ac:
-fffff800`0c154aac 4c8b8308100000  mov     r8,qword ptr [rbx+1008h]
-fffff800`0c154ab3 4d85c0          test    r8,r8
+fffff800`0c154aac 4c8b8308100000  mov     r8,qword ptr [rbx+1008h]  ;DEVEXT+0x1008 == stornvme's timer handle
+fffff800`0c154ab3 4d85c0          test    r8,r8  ;if timer_handle == NULL, goto 0x6da
 fffff800`0c154ab6 7422            je      stornvme!NVMeHwFindAdapter+0x6da (fffff800`0c154ada)  Branch
 
 stornvme!NVMeHwFindAdapter+0x6b8:
 fffff800`0c154ab8 488bd3          mov     rdx,rbx
-fffff800`0c154abb b922000000      mov     ecx,22h
+fffff800`0c154abb b922000000      mov     ecx,22h               ;ExtFunctionFreeTimer
 fffff800`0c154ac0 4c8b15d1e50200  mov     r10,qword ptr [stornvme!_imp_StorPortExtendedFunction (fffff800`0c183098)]
 fffff800`0c154ac7 e8349ad5ff      call    storport!StorPortExtendedFunction (fffff800`0beae500)
-fffff800`0c154acc 4c89ab08100000  mov     qword ptr [rbx+1008h],r13
-fffff800`0c154ad3 4489ab10100000  mov     dword ptr [rbx+1010h],r13d
+fffff800`0c154acc 4c89ab08100000  mov     qword ptr [rbx+1008h],r13     ;set timer handle = NULL
+fffff800`0c154ad3 4489ab10100000  mov     dword ptr [rbx+1010h],r13d    ;interval?
 
 stornvme!NVMeHwFindAdapter+0x6da:
 fffff800`0c154ada 4c8b83400e0000  mov     r8,qword ptr [rbx+0E40h]

@@ -11,16 +11,6 @@ fffff804`3c49086f 740c            je      stornvme!NVMeHwUnitControl+0x1d (fffff
 stornvme!NVMeHwUnitControl+0x11:
 fffff804`3c490871 f781380f000000100000 test dword ptr [rcx+0F38h],1000h
 fffff804`3c49087b 7528            jne     stornvme!NVMeHwUnitControl+0x45 (fffff804`3c4908a5)  Branch
-
-;   switch(ControlType)
-;   0:ScsiQuerySupportedUnitControlTypes
-;   2:ScsiUnitStart
-;   9:ScsiUnitRemove
-;   10:ScsiUnitSurpriseRemoval
-;
-;
-
-
 stornvme!NVMeHwUnitControl+0x1d:
 fffff804`3c49087d 48895c2430      mov     qword ptr [rsp+30h],rbx
 fffff804`3c490882 4889742438      mov     qword ptr [rsp+38h],rsi
@@ -59,8 +49,8 @@ fffff804`3c4b3831 0f87e1000000    ja      stornvme!NVMeHwUnitControl+0x230b8 (ff
 ;    ScsiUnitRichDescription,
 ;    ScsiUnitQueryFruId,
 ;    0x0E (new code),
-;    0x1E (new code),
-;    0x1F (new code),  <= could be new I/O path
+;    0x1E (new code),  <= could be new I/O path
+;    0x1F (new code),
 
 ;3: kd> db fffff804`3c480000+3a59e
 ;fffff804`3c4ba59e  00 01 02 0a 0a 0a 0a 0a-0a 03 04 05 0a 06 07 0a  ................

@@ -62,7 +62,7 @@ fffff800`0c1544d0 80e10f          and     cl,0Fh
 fffff800`0c1544d3 880d28ac0200    mov     byte ptr [stornvme!g_ControllerExtensionIndex (fffff800`0c17f101)],cl ;update index
 
 stornvme!NVMeHwFindAdapter+0xd9:
-fffff800`0c1544d9 8a8fc5000000    mov     cl,byte ptr [rdi+0C5h]
+fffff800`0c1544d9 8a8fc5000000    mov     cl,byte ptr [rdi+0C5h]    ;cl = PORT_CONFIGURATION_INFORMATION::DumpMode
 fffff800`0c1544df 884b14          mov     byte ptr [rbx+14h],cl
 fffff800`0c1544e2 8b87c8000000    mov     eax,dword ptr [rdi+0C8h]
 fffff800`0c1544e8 4084c6          test    sil,al
@@ -226,7 +226,7 @@ fffff800`0c154701 488bcb          mov     rcx,rbx
 fffff800`0c154704 e87b540100      call    stornvme!GetRegistrySettings (fffff800`0c169b84)
 
 stornvme!NVMeHwFindAdapter+0x309:
-fffff800`0c154709 44397f14        cmp     dword ptr [rdi+14h],r15d
+fffff800`0c154709 44397f14        cmp     dword ptr [rdi+14h],r15d  ;set PORT_CONFIGURATION_INFORMATION::InterruptMode
 fffff800`0c15470d 4c8d4c2460      lea     r9,[rsp+60h]
 fffff800`0c154712 41be03000000    mov     r14d,3
 fffff800`0c154718 458bc7          mov     r8d,r15d
@@ -322,16 +322,16 @@ fffff800`0c15480b 41b920000000    mov     r9d,20h
 
 stornvme!NVMeHwFindAdapter+0x411:
 fffff800`0c154811 66898348010000  mov     word ptr [rbx+148h],ax
-fffff800`0c154818 44897730        mov     dword ptr [rdi+30h],r14d
-fffff800`0c15481c 44887f51        mov     byte ptr [rdi+51h],r15b
-fffff800`0c154820 4488af91000000  mov     byte ptr [rdi+91h],r13b
-fffff800`0c154827 4489bf94000000  mov     dword ptr [rdi+94h],r15d
-fffff800`0c15482e 44397f14        cmp     dword ptr [rdi+14h],r15d
+fffff800`0c154818 44897730        mov     dword ptr [rdi+30h],r14d  ;portcfg->AlignmentMask = FILE_LONG_ALIGNMENT
+fffff800`0c15481c 44887f51        mov     byte ptr [rdi+51h],r15b   ;portcfg->ScatterGather = TRUE
+fffff800`0c154820 4488af91000000  mov     byte ptr [rdi+91h],r13b   ;portcfg->ResetTargetSupported = FALSE??
+fffff800`0c154827 4489bf94000000  mov     dword ptr [rdi+94h],r15d  ;portcfg->SynchronizationModel = StorSynchronizeFullDuplex
+fffff800`0c15482e 44397f14        cmp     dword ptr [rdi+14h],r15d  ;if(portcfg->InterruptMode != Latched) goto 0x446
 fffff800`0c154832 7512            jne     stornvme!NVMeHwFindAdapter+0x446 (fffff800`0c154846)  Branch
 
 stornvme!NVMeHwFindAdapter+0x434:
 fffff800`0c154834 488d05e5fcfeff  lea     rax,[stornvme!NVMeHwMSIInterrupt (fffff800`0c144520)]
-fffff800`0c15483b 48898798000000  mov     qword ptr [rdi+98h],rax
+fffff800`0c15483b 48898798000000  mov     qword ptr [rdi+98h],rax   ;set portcfg->HwMSInterruptRoutine
 fffff800`0c154842 8bc6            mov     eax,esi
 fffff800`0c154844 eb03            jmp     stornvme!NVMeHwFindAdapter+0x449 (fffff800`0c154849)  Branch
 
@@ -339,8 +339,8 @@ stornvme!NVMeHwFindAdapter+0x446:
 fffff800`0c154846 418bc7          mov     eax,r15d
 
 stornvme!NVMeHwFindAdapter+0x449:
-fffff800`0c154849 8987a0000000    mov     dword ptr [rdi+0A0h],eax
-fffff800`0c15484f 80bf9000000080  cmp     byte ptr [rdi+90h],80h
+fffff800`0c154849 8987a0000000    mov     dword ptr [rdi+0A0h],eax  ;portcfg->InterruptSynchronizationMode = 0
+fffff800`0c15484f 80bf9000000080  cmp     byte ptr [rdi+90h],80h    ;portcfg->Dma64BitAddresses = 0x80
 fffff800`0c154856 4489afd8000000  mov     dword ptr [rdi+0D8h],r13d
 fffff800`0c15485d 7507            jne     stornvme!NVMeHwFindAdapter+0x466 (fffff800`0c154866)  Branch
 
@@ -361,7 +361,7 @@ fffff800`0c15488a 7509            jne     stornvme!NVMeHwFindAdapter+0x495 (ffff
 
 stornvme!NVMeHwFindAdapter+0x48c:
 fffff800`0c15488c 83c904          or      ecx,4
-fffff800`0c15488f 898fdc000000    mov     dword ptr [rdi+0DCh],ecx
+fffff800`0c15488f 898fdc000000    mov     dword ptr [rdi+0DCh],ecx  ;portcfg->FeatureSupport = some value | STOR_ADAPTER_UNCACHED_EXTENSION_NUMA_NODE_PREFERRED
 
 stornvme!NVMeHwFindAdapter+0x495:
 fffff800`0c154895 f7433800004000  test    dword ptr [rbx+38h],400000h

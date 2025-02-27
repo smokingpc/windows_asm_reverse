@@ -11,7 +11,7 @@ fffff804`3c1e91f8 4154            push    r12
 fffff804`3c1e91fa 4155            push    r13
 fffff804`3c1e91fc 4156            push    r14
 fffff804`3c1e91fe 4157            push    r15
-fffff804`3c1e9200 488d6c24d9      lea     rbp,[rsp-27h]
+fffff804`3c1e9200 488d6c24d9      lea     rbp,[rsp-27h] ;rsp-0x38-0x27 => rbp,  local variables 0x27 bytes?
 fffff804`3c1e9205 4881ecd0000000  sub     rsp,0D0h
 fffff804`3c1e920c 488b056d411000  mov     rax,qword ptr [storport!_security_cookie (fffff804`3c2ed380)]
 fffff804`3c1e9213 4833c4          xor     rax,rsp

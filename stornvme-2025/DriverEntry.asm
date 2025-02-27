@@ -18,7 +18,10 @@ stornvme!DriverEntry+0x37:
 fffff804`3c490e27 e84c520300      call    stornvme!wil_InitializeFeatureStaging (fffff804`3c4c6078)
 
 stornvme!DriverEntry+0x3c:
-fffff804`3c490e2c 814d3fb8b103c0  or      dword ptr [rbp+3Fh],0C003B1B8h
+fffff804`3c490e2c 814d3fb8b103c0  or      dword ptr [rbp+3Fh],0C003B1B8h    ;FeatureSupport = 0xC003B1B8=> 
+                                        ;STOR_FEATURE_ADAPTER_CONTROL_PRE_FINDADAPTER | STOR_FEATURE_EXTRA_IO_INFORMATION | 
+                                        ; STOR_FEATURE_DUMP_RESUME_CAPABLE | STOR_FEATURE_DEVICE_NAME_NO_SUFFIX |
+                                        ; STOR_FEATURE_DUMP_POINTERS
 fffff804`3c490e33 488d05163e0000  lea     rax,[stornvme!NVMeHwInitialize (fffff804`3c494c50)]
 fffff804`3c490e3a 4889458f        mov     qword ptr [rbp-71h],rax   ;HW_INITIALIZATION_DATA::HwInitialize = NVMeHwInitialize();
 fffff804`3c490e3e 4c8d4587        lea     r8,[rbp-79h]
@@ -66,7 +69,7 @@ fffff804`3c490efe 4885c9          test    rcx,rcx
 fffff804`3c490f01 744f            je      stornvme!DriverEntry+0x162 (fffff804`3c490f52)  Branch
 
 stornvme!DriverEntry+0x113:
-fffff804`3c490f03 488d0596c10100  lea     rax,[stornvme!StorNVMeDriverUnload (fffff804`3c4ad0a0)]
+fffff804`3c490f03 488d0596c10100  lea     rax,[stornvme!StorNVMeDriverUnload (fffff804`3c4ad0a0)]   ;replace original storport!DriverUnload to my own unload function.
 fffff804`3c490f0a 48894768        mov     qword ptr [rdi+68h],rax
 fffff804`3c490f0e eb40            jmp     stornvme!DriverEntry+0x160 (fffff804`3c490f50)  Branch
 

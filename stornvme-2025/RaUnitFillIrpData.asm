@@ -10,33 +10,43 @@ fffff804`3c1e964c 4154            push    r12
 fffff804`3c1e964e 4156            push    r14
 fffff804`3c1e9650 4157            push    r15
 fffff804`3c1e9652 4883ec20        sub     rsp,20h
-fffff804`3c1e9656 4c8bb1b8000000  mov     r14,qword ptr [rcx+0B8h]  ;irp->Tail.Overlay.CurrentStackLocation
+fffff804`3c1e9656 4c8bb1b8000000  mov     r14,qword ptr [rcx+0B8h]  ;r14 = irp->Tail.Overlay.CurrentStackLocation
 fffff804`3c1e965d 488bfa          mov     rdi,rdx
-fffff804`3c1e9660 488b12          mov     rdx,qword ptr [rdx]
+fffff804`3c1e9660 488b12          mov     rdx,qword ptr [rdx]       
 fffff804`3c1e9663 488bf1          mov     rsi,rcx
-fffff804`3c1e9666 8b5930          mov     ebx,dword ptr [rcx+30h]   ;irp->IoStatus
-fffff804`3c1e9669 498b4628        mov     rax,qword ptr [r14+28h]   ;CurrentStackLocation->DeviceObject
+fffff804`3c1e9666 8b5930          mov     ebx,dword ptr [rcx+30h]   ;ebx = irp->IoStatus
+fffff804`3c1e9669 498b4628        mov     rax,qword ptr [r14+28h]   ;rax = CurrentStackLocation->DeviceObject
 fffff804`3c1e966d 4c8b4040        mov     r8,qword ptr [rax+40h]    ;DeviceObject->DeviceExtension ==> AdapterExt
-fffff804`3c1e9671 4885d2          test    rdx,rdx
+fffff804`3c1e9671 4885d2          test    rdx,rdx                   ;if
 fffff804`3c1e9674 7430            je      storport!RaUnitFillIrpData+0x66 (fffff804`3c1e96a6)  Branch
 
 storport!RaUnitFillIrpData+0x36:
-fffff804`3c1e9676 66833a01        cmp     word ptr [rdx],1
+fffff804`3c1e9676 66833a01        cmp     word ptr [rdx],1          ;0x0001
 fffff804`3c1e967a 752a            jne     storport!RaUnitFillIrpData+0x66 (fffff804`3c1e96a6)  Branch
 
 storport!RaUnitFillIrpData+0x3c:
-fffff804`3c1e967c 837a0404        cmp     dword ptr [rdx+4],4
+fffff804`3c1e967c 837a0404        cmp     dword ptr [rdx+4],4       ;0x00000004
 fffff804`3c1e9680 7524            jne     storport!RaUnitFillIrpData+0x66 (fffff804`3c1e96a6)  Branch
 
 storport!RaUnitFillIrpData+0x42:
 fffff804`3c1e9682 498b4018        mov     rax,qword ptr [r8+18h]    ;AdapExt->LowerDeviceObject
-fffff804`3c1e9686 0fb74838        movzx   ecx,word ptr [rax+38h]
-fffff804`3c1e968a 66894a02        mov     word ptr [rdx+2],cx
+fffff804`3c1e9686 0fb74838        movzx   ecx,word ptr [rax+38h]    ;AdapExt->LowerDeviceObject->Vpd? => Volume Parameter Block
+fffff804`3c1e968a 66894a02        mov     word ptr [rdx+2],cx       ;IprData+0x02 == Vpd->
 fffff804`3c1e968e 410fb64068      movzx   eax,byte ptr [r8+68h]
-fffff804`3c1e9693 884208          mov     byte ptr [rdx+8],al
-fffff804`3c1e9696 410fb64069      movzx   eax,byte ptr [r8+69h]
+fffff804`3c1e9693 884208          mov     byte ptr [rdx+8],al       ;set all following flags to IrpData+8
+;    [+0x000 ( 0: 0)] InitializedMiniport : 0x1 [Type: unsigned char]
+;    [+0x000 ( 1: 1)] WmiMiniPortInitialized : 0x1 [Type: unsigned char]
+;    [+0x000 ( 2: 2)] WmiInitialized   : 0x0 [Type: unsigned char]
+;    [+0x000 ( 3: 3)] BusInterfaceInternal : 0x0 [Type: unsigned char]
+;    [+0x000 ( 4: 4)] InHwInitialize   : 0x0 [Type: unsigned char]
+;    [+0x000 ( 5: 5)] IdlePowerManagementEnabled : 0x0 [Type: unsigned char]
+;    [+0x000 ( 6: 6)] TargetedRescan   : 0x0 [Type: unsigned char]
+;    [+0x000 ( 7: 7)] BootAdapter      : 0x0 [Type: unsigned char]
+
+
+fffff804`3c1e9696 410fb64069      movzx   eax,byte ptr [r8+69h]     ;AdapterExt->Flags->InvalidateBusRelations
 fffff804`3c1e969b 884209          mov     byte ptr [rdx+9],al
-fffff804`3c1e969e 410fb6406a      movzx   eax,byte ptr [r8+6Ah]
+fffff804`3c1e969e 410fb6406a      movzx   eax,byte ptr [r8+6Ah]     ;AdapterExt->Flags->RescanBus
 fffff804`3c1e96a3 88420a          mov     byte ptr [rdx+0Ah],al
 
 storport!RaUnitFillIrpData+0x66:
